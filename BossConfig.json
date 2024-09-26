@@ -1,0 +1,173 @@
+{
+	"Groups": 
+	[
+		{
+		  "Name": "Main",
+		  "DisplayName": "Boss Settings",
+		  "Elements":
+			[
+				{
+					"Name":"BossCombat",
+					"DisplayName":"Combat Mods",
+					"Description":["Using Combat Mods? Toggle them here"],
+					"Type":"BossHP",
+					"MinValue":null,
+					"MaxValue":null,
+					"DefaultValue":"1"
+				},
+			]
+		},
+		{
+		  "Name": "Main",
+		  "DisplayName": "Base Game Supreme Settings",
+		  "Elements":
+			[
+				{
+				"Name":"IncludeDir1",
+				"DisplayName":"Ouranos Island Supreme Type",
+				"Description":["Choose between 2 batches of QTE Scenes for Supreme."],
+				"Type":"SupremeB",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"RifleQTE01"
+				},
+				{
+				"Name":"IncludeDir2",
+				"DisplayName":"Laser Wing QTE",
+				"Description":["Supreme uses his wings to fire an even bigger laser. Comes in 2 flavors, one of them pays homage to a certain other game."],
+				"Type":"Winglaser",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"WingLaser_1"
+				},
+			]
+		},
+		{
+		  "Name": "Main",
+		  "DisplayName": "Final Horizons Settings",
+		  "Elements":
+			[
+				{
+				"Name":"IncludeDir5",
+				"DisplayName":"ParryMiss QTE",
+				"Description":["Added support for Hyper Sonic skins"],
+				"Type":"ZevParrymiss",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"RifleParrymiss"
+				},
+				{
+				"Name":"IncludeDir3",
+				"DisplayName":"The Final Blow QTE",
+				"Description":["The Final QTE has small changes."],
+				"Type":"ZevBlow",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"RifleBlow00"
+				},
+				{
+				"Name":"IncludeDir4",
+				"DisplayName":"Final Horizons Monologue",
+				"Description":["This is just a slot placeholder. Originally the Monologue was meant to be part of the mod, but is now a seperate download option that can be downloaded through a link. This default slot contains the edited transformation of Super Sonic 2 with The End remaining silent."],
+				"Type":"SupremeM",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"RifleEnd"
+				},
+			]
+		}
+	 ],
+
+	"Enums":
+	{
+		"BossHP":
+		[
+			{
+				"DisplayName":"Off",
+				"Value":"0",
+				"Description":["Vanilla"],
+			},
+			{
+				"DisplayName":"On",
+				"Value":"1",
+				"Description":["Lowered HP for certain combat mods that change Sonic's combat style."],
+			},
+		],
+		
+		"SupremeB":
+		[
+			{
+			"DisplayName":"Restored",
+			"Value":"RifleQTE01",
+			"Description":["The original scrapped QTE elements have been fully restored with some changes so it's not a complete 1-to-1 Copy-paste from Giganto. Check the readme file or mod submission description for more info. Bitlaser's short animation has a slight camera change when the scene starts. It's also a QTE now, it felt like it was meant to be a QTE instead of just a cutscene."],
+			},
+			{
+			"DisplayName":"Retooled",
+			"Value":"RifleQTE02",
+			"Description":["More unique QTE animations that utilizes unused animation files normally not seen in game. Example: Bitlaser01 and 02 are on full display with this option as they occupy the Shoot01 and 02 slots respectively."],
+			},
+		],
+		
+		"ZevBlow":
+		[
+			{
+			"DisplayName":"Vanilla Fixed",
+			"Value":"RifleBlow00",
+			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."],
+			},
+			{
+			"DisplayName":"Edited Animation",
+			"Value":"RifleBlow01",
+			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
+			},
+			{
+			"DisplayName":"Hyper Sonic (Fixed Vanilla)",
+			"Value":"RifleBlow00_Hyper",
+			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."],
+			},
+			{
+			"DisplayName":"Hyper Sonic (Edited Animation)",
+			"Value":"RifleBlow01_Hyper",
+			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
+			},
+		],
+		
+		"ZevParrymiss":
+		[
+			{
+			"DisplayName":"Vanilla",
+			"Value":"RifleParrymiss",
+			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."],
+			},
+			{
+			"DisplayName":"Hyper Sonic skins",
+			"Value":"RifleParrymiss_Hyper",
+			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
+			},
+		],
+		"Winglaser":
+		[
+			{
+			"DisplayName":"Version 1",
+			"Value":"Winglaser_1",
+			"Description":["The first iteration."],
+			},
+			{
+			"DisplayName":"Version 2",
+			"Value":"Winglaser_2",
+			"Description":["For those that wanted a Secret Rings callback."],
+			},
+		],
+		
+		"SupremeM":
+		[
+			{
+			"DisplayName":"Off (Edited ss2 powerup)",
+			"Value":"RifleEnd",
+			"Description":["The moon remains high in the sky puppeterring Supreme. SS2's transformation has a slight camera change and a little extra effects."],
+			},
+		]
+	},
+	
+   "IniFile":"mod.ini"
+}
