@@ -1,5 +1,5 @@
-add main/raw/boss/bosscommon.pac
 add main/raw/boss/rifle01.pac
+add main/raw/boss/bosscommon.pac
 add main/raw/boss/riflebeast.pac
 add main/raw/event/scene/bo4xxx.pac
 add main/raw/movie/zev_sp_riflebeast.usm
