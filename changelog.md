@@ -1,7 +1,8 @@
 ## Aggro-Titans V0.1.3
-- Patched Rifle01.pac (again)
+- Patched Rifle01.pac
 - Added and revised certain Final Horizons QTEs to support Hyper Sonic's blue outline
 - Final Horizons Monologue Mod update coming soon.
+- Fixed Mod.ini
 
 ## Aggro-Titans V0.1.2
 - Tweaked some things.
