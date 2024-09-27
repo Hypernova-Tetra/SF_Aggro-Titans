@@ -48,7 +48,7 @@
 		  "Elements":
 			[
 				{
-				"Name":"IncludeDir5",
+				"Name":"IncludeDir4",
 				"DisplayName":"ParryMiss QTE",
 				"Description":["Added support for Hyper Sonic skins"],
 				"Type":"ZevParrymiss",
@@ -64,15 +64,6 @@
 				"MinValue":null,
 				"MaxValue":null,
 				"DefaultValue":"RifleBlow00"
-				},
-				{
-				"Name":"IncludeDir4",
-				"DisplayName":"Final Horizons Monologue",
-				"Description":["This is just a slot placeholder. Originally the Monologue was meant to be part of the mod, but is now a seperate download option that can be downloaded through a link. This default slot contains the edited transformation of Super Sonic 2 with The End remaining silent."],
-				"Type":"SupremeM",
-				"MinValue":null,
-				"MaxValue":null,
-				"DefaultValue":"RifleEnd"
 				},
 			]
 		}
@@ -158,15 +149,6 @@
 			"Description":["For those that wanted a Secret Rings callback."],
 			},
 		],
-		
-		"SupremeM":
-		[
-			{
-			"DisplayName":"Off (Edited ss2 powerup)",
-			"Value":"RifleEnd",
-			"Description":["The moon remains high in the sky puppeterring Supreme. SS2's transformation has a slight camera change and a little extra effects."],
-			},
-		]
 	},
 	
    "IniFile":"mod.ini"
