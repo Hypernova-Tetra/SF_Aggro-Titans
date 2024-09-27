@@ -1,3 +1,8 @@
+## Aggro-Titans V0.1.4
+- Rearranged files
+- Adjusted Red Circle QTE on "Zev_Blow" for Fixed Vanilla option
+- Adjusted "Winglaser_2" QTE option. (Still in progress)
+
 ## Aggro-Titans V0.1.3
 - Patched Rifle01.pac
 - Added and revised certain Final Horizons QTEs to support Hyper Sonic's blue outline
