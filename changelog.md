@@ -1,7 +1,10 @@
 ## Aggro-Titans V0.1.4
 - Rearranged files
 - Adjusted Red Circle QTE on "Zev_Blow" for Fixed Vanilla option
-- Adjusted "Winglaser_2" QTE option. (Still in progress)
+- Small Adjustment to the "Winglaser_2" QTE (This is still being worked on)
+- Added some effects to the QTE scene from file "test_qte_sample"
+- Fixed incorrect Resource Pointer from "Zev_rfl_Sp02"
+- Adjusted "bo6xxx.pac" for the Hyper Sonic skin option as it was an outdated version of what I used for the Monologue mod.
 
 ## Aggro-Titans V0.1.3
 - Patched Rifle01.pac
