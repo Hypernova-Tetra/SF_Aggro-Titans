@@ -14,7 +14,7 @@ Code "RifleBeastTackle"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661726NB00");
+		var mod = HMM.GetModByID("H1661726NB");
 
 		if (mod == null)
 			return;
