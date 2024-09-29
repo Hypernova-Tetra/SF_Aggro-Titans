@@ -1,31 +1,34 @@
-delete main
-delete RifleBlow00
-delete RifleBlow00_Hyper
-delete RifleBlow01
-delete RifleBlow01_Hyper
-delete RifleEnd
-delete RifleQTE01
-delete RifleQTE02
-delete RifleEnd
-delete Winglaser_1
-delete Winglaser_2
-delete RifleParrymiss
-delete RifleParrymiss_Hyper
+delete RifleEnd/raw/event/scene/bo6xxx.pac
+delete RifleEnd/raw/event/scene/zev_sp_riflebeast.pac
+delete RifleEnd/raw/event/scene/
+delete RifleEnd/raw/event/
+delete RifleEnd/raw/movie/bo6110.usm
+delete RifleEnd/raw/movie/bo6120.usm
+delete RifleEnd/raw/movie/bo6140.usm
+delete RifleEnd/raw/movie/bo6160.usm
+delete RifleEnd/raw/movie/bo6165.usm
+delete RifleEnd/raw/movie/bo6190.usm
+delete RifleEnd/raw/
+delete RifleEnd/
+delete main/raw/movie/zev_sp_riflebeast_4k.usm
 
 add main/raw/boss/rifle01.pac
 add main/raw/boss/bosscommon.pac
 add main/raw/boss/riflebeast.pac
 add main/raw/event/scene/bo4xxx.pac
 add main/raw/movie/zev_sp_riflebeast.usm
+add main/raw/movie/bo6110.usm
+add main/raw/movie/bo6120.usm
+add main/raw/movie/bo6140.usm
+add main/raw/movie/bo6160.usm
+add main/raw/movie/bo6165.usm
+add main/raw/movie/bo6190.usm
 add main/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 add RifleBlow00/raw/event/scene/zev_blow_rifleboss.pac
 add RifleBlow00_Hyper/raw/event/scene/zev_blow_rifleboss.pac
 add RifleBlow01/raw/event/scene/zev_blow_rifleboss.pac
 add RifleBlow01_Hyper/raw/event/scene/zev_blow_rifleboss.pac
-
-add RifleEnd/raw/event/scene/bo6xxx.pac
-add RifleEnd/raw/event/scene/zev_sp_riflebeast.pac
 
 add RifleQTE01/raw/event/scene/test_qte_sample.pac
 add RifleQTE01/raw/event/scene/test_sage_move.pac
@@ -48,11 +51,18 @@ add RifleQTE02/raw/event/scene/zev_rfl_sp02.pac
 add Winglaser_1/raw/event/scene/zev_rfl_sp01.pac
 add Winglaser_2/raw/event/scene/zev_rfl_sp01.pac
 
+add RifleParrymiss/raw/event/scene/bo6xxx.pac
+add RifleParrymiss/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss/raw/event/scene/zev_parrymiss_riflebeast.pac
+
+add RifleParrymiss_Hyper/raw/event/scene/bo6xxx.pac
+add RifleParrymiss_Hyper/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_Hyper/raw/event/scene/zev_parrymiss_riflebeast.pac
+
 
 add BossConfig.json
 add BossRifle01.hmm
 add BossRifle01Combat.hmm
 add BossRifleBeastCombat.hmm
+
 add mod.ini
