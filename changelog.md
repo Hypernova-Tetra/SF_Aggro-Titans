@@ -5,6 +5,7 @@
 - Added some effects to the QTE scene from file "test_qte_sample"
 - Fixed incorrect Resource Pointer from "Zev_rfl_Sp02"
 - Adjusted "bo6xxx.pac" for the Hyper Sonic skin option as it was an outdated version of what I used for the Monologue mod.
+- "Zev_rfl_Shoot01" had an issue with Sonic being in the wrong spot when failing parts of the QTE. So this scene was updated with new fail scenes.
 
 ## Aggro-Titans V0.1.3
 - Patched Rifle01.pac
