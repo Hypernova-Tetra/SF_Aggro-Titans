@@ -1,3 +1,8 @@
+## Aggro-Titans V0.1.5
+- Optimized certain QTEs related to Shoot02 and its variants across the mod to load quicker in the fight.
+- Fixed Winglaser_2 QTE's second input auto failing due to incorrect timescale parameter.
+- Changed Supreme's "immediateActions" or rather what the asm file calls "counterPose" animation.
+
 ## Aggro-Titans V0.1.4
 - Rearranged files
 - Adjusted Red Circle QTE on "Zev_Blow" for Fixed Vanilla option
