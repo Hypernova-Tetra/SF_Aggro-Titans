@@ -2,6 +2,8 @@
 - Optimized certain QTEs related to Shoot02 and its variants across the mod to load quicker in the fight.
 - Fixed Winglaser_2 QTE's second input auto failing due to incorrect timescale parameter.
 - Changed Supreme's "immediateActions" or rather what the asm file calls "counterPose" animation.
+- New short QTE animation for the "Restored" option during Phase 1.
+- Supreme's @attack_counter01 animation file swapped with @attack_counter04.
 
 ## Aggro-Titans V0.1.4
 - Rearranged files
