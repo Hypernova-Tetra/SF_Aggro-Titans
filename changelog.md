@@ -1,3 +1,16 @@
+## Aggro-Titans V0.1.6
+- Changed animation for Riflebeast's recoil animation when parrying Claw attacks.
+- Changed "slowSetting" parameters for "cyloopState" when SS2 crushes Riflebeast are adjusted. 
+- se_rangers_giant04.acb file was adjusted: Sounds with the label "riflecrush" were modified to reflect changes in cyloopState listed above.
+- Riflebeast's Hominglaser_Orb base speed was adjusted. 155 -> 135
+- The unused "AttackHomingLaserPatterns" (Also known as "AT_HIMING") for "06, 07, 08, and 09" are implemented, though they're in a WIP state.
+- Fixed cutscene "ev5040" where it loaded as a black screen.
+- Fixed cutscene "ev6030" where it loaded as a black screen. Another adjustment was made to the location of Eggman and his computer console. The scene is located at the start of Ouranos Island as a temporary workaround until I figure out a way to load Chaos Island's assets to get him in his proper spot.
+- ev1770 and ev5020 use the Beta Super Sonic transformation effects.
+- "Boss_Bit_Param" was adjusted. 2 attacks from the drone's attack patterns have their order swapped.
+- "smallbit_Laser" rotation speed adjusted. Is now the 1st drone attack that occurs when the fight starts. Before it was the 3rd attack.
+- "smallbit_Homing" homingDelay and homingAccuracy slightly adjusted. Is now the 3rd attack that the drones do in order. Before it was the 1st attack.
+
 ## Aggro-Titans V0.1.5
 - Optimized certain QTEs related to Shoot02 and its variants across the mod to load quicker in the fight.
 - Fixed Winglaser_2 QTE's second input auto failing due to incorrect timescale parameter.

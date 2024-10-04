@@ -1,5 +1,6 @@
 delete RifleEnd/raw/event/scene/bo6xxx.pac
 delete RifleEnd/raw/event/scene/zev_sp_riflebeast.pac
+delete RifleEnd/raw/event/scene/zev_parrymiss_riflebeast.pac
 delete RifleEnd/raw/event/scene/
 delete RifleEnd/raw/event/
 delete RifleEnd/raw/movie/bo6110.usm
@@ -10,19 +11,29 @@ delete RifleEnd/raw/movie/bo6165.usm
 delete RifleEnd/raw/movie/bo6190.usm
 delete RifleEnd/raw/
 delete RifleEnd/
+delete main/raw/event/scene/zev_sp_riflebeast.pac
+delete main/raw/event/scene/zev_parrymiss_riflebeast.pac
 delete main/raw/movie/zev_sp_riflebeast_4k.usm
 
 add main/raw/boss/rifle01.pac
 add main/raw/boss/bosscommon.pac
 add main/raw/boss/riflebeast.pac
+add main/raw/event/scene/ev1770.pac
+add main/raw/event/scene/ev5020.pac
+add main/raw/event/scene/ev5040.pac
 add main/raw/event/scene/bo4xxx.pac
-add main/raw/movie/zev_sp_riflebeast.usm
+add main/raw/event/scene/zev_end.pac
+add main/raw/event/scene/zev_end_shooting.pac
+add main/raw/movie/ev1770.usm
+add main/raw/movie/ev5020.usm
+add main/raw/movie/ev5040.usm
 add main/raw/movie/bo6110.usm
 add main/raw/movie/bo6120.usm
 add main/raw/movie/bo6140.usm
 add main/raw/movie/bo6160.usm
 add main/raw/movie/bo6165.usm
 add main/raw/movie/bo6190.usm
+add main/raw/movie/zev_sp_riflebeast.usm
 add main/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 add RifleBlow00/raw/event/scene/zev_blow_rifleboss.pac
