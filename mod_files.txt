@@ -21,12 +21,14 @@ add main/raw/boss/riflebeast.pac
 add main/raw/event/scene/ev1770.pac
 add main/raw/event/scene/ev5020.pac
 add main/raw/event/scene/ev5040.pac
+add main/raw/event/scene/ev6030.pac
 add main/raw/event/scene/bo4xxx.pac
 add main/raw/event/scene/zev_end.pac
 add main/raw/event/scene/zev_end_shooting.pac
 add main/raw/movie/ev1770.usm
 add main/raw/movie/ev5020.usm
 add main/raw/movie/ev5040.usm
+add main/raw/movie/ev6030.usm
 add main/raw/movie/bo6110.usm
 add main/raw/movie/bo6120.usm
 add main/raw/movie/bo6140.usm
