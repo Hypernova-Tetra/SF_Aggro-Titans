@@ -11,7 +11,9 @@
 - "smallbit_Laser" rotation speed adjusted. Is now the 1st drone attack that occurs when the fight starts. Before it was the 3rd attack.
 - "smallbit_Homing" homingDelay and homingAccuracy slightly adjusted. Is now the 3rd attack that the drones do in order. Before it was the 1st attack.
 - Event/Scene "Zev_rfl_Sp02" in Retooled option received animation updates during the fail scene.
-- Event/Scene "Zev_rfl_Shoot01" and "02 in "Retooled" Option (The extended Bitlaser01 and 02 animations) received an animation update: Extended frames during the QTE button mash phase. Different fail animation implemented depending on if the wrong button was pressed or no button was pressed, timing out the chance to win the QTE. 
+- Event/Scene "Zev_rfl_Shoot01" and "02 in "Retooled" Option (The extended Bitlaser01 and 02 animations) received an animation update: Extended frames during the QTE button mash phase. Different fail animation implemented depending on if the wrong button was pressed or no button was pressed, timing out the chance to win the QTE.
+- Updated "Winglaser_2" animation
+- Changed the "flyMoveCircleRadius" parameter so that he doesn't fly too far away and end up stuck against the Ouranos pyramid temple with no way to reach him, soft-locking he fight.
 
 ## Aggro-Titans V0.1.5
 - Optimized certain QTEs related to Shoot02 and its variants across the mod to load quicker in the fight.
