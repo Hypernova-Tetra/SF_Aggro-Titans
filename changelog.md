@@ -15,6 +15,7 @@
 - Updated "Winglaser_2" animation
 - Changed the "flyMoveCircleRadius" parameter so that he doesn't fly too far away and end up stuck against the Ouranos pyramid temple with no way to reach him, soft-locking he fight.
 - "@attack_counter_bite_start" and "bite_dead" cam-anim files (for Supreme) are properly working now.
+- Low HP phase for og Supreme's attack pattern slightly adjusted.
 
 ## Aggro-Titans V0.1.5
 - Optimized certain QTEs related to Shoot02 and its variants across the mod to load quicker in the fight.
