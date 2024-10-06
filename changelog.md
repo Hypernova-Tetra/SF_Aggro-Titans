@@ -14,6 +14,7 @@
 - Event/Scene "Zev_rfl_Shoot01" and "02 in "Retooled" Option (The extended Bitlaser01 and 02 animations) received an animation update: Extended frames during the QTE button mash phase. Different fail animation implemented depending on if the wrong button was pressed or no button was pressed, timing out the chance to win the QTE.
 - Updated "Winglaser_2" animation
 - Changed the "flyMoveCircleRadius" parameter so that he doesn't fly too far away and end up stuck against the Ouranos pyramid temple with no way to reach him, soft-locking he fight.
+- "@attack_counter_bite_start" and "bite_dead" cam-anim files (for Supreme) are properly working now.
 
 ## Aggro-Titans V0.1.5
 - Optimized certain QTEs related to Shoot02 and its variants across the mod to load quicker in the fight.
