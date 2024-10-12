@@ -5,6 +5,7 @@
 - Reduced file size for "bo6190.usm". Eggman's scope HUD shows up in Realtime now, but only during Eggman's glasses. The scope P.O.V. still remains pre-rendered for now. I doubt I can get the POV working for Realtime.
 - Event/Scene "bo4110" is slightly updated.
 - Event/Scene "bo4160" is slightly updated more changes coming soon.
+- Barrier HP in Extreme Mode changed: 67 -> 50
 
 ## Aggro-Titans V0.1.6
 - Changed animation for Riflebeast's recoil animation when parrying Claw attacks.
