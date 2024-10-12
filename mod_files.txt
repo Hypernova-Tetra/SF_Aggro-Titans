@@ -72,7 +72,6 @@ add RifleParrymiss_Hyper/raw/event/scene/bo6xxx.pac
 add RifleParrymiss_Hyper/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_Hyper/raw/event/scene/zev_parrymiss_riflebeast.pac
 
-
 add BossConfig.json
 add BossRifle01.hmm
 add BossRifle01Combat.hmm
