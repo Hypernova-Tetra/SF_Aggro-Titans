@@ -1,3 +1,11 @@
+## Aggro-Titans V0.1.7
+- A fix for SSCyber and SSDamage model and assets not loading in the cutscene.
+- Event/Scene bo6140 (Phase2) updated. Overlapping voices of Sage, Amy, Knux, and Tails are fixed.
+- Adjustment to Event/Scene bo6190 (The Finale) for Hyper Sonic skins that may include slightly altered camera angle shots and added effects when Sonic going full Cyber attacks Supreme and The End.
+- Reduced file size for "bo6190.usm". Eggman's scope HUD shows up in Realtime now, but only during Eggman's glasses. The scope P.O.V. still remains pre-rendered for now. I doubt I can get the POV working for Realtime.
+- Event/Scene "bo4110" is slightly updated.
+- Event/Scene "bo4160" is slightly updated more changes coming soon.
+
 ## Aggro-Titans V0.1.6
 - Changed animation for Riflebeast's recoil animation when parrying Claw attacks.
 - Changed "slowSetting" parameters for "cyloopState" when SS2 crushes Riflebeast are adjusted. 
