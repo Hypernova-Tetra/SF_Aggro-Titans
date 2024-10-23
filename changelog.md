@@ -1,3 +1,9 @@
+## Aggro-Titans V0.1.8 (Untested)
+- Riflebeast "attackPattern" and "attackPatternAfter" slightly changed.
+- Riflebeast "attackHominglaserPattern" slightly changed.
+- Adjusted Winglaser_2 slightly. Fixed a problem where the QTE didn't fail immediately on the wrong button press. Second QTE prompt changed: "TheEndVariant" -> "PressPrompt".
+- Other slight changes.
+
 ## Aggro-Titans V0.1.7
 - A fix for SSCyber and SSDamage model and assets not loading in the cutscene.
 - Event/Scene bo6140 (Phase2) updated. Overlapping voices of Sage, Amy, Knux, and Tails are fixed.
