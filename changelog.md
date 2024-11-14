@@ -1,4 +1,9 @@
-## Aggro-Titans V0.1.8 (Untested)
+## Aggro-Titans V0.1.9
+- Some adjustments to Supreme's attack speed and attack patterns.
+- Adjusted Supreme's "attackHomingLaser" and "attackHandLaser" parameters.
+- Adjusted "immediateActions" parameters
+
+## Aggro-Titans V0.1.8
 - Riflebeast "attackPattern" and "attackPatternAfter" slightly changed.
 - Riflebeast "attackHominglaserPattern" slightly changed.
 - Adjusted Winglaser_2 slightly. Fixed a problem where the QTE didn't fail immediately on the wrong button press. Second QTE prompt changed: "TheEndVariant" -> "PressPrompt".
