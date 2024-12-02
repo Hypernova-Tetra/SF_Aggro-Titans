@@ -1,3 +1,8 @@
+## Aggro-Titans V0.2.0
+- Files reuploaded to the GitHub Repo
+- Tweaks and adjustments made to Boss Health and Attack Patterns to both Rifle01 and Riflebeast
+- Added Holoska's code for "AT_SHOT2" to play "Zev_Rfl_Sp02"
+
 ## Aggro-Titans V0.1.9
 - Some adjustments to Supreme's attack speed and attack patterns.
 - Adjusted Supreme's "attackHomingLaser" and "attackHandLaser" parameters.
