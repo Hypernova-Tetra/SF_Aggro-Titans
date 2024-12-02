@@ -45,7 +45,7 @@ Code "RifleBeastTackle"
 
 	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[0], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_L);
     RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[5], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_R);
-    RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[8], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_L);
+    RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[7], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_L);
 	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[1].attackPattern[0], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_R);
     RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[1].attackPattern[3], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_HIMING02);
     RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[1].attackPattern[7], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_L);

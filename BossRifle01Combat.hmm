@@ -43,7 +43,7 @@ Code "RifleCombat"
 	if (BossRifleConfigInfo.pData == null)
 		return;
 
-	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.status.healthPoint, 200000);
+	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.status.healthPoint, 180000);
 	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.dropRing.ringNumQuickCyloopUp, 3);
 	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.dropRing.ringNumQuickCyloopDown, 7);
 	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.dropRing.ringNumSonicSpecial, 10);
