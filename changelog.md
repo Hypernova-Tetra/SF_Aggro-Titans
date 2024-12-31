@@ -1,3 +1,7 @@
+## Aggro-Titans V0.2.1
+- New Grand Slam animation for Hyper Sonic skin option when selecting "ParryMiss QTE option".
+- "Zev_Parrymiss_Riflebeast.pac" adjusted to remove a detail that didn't quite make sense.
+
 ## Aggro-Titans V0.2.0
 - Files reuploaded to the GitHub Repo
 - Tweaks and adjustments made to Boss Health and Attack Patterns to both Rifle01 and Riflebeast

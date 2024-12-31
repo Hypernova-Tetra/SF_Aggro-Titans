@@ -14,6 +14,7 @@ delete RifleEnd/
 delete Main/raw/event/scene/zev_sp_riflebeast.pac
 delete Main/raw/event/scene/zev_parrymiss_riflebeast.pac
 delete Main/raw/movie/zev_sp_riflebeast_4k.usm
+delete Main/raw/movie/zev_sp_riflebeast.usm
 
 add Main/raw/boss/rifle01.pac
 add Main/raw/boss/bosscommon.pac
@@ -35,7 +36,6 @@ add Main/raw/movie/bo6140.usm
 add Main/raw/movie/bo6160.usm
 add Main/raw/movie/bo6165.usm
 add Main/raw/movie/bo6190.usm
-add Main/raw/movie/zev_sp_riflebeast.usm
 add Main/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 add RifleBlow00/raw/event/scene/zev_blow_rifleboss.pac
@@ -67,10 +67,12 @@ add Winglaser_2/raw/event/scene/zev_rfl_sp01.pac
 add RifleParrymiss/raw/event/scene/bo6xxx.pac
 add RifleParrymiss/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss/raw/event/scene/zev_parrymiss_riflebeast.pac
+add RifleParrymiss/raw/movie/zev_sp_riflebeast.usm
 
 add RifleParrymiss_Hyper/raw/event/scene/bo6xxx.pac
 add RifleParrymiss_Hyper/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_Hyper/raw/event/scene/zev_parrymiss_riflebeast.pac
+add RifleParrymiss_Hyper/raw/movie/zev_sp_riflebeast.usm
 
 add BossConfig.json
 add BossRifle01.hmm
