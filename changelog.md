@@ -1,3 +1,8 @@
+## Aggro-Titans V0.2.2
+- Adjustments to Supreme's QTE files for better pacing and to cut down on length for some.
+R1: Further fixing QTE files so QTE inputs register properly.
+
+
 ## Aggro-Titans V0.2.1
 - New Grand Slam animation for Hyper Sonic skin option when selecting "ParryMiss QTE option".
 - "Zev_Parrymiss_Riflebeast.pac" adjusted to remove a detail that didn't quite make sense.
