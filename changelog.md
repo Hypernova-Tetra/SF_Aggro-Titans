@@ -1,3 +1,6 @@
+## Aggro-Titans V1.0.0
+- Public Mod Release
+
 ## Aggro-Titans V0.2.2
 - Adjustments to Supreme's QTE files for better pacing and to cut down on length for some.
 - R1: Further fixing QTE files so QTE inputs register properly.
