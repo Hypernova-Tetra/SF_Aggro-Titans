@@ -5,6 +5,7 @@
 - Adjustments to Supreme's QTE files for better pacing and to cut down on length for some.
 - R1: Further fixing QTE files so QTE inputs register properly.
 - R2: Last minute tweaks to gun QTEs.
+- R3: Changed cutscene bo4160.
 
 ## Aggro-Titans V0.2.1
 - New Grand Slam animation for Hyper Sonic skin option when selecting "ParryMiss QTE option".
