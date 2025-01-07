@@ -1,4 +1,4 @@
-## Aggro-Titans V1.0.0
+## Aggro-Titans V1.00_r00
 - Public Mod Release
 
 ## Aggro-Titans V0.2.2
