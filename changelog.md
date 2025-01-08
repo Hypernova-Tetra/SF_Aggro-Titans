@@ -1,13 +1,16 @@
-## Aggro-Titans V1.00_r01
+## Aggro-Titans V1.00_r05
 - Public Mod Release
 
-## Aggro-Titans V0.2.2
-- Adjustments to Supreme's QTE files for better pacing and to cut down on length for some.
+
+# Aggro Titans Pre-release Day 0 Patch
 - R1: Further fixing QTE files so QTE inputs register properly.
 - R2: Last minute tweaks to gun QTEs.
 - R3: Changed cutscene bo4160.
 - R4: Tweaked a certain shot for cutscene bo4110
 - R5: Fixed Shoot01 in "Restored". Sonic was clipping through the first "Red Circle" QTE graphic.
+
+## Aggro-Titans V0.2.2
+- Adjustments to Supreme's QTE files for better pacing and to cut down on length for some.
 
 ## Aggro-Titans V0.2.1
 - New Grand Slam animation for Hyper Sonic skin option when selecting "ParryMiss QTE option".
