@@ -76,7 +76,9 @@ add RifleParrymiss_Hyper/raw/movie/zev_sp_riflebeast.usm
 
 add BossConfig.json
 add BossRifle01.hmm
+add BossBitCombat.hmm
 add BossRifle01Combat.hmm
 add BossRifleBeastCombat.hmm
+
 
 add mod.ini

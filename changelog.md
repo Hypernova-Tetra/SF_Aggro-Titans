@@ -1,4 +1,4 @@
-## Aggro-Titans V1.00_r06
+## Aggro-Titans V1.00_r07
 - Public Mod Release
 
 
@@ -9,6 +9,7 @@
 - R4: Tweaked a certain shot for cutscene bo4110
 - R5: Fixed Shoot01 in "Restored": Sonic was clipping through the first "Red Circle" QTE graphic. 
 - R6: Adjusted Supreme's Drone Homing Missile to avoid a bug where the homing missiles and Supreme's counter swipe attack making Sonic unable to parry. Slight update to Supreme's idle animation.
+- R7: Updated "Combat Mods" Hmm code option: Added "BossBitConfig.hmm"
 
 ## Aggro-Titans V0.2.2
 - Adjustments to Supreme's QTE files for better pacing and to cut down on length for some.
