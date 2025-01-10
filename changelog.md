@@ -1,8 +1,8 @@
-## Aggro-Titans v1_r08
+## Aggro-Titans v1_r09
 - Public Mod Release
 
-
-# Aggro Titans Pre-release Day 0 Patch
+# Aggro Titans Pre-release Patches
+Things that were done right when I thought I was done with the mod as a whole, but almost ended up missing a few things that I forgot to do, extending the original planned release date.
 - R1: Further fixing QTE files so QTE inputs register properly.
 - R2: Last minute tweaks to gun QTEs.
 - R3: Changed cutscene bo4160.
@@ -11,6 +11,7 @@
 - R6: Adjusted Supreme's Drone Homing Missile to avoid a bug where the homing missiles and Supreme's counter swipe attack making Sonic unable to parry. Slight update to Supreme's idle animation.
 - R7: Updated "Combat Mods" Hmm code option: Added "BossBitConfig.hmm"
 - R8: Tweaked a few parameters across several scenes. Reset Supreme's idle pose back to default for the time being.
+- R9: Last minute fix to Shoot01 again in "Restored" option where Sonic was clipping through another "Red Circle" QTE Graphic on the 3rd shot during the slow-motion button prompt. Fixed a scene in "Retooled" option where one of the QTE prompt types didn't match.
 
 ## Aggro-Titans V0.2.2
 - Adjustments to Supreme's QTE files for better pacing and to cut down on length for some.
