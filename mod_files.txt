@@ -51,7 +51,7 @@ add Main/raw/movie/bo6160.usm
 add Main/raw/movie/bo6165.usm
 add Main/raw/movie/bo6165_4k.usm
 add Main/raw/movie/bo6190.usm
-add Main/raw/movie/bo6190_4k.usm
+
 add Main/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 add RifleBlow00/raw/event/scene/zev_blow_rifleboss.pac
