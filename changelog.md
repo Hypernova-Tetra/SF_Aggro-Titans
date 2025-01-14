@@ -1,4 +1,4 @@
-## Aggro-Titans (Release Version)
+## Aggro-Titans (Release Version Jan. 13)
 - Public Mod Release
 
 # Aggro Titans Pre-release Patches
@@ -12,7 +12,7 @@ Things that were done right when I thought I was done with the mod as a whole, b
 - R7: Updated "Combat Mods" Hmm code option: Added "BossBitConfig.hmm"
 - R8: Tweaked a few parameters across several scenes. Reset Supreme's idle pose back to default for the time being.
 - R9: Last minute fix to Shoot01 again in "Restored" option where Sonic was clipping through another "Red Circle" QTE Graphic on the 3rd shot during the slow-motion button prompt. Fixed a scene in "Retooled" option where one of the QTE prompt types didn't match. Tweaked an animation for Supreme when parrying his counter spin attack.
-- R10: Adjusted "Winglaser_v1" QTE. Added effects to a Mash QTE that was missing effects in a certain area when Supreme tried to crush Sonic with his hands. Added 4k.usm files for 4k Resolution Support for Cutscenes
+- R10: Adjusted "Winglaser_v1" QTE. Added effects to a Mash QTE that was missing effects in a certain area when Supreme tried to crush Sonic with his hands. Added 4k.usm files for 4k Resolution Support for Cutscenes.
 
 ## Aggro-Titans V0.2.2
 - Adjustments to Supreme's QTE files for better pacing and to cut down on length for some.
