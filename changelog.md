@@ -1,4 +1,4 @@
-## Aggro-Titans (Release Version Jan. 14)
+## Aggro-Titans (Release Version Jan. 15)
 - Public Mod Release
 
 # Aggro Titans Pre-release Patches
