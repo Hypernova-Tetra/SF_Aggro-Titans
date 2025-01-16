@@ -1,27 +1,3 @@
-delete RifleEnd/raw/event/scene/bo6xxx.pac
-delete RifleEnd/raw/event/scene/zev_sp_riflebeast.pac
-delete RifleEnd/raw/event/scene/zev_parrymiss_riflebeast.pac
-delete RifleEnd/raw/event/scene/
-delete RifleEnd/raw/event/
-delete RifleEnd/raw/movie/bo6110.usm
-delete RifleEnd/raw/movie/bo6110_4k.usm
-delete RifleEnd/raw/movie/bo6120.usm
-delete RifleEnd/raw/movie/bo6140_4k.usm
-delete RifleEnd/raw/movie/bo6140.usm
-delete RifleEnd/raw/movie/bo6140_4k.usm
-delete RifleEnd/raw/movie/bo6160.usm
-delete RifleEnd/raw/movie/bo6165.usm
-delete RifleEnd/raw/movie/bo6165_4k.usm
-delete RifleEnd/raw/movie/bo6190.usm
-delete RifleEnd/raw/movie/bo6190_4k.usm
-delete RifleEnd/raw/
-delete RifleEnd/
-
-delete Main/raw/event/scene/zev_sp_riflebeast.pac
-delete Main/raw/event/scene/zev_parrymiss_riflebeast.pac
-delete Main/raw/movie/zev_sp_riflebeast.usm
-delete Main/raw/movie/zev_sp_riflebeast_4k.usm
-
 add Main/raw/boss/rifle01.pac
 add Main/raw/boss/bosscommon.pac
 add Main/raw/boss/riflebeast.pac
