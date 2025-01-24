@@ -16,9 +16,6 @@ add Main/raw/movie/ev5040_4k.usm
 add Main/raw/movie/ev6030.usm
 add Main/raw/movie/ev6030_4k.usm
 
-add Main/raw/sound/rifle01_sound/bgm_boss04.acb
-add Main/raw/sound/rifle01_sound/bgm_boss04.awb
-
 add RifleBlow00/raw/event/scene/zev_blow_rifleboss.pac
 add RifleBlow00_Hyper/raw/event/scene/zev_blow_rifleboss.pac
 
@@ -137,22 +134,25 @@ add RifleParrymiss_Hyper/raw/movie/zev_sp_riflebeast_4k.usm
 add RifleParrymiss_Hyper/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 add RifleQTE01/raw/event/scene/test_qte_sample.pac
-add RifleQTE01/raw/event/scene/test_sage_move.pac
 add RifleQTE01/raw/event/scene/test_sonic_walk.pac
 add RifleQTE01/raw/event/scene/zev_rfl_bitlaser02.pac
 add RifleQTE01/raw/event/scene/zev_rfl_shoot01.pac
 add RifleQTE01/raw/event/scene/zev_rfl_shoot02.pac
-add RifleQTE01/raw/event/scene/zev_rfl_sp00.pac
 add RifleQTE01/raw/event/scene/zev_rfl_sp02.pac
 
 add RifleQTE02/raw/event/scene/test_qte_sample.pac
-add RifleQTE02/raw/event/scene/test_sage_move.pac
 add RifleQTE02/raw/event/scene/test_sonic_walk.pac
 add RifleQTE02/raw/event/scene/zev_rfl_bitlaser02.pac
 add RifleQTE02/raw/event/scene/zev_rfl_shoot01.pac
 add RifleQTE02/raw/event/scene/zev_rfl_shoot02.pac
-add RifleQTE02/raw/event/scene/zev_rfl_sp00.pac
 add RifleQTE02/raw/event/scene/zev_rfl_sp02.pac
+
+add RifleQTE03/raw/event/scene/test_qte_sample.pac
+add RifleQTE03/raw/event/scene/test_sonic_walk.pac
+add RifleQTE03/raw/event/scene/zev_rfl_bitlaser02.pac
+add RifleQTE03/raw/event/scene/zev_rfl_shoot01.pac
+add RifleQTE03/raw/event/scene/zev_rfl_shoot02.pac
+add RifleQTE03/raw/event/scene/zev_rfl_sp02.pac
 
 add Winglaser_1/raw/event/scene/zev_rfl_sp01.pac
 add Winglaser_2/raw/event/scene/zev_rfl_sp01.pac
