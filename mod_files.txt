@@ -11,10 +11,28 @@ add Main/raw/event/scene/ev6030.pac
 add Main/raw/event/scene/zev_end.pac
 add Main/raw/event/scene/zev_end_shooting.pac
 
+delete Main/raw/event/sound/rifle01_sound/bgm_boss04.acb
+delete Main/raw/event/sound/rifle01_sound/bgm_boss04.awb
+
 add Main/raw/movie/ev5040.usm
 add Main/raw/movie/ev5040_4k.usm
 add Main/raw/movie/ev6030.usm
 add Main/raw/movie/ev6030_4k.usm
+
+delete Main/raw/movie/bo4140.usm
+delete Main/raw/movie/bo4160.usm
+delete Main/raw/movie/ev5020.usm
+delete Main/raw/movie/bo6110.usm
+delete Main/raw/movie/bo6110_4k.usm
+delete Main/raw/movie/bo6120.usm
+delete Main/raw/movie/bo6120_4k.usm
+delete Main/raw/movie/bo6140.usm
+delete Main/raw/movie/bo6140_4k.usm
+delete Main/raw/movie/bo6160.usm
+delete Main/raw/movie/bo6165.usm
+delete Main/raw/movie/bo6165_4k.usm
+delete Main/raw/movie/bo6190.usm
+delete Main/raw/movie/bo6190_4k.usm
 
 add RifleBlow00/raw/event/scene/zev_blow_rifleboss.pac
 add RifleBlow00_Hyper/raw/event/scene/zev_blow_rifleboss.pac
@@ -140,12 +158,18 @@ add RifleQTE01/raw/event/scene/zev_rfl_shoot01.pac
 add RifleQTE01/raw/event/scene/zev_rfl_shoot02.pac
 add RifleQTE01/raw/event/scene/zev_rfl_sp02.pac
 
+delete RifleQTE01/raw/event/scene/test_sage_move.pac
+delete RifleQTE01/raw/event/scene/zev_rfl_sp00.pac
+
 add RifleQTE02/raw/event/scene/test_qte_sample.pac
 add RifleQTE02/raw/event/scene/test_sonic_walk.pac
 add RifleQTE02/raw/event/scene/zev_rfl_bitlaser02.pac
 add RifleQTE02/raw/event/scene/zev_rfl_shoot01.pac
 add RifleQTE02/raw/event/scene/zev_rfl_shoot02.pac
 add RifleQTE02/raw/event/scene/zev_rfl_sp02.pac
+
+delete RifleQTE02/raw/event/scene/test_sage_move.pac
+delete RifleQTE02/raw/event/scene/zev_rfl_sp00.pac
 
 add RifleQTE03/raw/event/scene/test_qte_sample.pac
 add RifleQTE03/raw/event/scene/test_sonic_walk.pac
