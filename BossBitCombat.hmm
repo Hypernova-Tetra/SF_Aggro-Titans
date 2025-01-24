@@ -14,7 +14,7 @@ Code "RifleCombat"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661726NB");
+		var mod = HMM.GetModByID("H1661727NB");
 
 		if (mod == null)
 			return;

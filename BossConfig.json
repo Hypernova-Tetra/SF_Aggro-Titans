@@ -48,6 +48,15 @@
 		  "Elements":
 			[
 				{
+				"Name":"RifleShieldFix",
+				"DisplayName":"Riflebeast Tackle",
+				"Description":["Toggle this option to replace Supreme's Shield Tackle to prevent a crash when parrying the arms."],
+				"Type":"NoTackle",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"0"
+				},
+				{
 				"Name":"IncludeDir4",
 				"DisplayName":"ParryMiss QTE",
 				"Description":["Added support for Hyper Sonic skins"],
@@ -98,7 +107,21 @@
 			"Description":["More unique QTE animations that utilizes unused animation files normally not seen in game. Example: Bitlaser01 and 02 are on full display with this option as they occupy the Shoot01 and 02 slots respectively."],
 			},
 		],
-		
+				
+		"NoTackle":
+		[
+			{
+			"DisplayName":"Off",
+			"Value":"0",
+			"Description":["If you're not having this issue, leave this off."],
+			},
+			{
+			"DisplayName":"On",
+			"Value":"1",
+			"Description":["Use only when your game crashes when trying to parry Supreme's arms when stopping him from tackling Sage and Friend's barrier."],
+			},
+		],
+
 		"ZevBlow":
 		[
 			{
@@ -136,6 +159,7 @@
 			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
 			},
 		],
+
 		"Winglaser":
 		[
 			{

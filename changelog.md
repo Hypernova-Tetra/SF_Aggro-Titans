@@ -1,4 +1,15 @@
-## Aggro-Titans (Release Version Jan. 16)
+## Aggro-Titans (Neo Beta)
+- Merged Monologue Add-on with Main Mod with additional options.
+- Realtime Cutscene for ev5030
+- Updated Final Horizons Cutscenes
+- bo6110: Adjusted opening scene where The End takes over Supreme.
+- bo6120 and bo6165 (SS2): Super Sonic's eyes turn blue using a certain effect before model swapping to SS2.
+- bo6120 and bo6165 (Hyper): Same as the SS2 note, with the addition of adjusted effects using Cyber Sonic's particles before he turns Hyper.
+- Tweaked base Supreme's cyloop animations
+- Updated Winglaser v1 and v2.
+- Tweaks to Supreme's Shot projectiles after destroying drones.
+
+# Aggro-Titans (Release Version Jan. 16)
 - Public Mod Release
 
 # Aggro Titans Pre-release Patches

@@ -14,7 +14,7 @@ Code "RifleCombat"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661726NB");
+		var mod = HMM.GetModByID("H1661727NB");
 
 		if (mod == null)
 			return;
@@ -43,10 +43,11 @@ Code "RifleCombat"
 	if (BossRifleConfigInfo.pData == null)
 		return;
 
-	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.status.healthPoint, 180000);
+	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.status.healthPoint, 140000);
 	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.dropRing.ringNumQuickCyloopUp, 3);
-	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.dropRing.ringNumQuickCyloopDown, 7);
-	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.dropRing.ringNumSonicSpecial, 10);
+	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.dropRing.ringNumQuickCyloopDown, 6);
+	RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.dropRing.ringNumSonicSpecial, 12);
+
 }
 
 Library "BossRifleConfig"
