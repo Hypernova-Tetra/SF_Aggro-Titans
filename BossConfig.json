@@ -57,13 +57,22 @@
 				"DefaultValue":"0"
 				},
 				{
+				"Name":"IncludeDir5",
+				"DisplayName":"The End monologue during cutscenes",
+				"Description":["This mod modifies file: 'bo6xxx.pac' to restore the Monologue. Adds the default 'bgm_boss05' in the files to avoid confliction with other mods that restore the monologue using this file. Place THIS mod above the other mods that implimented the monologue that way. If you don't want to have the monologue heard through the game's cutscenes, you can keep this mod disabled."],
+				"Type":"SupremeM",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"RifleEnd0rg_Mono"
+				},
+				{
 				"Name":"IncludeDir4",
 				"DisplayName":"ParryMiss QTE",
 				"Description":["Added support for Hyper Sonic skins"],
 				"Type":"ZevParrymiss",
 				"MinValue":null,
 				"MaxValue":null,
-				"DefaultValue":"RifleParrymiss"
+				"DefaultValue":"RifleParrymiss_0rg"
 				},
 				{
 				"Name":"IncludeDir3",
@@ -97,14 +106,19 @@
 		"SupremeB":
 		[
 			{
-			"DisplayName":"Restored",
+			"DisplayName":"Restored Vanilla",
 			"Value":"RifleQTE01",
-			"Description":["The original scrapped QTE elements have been fully restored with some changes so it's not a complete 1-to-1 Copy-paste from Giganto. Check the readme file or mod submission description for more info. Bitlaser's short animation has a slight camera change when the scene starts. It's also a QTE now, it felt like it was meant to be a QTE instead of just a cutscene."],
+			"Description":["The original unused scenes restored and Bitlaser is now a QTE."],
 			},
 			{
 			"DisplayName":"Retooled",
 			"Value":"RifleQTE02",
-			"Description":["More unique QTE animations that utilizes unused animation files normally not seen in game. Example: Bitlaser01 and 02 are on full display with this option as they occupy the Shoot01 and 02 slots respectively."],
+			"Description":["Unique scenes utilizing unused animation files for new sequences."],
+			},
+			{
+			"DisplayName":"Oops All BitLaser",
+			"Value":"RifleQTE03",
+			"Description":["Supreme uses the large diamond turrets more often here. Bitlaser01 and 02 have their extended uncut animations."],
 			},
 		],
 				
@@ -125,22 +139,22 @@
 		"ZevBlow":
 		[
 			{
-			"DisplayName":"Vanilla Fixed",
+			"DisplayName":"Vanilla",
 			"Value":"RifleBlow00",
 			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."],
 			},
 			{
-			"DisplayName":"Edited Animation",
+			"DisplayName":"Edited",
 			"Value":"RifleBlow01",
 			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
 			},
 			{
-			"DisplayName":"Hyper Sonic (Fixed Vanilla)",
+			"DisplayName":"Hyper Sonic (Blue Aura)(Vanilla)",
 			"Value":"RifleBlow00_Hyper",
 			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."],
 			},
 			{
-			"DisplayName":"Hyper Sonic (Edited Animation)",
+			"DisplayName":"Hyper Sonic (Blue Aura)(Edited)",
 			"Value":"RifleBlow01_Hyper",
 			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
 			},
@@ -150,13 +164,18 @@
 		[
 			{
 			"DisplayName":"Vanilla",
-			"Value":"RifleParrymiss",
-			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."],
+			"Value":"RifleParrymiss_0rg",
+			"Description":["The original animation from the release of the DLC."],
 			},
 			{
-			"DisplayName":"Hyper Sonic skins",
+			"DisplayName":"Edited",
+			"Value":"RifleParrymiss_01",
+			"Description":["Cuts out the segment of Supreme demon crawling to Sonic."],
+			},
+			{
+			"DisplayName":"Hyper Sonic (Blue Aura)",
 			"Value":"RifleParrymiss_Hyper",
-			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
+			"Description":["Same as the 'Edited' option but with Hyper Sonic's blue outline."],
 			},
 		],
 
@@ -173,6 +192,40 @@
 			"Description":["For those that wanted a Secret Rings callback."],
 			},
 		],
+		
+		"SupremeM":
+		[
+			{
+			"DisplayName":"Off (Original)",
+			"Value":"RifleEnd0rg_Silent",
+			"Description":["The Fake Moon just floats there, menacingly."],
+			},
+			{
+			"DisplayName":"On (Original)",
+			"Value":"RifleEnd0rg_Mono",
+			"Description":["The End will praddle on and start boasting in certain cutscenes. It will also flex its high kill count."],
+			},
+			{
+			"DisplayName":"Off (SS2 Edited)",
+			"Value":"RifleEnd01_Silent",
+			"Description":["The moon remains high in the sky puppeterring Supreme in silent. SS2's transformation has a slight camera change."],
+			},
+			{
+			"DisplayName":"On (SS2 Edited)",
+			"Value":"RifleEnd01_Mono",
+			"Description":["The End will start its blog yap session on how powerful it is and how Sonic is weak and meaningless. SS2's transformation has a slight camera change and a little extra effects."],
+			},
+			{
+			"DisplayName":"Off (Hyper Sonic Blue Aura)",
+			"Value":"RifleEndHyper_Silent",
+			"Description":["Same as SS2 Edited, but with different effects to fit Hyper Sonic's transformation."],
+			},
+			{
+			"DisplayName":"On (Hyper Sonic Blue Aura)",
+			"Value":"RifleEndHyper_Mono",
+			"Description":["Same as SS2 Edited, but with different effects to fit Hyper Sonic's transformation."],
+			},
+		]
 	},
 	
    "IniFile":"mod.ini"
