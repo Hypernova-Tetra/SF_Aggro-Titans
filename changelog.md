@@ -11,6 +11,7 @@
 - Overhauled QTE files. The RNG code will choose 1 from 2 possible events instead of 3. A 3rd QTE Preset is implemented to compensate for the rearranging of files.
 - Updated Rifle01.hmm to fix the crash issue in version 1.42.
 - Added the original "Parrymiss QTE" animation for Hyper Sonic skin mods.
+- Added code file for version 1.41: To apply just modify the "mod.ini" file to match the code file for the previous game version.
 
 # Aggro-Titans (Release Version Jan. 16)
 - Public Mod Release
