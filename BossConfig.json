@@ -149,12 +149,12 @@
 			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
 			},
 			{
-			"DisplayName":"Hyper Sonic (Blue Aura)(Vanilla)",
+			"DisplayName":"Vanilla (Hyper Sonic Blue Aura)",
 			"Value":"RifleBlow00_Hyper",
 			"Description":["The original animation from the release of the DLC. Fixes Super Sonic 2's aura missing and Super Sonic 2 disappearing when escaping Supreme's grip."],
 			},
 			{
-			"DisplayName":"Hyper Sonic (Blue Aura)(Edited)",
+			"DisplayName":"Edited (Hyper Sonic Blue Aura)",
 			"Value":"RifleBlow01_Hyper",
 			"Description":["When failing the initial QTE prompt and Supreme lands down to grab at Sonic, there's a small difference. When Sonic escapes Supreme's grip, he will spindash and kick him in the back of the head. When failing, Supreme chucks Sonic instead of slamming him to the floor."],
 			},
@@ -173,7 +173,12 @@
 			"Description":["Cuts out the segment of Supreme demon crawling to Sonic."],
 			},
 			{
-			"DisplayName":"Hyper Sonic (Blue Aura)",
+			"DisplayName":"Vanilla (Hyper Sonic Blue Aura)",
+			"Value":"RifleParrymiss_0rg_Hyper",
+			"Description":["Same as the 'Edited' option but with Hyper Sonic's blue outline."],
+			},
+			{
+			"DisplayName":"Edited (Hyper Sonic Blue Aura)",
 			"Value":"RifleParrymiss_Hyper",
 			"Description":["Same as the 'Edited' option but with Hyper Sonic's blue outline."],
 			},

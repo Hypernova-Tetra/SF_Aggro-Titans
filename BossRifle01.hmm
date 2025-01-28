@@ -73,32 +73,6 @@ Code "RNG counter attack anim " by "H"
     }
 }
 
-Code "shot2" by "holoska" fixed by "Ashrindy"
-/* shot2 but zev_rfl_sp02 */
-//
-    #lib "Memory"
-//
-{
-    WriteProtected<byte>
-    (
-        0x1403239BB,
-        new byte[] { 0xD0, 0x3D, 0x32, 0x40, 0x01 }
-    );
-}
-
-Code "shot4" by "holoska"
-/*shot4 but zev_rfl_sp01*/
-//
-#lib "Memory"
-//
-{
-    WriteProtected<byte>
-    (
-        0x1403239BB,
-        new byte[] { 0x48, 0x8D, 0x15, 0x3E, 0xE5, 0x13, 0x01 }
-    );
-}
-
 Code "text shit" by "Pikachu"
 //
         #lib "Converse"

@@ -129,6 +129,17 @@ add RifleParrymiss_0rg/raw/movie/zev_sp_riflebeast.usm
 add RifleParrymiss_0rg/raw/movie/zev_sp_riflebeast_4k.usm
 add RifleParrymiss_0rg/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
+add RifleParrymiss_0rg_Hyper/raw/event/scene/zev_sp_riflebeast.pac
+add RifleParrymiss_0rg_Hyper/raw/event/scene/zev_parrymiss_riflebeast.pac
+add RifleParrymiss_0rg_Hyper/raw/movie/bo4140.usm
+add RifleParrymiss_0rg_Hyper/raw/movie/bo4160.usm
+add RifleParrymiss_0rg_Hyper/raw/movie/ev1770.usm
+add RifleParrymiss_0rg_Hyper/raw/movie/ev1770_4k.usm
+add RifleParrymiss_0rg_Hyper/raw/movie/ev5020.usm
+add RifleParrymiss_0rg_Hyper/raw/movie/zev_sp_riflebeast.usm
+add RifleParrymiss_0rg_Hyper/raw/movie/zev_sp_riflebeast_4k.usm
+add RifleParrymiss_0rg_Hyper/raw/sound/rifle01_sound/se_rangers_giant04.acb
+
 add RifleParrymiss_01/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_01/raw/event/scene/zev_parrymiss_riflebeast.pac
 add RifleParrymiss_01/raw/movie/bo4140.usm

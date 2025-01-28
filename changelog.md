@@ -10,6 +10,7 @@
 - Tweaks to Supreme's Shot projectiles after destroying drones.
 - Overhauled QTE files. The RNG code will choose 1 from 2 possible events instead of 3. A 3rd QTE Preset is implemented to compensate for the rearranging of files.
 - Updated Rifle01.hmm to fix the crash issue in version 1.42.
+- Added the original "Parrymiss QTE" animation for Hyper Sonic skin mods.
 
 # Aggro-Titans (Release Version Jan. 16)
 - Public Mod Release
