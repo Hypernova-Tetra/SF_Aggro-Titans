@@ -12,6 +12,7 @@
 - Updated Rifle01.hmm to fix the crash issue in version 1.42.
 - Added the original "Parrymiss QTE" animation for Hyper Sonic skin mods.
 - Added code file for version 1.41: To apply just modify the "mod.ini" file to match the code file for the previous game version.
+- A couple of adjustments to bo4160 - I promise this is the last time.
 
 # Aggro-Titans (Release Version Jan. 16)
 - Public Mod Release
