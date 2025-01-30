@@ -13,6 +13,7 @@
 - Added the original "Parrymiss QTE" animation for Hyper Sonic skin mods.
 - Added code file for version 1.41: To apply just modify the "mod.ini" file to match the code file for the previous game version.
 - A couple of adjustments to bo4160 - I promise this is the last time.
+- Added "bo6190_4k" to the GitHub Repo (in 30FPS, the 60 was too big for GitHub)
 
 # Aggro-Titans (Release Version Jan. 16)
 - Public Mod Release
