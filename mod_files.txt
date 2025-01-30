@@ -51,6 +51,7 @@ add RifleEnd0rg_Mono/movie/bo6160.usm
 add RifleEnd0rg_Mono/movie/bo6165.usm
 add RifleEnd0rg_Mono/movie/bo6165_4k.usm
 add RifleEnd0rg_Mono/movie/bo6190.usm
+add RifleEnd0rg_Mono/movie/bo6190_4k.usm
 add RifleEnd0rg_Mono/raw/sound/riflebeast_sound/bgm_boss05.acb
 add RifleEnd0rg_Mono/raw/sound/riflebeast_sound/bgm_boss05.awb
 
@@ -65,6 +66,7 @@ add RifleEnd0rg_Silent/movie/bo6160.usm
 add RifleEnd0rg_Silent/movie/bo6165.usm
 add RifleEnd0rg_Silent/movie/bo6165_4k.usm
 add RifleEnd0rg_Silent/movie/bo6190.usm
+add RifleEnd0rg_Silent/movie/bo6190_4k.usm
 
 add RifleEnd01_Mono/raw/event/scene/bo6xxx.pac
 add RifleEnd01_Mono/movie/bo6110.usm
@@ -77,6 +79,7 @@ add RifleEnd01_Mono/movie/bo6160.usm
 add RifleEnd01_Mono/movie/bo6165.usm
 add RifleEnd01_Mono/movie/bo6165_4k.usm
 add RifleEnd01_Mono/movie/bo6190.usm
+add RifleEnd01_Mono/movie/bo6190_4k.usm
 add RifleEnd01_Mono/raw/sound/riflebeast_sound/bgm_boss05.acb
 add RifleEnd01_Mono/raw/sound/riflebeast_sound/bgm_boss05.awb
 
@@ -91,6 +94,7 @@ add RifleEnd01_Silent/movie/bo6160.usm
 add RifleEnd01_Silent/movie/bo6165.usm
 add RifleEnd01_Silent/movie/bo6165_4k.usm
 add RifleEnd01_Silent/movie/bo6190.usm
+add RifleEnd01_Silent/movie/bo6190_4k.usm
 
 add RifleEndHyper_Mono/raw/event/scene/bo6xxx.pac
 add RifleEndHyper_Mono/movie/bo6110.usm
@@ -103,6 +107,7 @@ add RifleEndHyper_Mono/movie/bo6160.usm
 add RifleEndHyper_Mono/movie/bo6165.usm
 add RifleEndHyper_Mono/movie/bo6165_4k.usm
 add RifleEndHyper_Mono/movie/bo6190.usm
+add RifleEndHyper_Mono/movie/bo6190_4k.usm
 add RifleEndHyper_Mono/raw/sound/riflebeast_sound/bgm_boss05.acb
 add RifleEndHyper_Mono/raw/sound/riflebeast_sound/bgm_boss05.awb
 
@@ -117,6 +122,7 @@ add RifleEndHyper_Silent/movie/bo6160.usm
 add RifleEndHyper_Silent/movie/bo6165.usm
 add RifleEndHyper_Silent/movie/bo6165_4k.usm
 add RifleEndHyper_Silent/movie/bo6190.usm
+add RifleEndHyper_Silent/movie/bo6190_4k.usm
 
 add RifleParrymiss_0rg/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_0rg/raw/event/scene/zev_parrymiss_riflebeast.pac
@@ -196,6 +202,8 @@ add BossConfig.json
 add BossBitCombat.hmm
 add BossRifle01.hmm
 add BossRifle01Combat.hmm
+add BossRifle_SHOT2-4_v1.41.hmm
+add BossRifle_SHOT2-4_v1.42.hmm
 add BossRifleBeastCombat.hmm
 add BossRifleBeastTackle.hmm
 
