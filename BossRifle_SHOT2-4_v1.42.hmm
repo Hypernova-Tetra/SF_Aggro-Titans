@@ -1,17 +1,17 @@
-Code "shot2" by "holoska" fixed for v1.42 by "Ashrindy"
-/* shot2 but zev_rfl_sp02 */
+Code "shot2" by "holoska"
+/*shot2 but zev_rfl_sp02*/
 //
 #lib "Memory"
 //
 {
     WriteProtected<byte>
     (
-        0x1403239BB,
-        new byte[] { 0xD0, 0x3D, 0x32, 0x40, 0x01 }
+        0x14145E9C0,
+        new byte[] { 0x00, 0x3E, 0x32, 0x40, 0x01 }
     );
 }
 
-Code "shot4" by "holoska" updated for Version 1.42
+Code "shot4" by "holoska"
 /*shot4 but zev_rfl_sp01*/
 //
 #lib "Memory"

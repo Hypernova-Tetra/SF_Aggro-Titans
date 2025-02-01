@@ -1,4 +1,7 @@
-## Aggro-Titans (Neo Beta)
+# Aggro-Titans Update (Release Feb. 01)
+- Public Update Release
+
+# Aggro-Titans (Neo Beta)
 - Merged Monologue Add-on with Main Mod with additional options.
 - Realtime Cutscene for ev5030
 - Updated Final Horizons Cutscenes
