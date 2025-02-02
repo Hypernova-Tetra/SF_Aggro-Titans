@@ -49,8 +49,8 @@
 			[
 				{
 				"Name":"RifleShieldFix",
-				"DisplayName":"Riflebeast Tackle",
-				"Description":["Toggle this option to replace Supreme's Shield Tackle to prevent a crash when parrying the arms."],
+				"DisplayName":"Riflebeast Tackle Crash Fix",
+				"Description":["Toggle this option to disable Supreme's Shield Tackle to prevent a crash when parrying the arms."],
 				"Type":"NoTackle",
 				"MinValue":null,
 				"MaxValue":null,
