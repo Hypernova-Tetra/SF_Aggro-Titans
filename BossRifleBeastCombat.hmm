@@ -14,7 +14,7 @@ Code "RiflebeastCombat"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661726NB");
+		var mod = HMM.GetModByID("H1661727NB");
 
 		if (mod == null)
 			return;
@@ -43,10 +43,10 @@ Code "RiflebeastCombat"
 	if (BossRifleBeastConfigInfo.pData == null)
 		return;
 
-	RFL_SET_PARAM(BossRifleBeastConfigInfo, bossBaseConfig.status.healthPoint, 200000);
+	RFL_SET_PARAM(BossRifleBeastConfigInfo, bossBaseConfig.status.healthPoint, 150000);
 	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.actionParams[0].changePatternHP, 1.0f);
 	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.actionParams[1].changePatternHP, 1.0f);
-	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackHomingLaser.EnemyDamage, 2000);
+	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackHomingLaser.EnemyDamage, 2100);
 	RFL_SET_PARAM(BossRifleBeastConfigInfo, cableParam.healthPoint, 6667);
 
 }

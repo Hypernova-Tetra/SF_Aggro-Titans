@@ -8,13 +8,13 @@ Code "RifleBeastTackle"
     #import "Services"
 
     static bool IsConfigInitialised = false;
-	static int ShieldFixConfig = 0;
+	static int NoTackle = 0;
     static bool shieldBool = false;
 //
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661726NB");
+		var mod = HMM.GetModByID("H1661727NB");
 
 		if (mod == null)
 			return;
@@ -22,10 +22,10 @@ Code "RifleBeastTackle"
 		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
 		var ini = INI.Read(modConfigIniPath);
 
-		ShieldFixConfig = INI.Parse<int>(ini["Main"]["RifleShieldFix"], ShieldFixConfig);
+		NoTackle = INI.Parse<int>(ini["Main"]["RifleShieldFix"], NoTackle);
         IsConfigInitialised = true;
 
-        if (ShieldFixConfig == 1)
+        if (NoTackle == 1)
         {
             shieldBool = true;
         }
@@ -43,12 +43,9 @@ Code "RifleBeastTackle"
 	if (BossRifleBeastConfigInfo.pData == null)
 		return;
 
-	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[0], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_L);
-    RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[5], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_R);
-    RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[7], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_L);
-	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[1].attackPattern[0], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_R);
-    RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[1].attackPattern[3], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_HIMING02);
-    RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[1].attackPattern[7], shieldBool ? BossRifleBeastConfig.AtackType.AT_TACKLE : BossRifleBeastConfig.AtackType.AT_CROW_L);
+	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[0], BossRifleBeastConfig.AtackType.AT_CROW_L);
+	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[4], BossRifleBeastConfig.AtackType.AT_CROW_R);
+	RFL_SET_PARAM(BossRifleBeastConfigInfo, battleParam.attackPatternAfter[0].attackPattern[8], BossRifleBeastConfig.AtackType.AT_HIMING05);
 }
 
 Library "BossRifleBeastConfig"

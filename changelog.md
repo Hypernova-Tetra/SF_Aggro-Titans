@@ -1,4 +1,27 @@
-## Aggro-Titans (Release Version Jan. 16)
+## Aggro-Titans Version 1.1 (Release Feb. 01)
+- Public Update Release after game update 1.42
+
+# Aggro-Titans (Update Beta)
+- Merged Monologue Add-on with Main Mod with additional options.
+- Realtime Cutscene for ev5030
+- Updated Final Horizons Cutscenes
+- bo6110: Adjusted opening scene where The End takes over Supreme.
+- bo6120 and bo6165 (SS2): Super Sonic's eyes turn blue using a certain effect before model swapping to SS2.
+- bo6120 and bo6165 (Hyper): Same as the SS2 note, with the addition of adjusted effects using Cyber Sonic's particles before he turns Hyper.
+- Tweaked base Supreme's cyloop animations
+- Updated Winglaser v1 and v2.
+- Tweaks to Supreme's Shot projectiles after destroying drones.
+- Overhauled QTE files. The RNG code will choose 1 from 2 possible events instead of 3. A 3rd QTE Preset is implemented to compensate for the rearranging of files.
+- Added the original "Parrymiss QTE" animation for Hyper Sonic skin mods.
+- Added code file for version 1.41: To apply just modify the "mod.ini" file to match the code file for the previous game version.
+- A couple of adjustments to bo4160 - I promise this is the last time.
+- Added "bo6190_4k" to the GitHub Repo (in 30FPS, the 60 was too big for GitHub)
+- Updated Rifle01.hmm to isolate affected lines of code after the 1.42 Update.
+- Added "BossRifle_SHOT2-4_v1.42.hmm" To support the new game version.
+- Added "BossRifle_SHOT2-4_v1.41.hmm" For those still on version 1.41. To apply this, open "mod.ini" and change the code file name to this file.
+- Adjusted Monologue Descriptions.
+
+# Aggro-Titans (Release Version Jan. 16)
 - Public Mod Release
 
 # Aggro Titans Pre-release Patches
