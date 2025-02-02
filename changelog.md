@@ -19,6 +19,7 @@
 - Updated Rifle01.hmm to isolate affected lines of code after the 1.42 Update.
 - Added "BossRifle_SHOT2-4_v1.42.hmm" To support the new game version.
 - Added "BossRifle_SHOT2-4_v1.41.hmm" For those still on version 1.41. To apply this, open "mod.ini" and change the code file name to this file.
+- Adjusted Monologue Descriptions.
 
 # Aggro-Titans (Release Version Jan. 16)
 - Public Mod Release
