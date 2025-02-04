@@ -72,11 +72,3 @@ Code "RNG counter attack anim " by "H"
         WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
     }
 }
-
-Code "text shit" by "Pikachu"
-//
-        #lib "Converse"
-//
-{
-        Converse.Redirect("sy4500_026", "...THE END, comes for you all!");
-}

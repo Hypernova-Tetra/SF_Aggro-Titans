@@ -1,4 +1,9 @@
-## Aggro-Titans Version 1.1 (Release Feb. 01)
+## Aggro-Titans Version 1.11
+- Monologue files adjustments.
+- Fixing an audio problem in which the Italian voice line plays a line twice.
+- Removed a code in Rifle01.hmm that overrides text in "sy4500_026" in other languages.
+
+# Aggro-Titans Version 1.1 (Release Feb. 01)
 - Public Update Release after game update 1.42
 
 # Aggro-Titans (Update Beta)
