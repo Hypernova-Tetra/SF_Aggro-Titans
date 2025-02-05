@@ -3,6 +3,7 @@
 - Fixing an audio problem in which the Italian voice line plays a line twice.
 - Removed a code in Rifle01.hmm that overrides text in "sy4500_026" in other languages.
 - Fixed a problem with certain voice audio of Sage, Amy, Knux, and Tails playing on the left ear in bo6140's monologue "on" setting.
+- Fixed a small issue with Supreme's pillars on a QTE not glowing red energy.
 
 # Aggro-Titans Version 1.1 (Release Feb. 01)
 - Public Update Release after game update 1.42
