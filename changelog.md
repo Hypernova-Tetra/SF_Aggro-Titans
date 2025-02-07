@@ -1,5 +1,6 @@
 ## Aggro-Titans Version 1.12
 - Improved a method in which to support the mod for version 1.41. (Testing and feedback needed.)
+- Fixed animation for bo6190.
 
 # Aggro-Titans Version 1.11
 - Monologue files adjustments.
