@@ -249,7 +249,7 @@ add BossConfig.json
 add BossBitCombat.hmm
 add BossRifle01.hmm
 add BossRifle01Combat.hmm
-add BossRifle_SHOT2-4.hmm
+add BossRifleATSHOT2-4.hmm
 add BossRifleBeastCombat.hmm
 add BossRifleBeastTackle.hmm
 
