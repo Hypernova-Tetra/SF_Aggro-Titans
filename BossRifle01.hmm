@@ -4,7 +4,7 @@ Code "Shoot01 RNG" by "H"
 	static string[] qte_L = new[]
 	{
         /* sup */
-        "test_sonic_walk", "zev_rfl_shoot01"
+        "test_sonic_walk", "test_sonic_walk", "zev_rfl_shoot01", "zev_rfl_shoot01"
     };
 //
 {
@@ -29,7 +29,7 @@ Code "Shoot02 RNG" by "H"
 	static string[] qte_L = new[]
 	{
         /* sup */
-        "test_qte_sample", "zev_rfl_shoot02"
+        "test_qte_sample", "test_qte_sample", "zev_rfl_shoot02", "zev_rfl_shoot02"
     };
 //
 {
@@ -71,12 +71,4 @@ Code "RNG counter attack anim " by "H"
     {
         WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
     }
-}
-
-Code "text shit" by "Pikachu"
-//
-        #lib "Converse"
-//
-{
-        Converse.Redirect("sy4500_026", "...THE END, comes for you all!");
 }

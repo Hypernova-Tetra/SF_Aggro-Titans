@@ -36,9 +36,14 @@ delete RifleParrymiss/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 delete RifleParrymiss_Hyper/raw/event/scene/bo6xxx.pac
 
+delete BossRifle_SHOT2-4_v1.41.hmm
+delete BossRifle_SHOT2-4_v1.42.hmm
+
 add Main/raw/boss/bosscommon.pac
 add Main/raw/boss/rifle01.pac
 add Main/raw/boss/riflebeast.pac
+
+add profiles/Default.ini
 
 add Main/raw/event/scene/bo4xxx.pac
 add Main/raw/event/scene/ev1770.pac
@@ -244,8 +249,7 @@ add BossConfig.json
 add BossBitCombat.hmm
 add BossRifle01.hmm
 add BossRifle01Combat.hmm
-add BossRifle_SHOT2-4_v1.41.hmm
-add BossRifle_SHOT2-4_v1.42.hmm
+add BossRifle_SHOT2-4.hmm
 add BossRifleBeastCombat.hmm
 add BossRifleBeastTackle.hmm
 
