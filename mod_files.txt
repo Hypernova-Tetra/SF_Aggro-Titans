@@ -31,8 +31,12 @@ delete RifleParrymiss/raw/event/scene/zev_parrymiss_riflebeast.pac
 delete RifleParrymiss/raw/event/scene/zev_sp_riflebeast.pac
 delete RifleParrymiss/raw/movie/zev_sp_riflebeast.usm
 delete RifleParrymiss/raw/movie/zev_sp_riflebeast_4k.usm
+delete RifleParrymiss/raw/movie/
 delete RifleParrymiss/raw/sound/rifle01_sound/se_rangers_giant04.acb
 delete RifleParrymiss/raw/sound/rifle01_sound/se_rangers_giant04.acb
+delete RifleParrymiss/raw/sound/
+delete RifleParrymiss/raw/
+delete RifleParrymiss
 
 delete RifleParrymiss_Hyper/raw/event/scene/bo6xxx.pac
 
