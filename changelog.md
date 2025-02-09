@@ -2,6 +2,7 @@
 - Improved a method in which to support the mod for version 1.41. (Testing and feedback needed.)
 - Fixed animation for bo6190.
 - An oopsie fixed with SS2's Grand Slam animation when a certain setting was set to "Vanilla (Blue Aura)"
+- Moved ev1770.usm from "Parrymiss" directories to the "RifleEnd" directories.
 
 # Aggro-Titans Version 1.11
 - Monologue files adjustments.
