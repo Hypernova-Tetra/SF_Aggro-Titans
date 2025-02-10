@@ -1,48 +1,3 @@
-delete Main/raw/event/sound/rifle01_sound/bgm_boss04.acb
-delete Main/raw/event/sound/rifle01_sound/bgm_boss04.awb
-
-delete Main/raw/movie/bo4140.usm
-delete Main/raw/movie/bo4160.usm
-delete Main/raw/movie/ev5020.usm
-delete Main/raw/movie/ev1770.usm
-delete Main/raw/movie/ev1770_4k.usm
-delete Main/raw/movie/bo6110.usm
-delete Main/raw/movie/bo6110_4k.usm
-delete Main/raw/movie/bo6120.usm
-delete Main/raw/movie/bo6120_4k.usm
-delete Main/raw/movie/bo6140.usm
-delete Main/raw/movie/bo6140_4k.usm
-delete Main/raw/movie/bo6160.usm
-delete Main/raw/movie/bo6165.usm
-delete Main/raw/movie/bo6165_4k.usm
-delete Main/raw/movie/bo6190.usm
-delete Main/raw/movie/bo6190_4k.usm
-
-delete Main/raw/sound/rifle01_sound/se_rangers_giant04.acb
-
-delete RifleQTE01/raw/event/scene/test_sage_move.pac
-delete RifleQTE01/raw/event/scene/zev_rfl_sp00.pac
-
-delete RifleQTE02/raw/event/scene/test_sage_move.pac
-delete RifleQTE02/raw/event/scene/zev_rfl_sp00.pac
-
-delete RifleParrymiss/raw/event/scene/bo6xxx.pac
-delete RifleParrymiss/raw/event/scene/zev_parrymiss_riflebeast.pac
-delete RifleParrymiss/raw/event/scene/zev_sp_riflebeast.pac
-delete RifleParrymiss/raw/movie/zev_sp_riflebeast.usm
-delete RifleParrymiss/raw/movie/zev_sp_riflebeast_4k.usm
-delete RifleParrymiss/raw/movie/
-delete RifleParrymiss/raw/sound/rifle01_sound/se_rangers_giant04.acb
-delete RifleParrymiss/raw/sound/rifle01_sound/se_rangers_giant04.acb
-delete RifleParrymiss/raw/sound/
-delete RifleParrymiss/raw/
-delete RifleParrymiss
-
-delete RifleParrymiss_Hyper/raw/event/scene/bo6xxx.pac
-
-delete BossRifle_SHOT2-4_v1.41.hmm
-delete BossRifle_SHOT2-4_v1.42.hmm
-
 add Main/raw/boss/bosscommon.pac
 add Main/raw/boss/rifle01.pac
 add Main/raw/boss/riflebeast.pac
@@ -57,7 +12,6 @@ add Main/raw/event/scene/ev5040.pac
 add Main/raw/event/scene/ev6030.pac
 add Main/raw/event/scene/zev_end.pac
 add Main/raw/event/scene/zev_end_shooting.pac
-
 add Main/raw/movie/ev5040.usm
 add Main/raw/movie/ev5040_4k.usm
 add Main/raw/movie/ev6030.usm
@@ -70,6 +24,9 @@ add RifleBlow01/raw/event/scene/zev_blow_rifleboss.pac
 add RifleBlow01_Hyper/raw/event/scene/zev_blow_rifleboss.pac
 
 add RifleEnd0rg_Mono/raw/event/scene/bo6xxx.pac
+add RifleEnd0rg_Mono/raw/movie/ev1770.usm
+add RifleEnd0rg_Mono/raw/movie/ev1770_4k.usm
+add RifleEnd0rg_Mono/raw/movie/ev5020.usm
 add RifleEnd0rg_Mono/raw/movie/bo6110.usm
 add RifleEnd0rg_Mono/raw/movie/bo6110_4k.usm
 add RifleEnd0rg_Mono/raw/movie/bo6120.usm
@@ -85,6 +42,9 @@ add RifleEnd0rg_Mono/raw/sound/riflebeast_sound/bgm_boss05.acb
 add RifleEnd0rg_Mono/raw/sound/riflebeast_sound/bgm_boss05.awb
 
 add RifleEnd0rg_Silent/raw/event/scene/bo6xxx.pac
+add RifleEnd0rg_Silent/raw/movie/ev1770.usm
+add RifleEnd0rg_Silent/raw/movie/ev1770_4k.usm
+add RifleEnd0rg_Silent/raw/movie/ev5020.usm
 add RifleEnd0rg_Silent/raw/movie/bo6110.usm
 add RifleEnd0rg_Silent/raw/movie/bo6110_4k.usm
 add RifleEnd0rg_Silent/raw/movie/bo6120.usm
@@ -98,6 +58,9 @@ add RifleEnd0rg_Silent/raw/movie/bo6190.usm
 add RifleEnd0rg_Silent/raw/movie/bo6190_4k.usm
 
 add RifleEndHyper_0rg_Mono/raw/event/scene/bo6xxx.pac
+add RifleEndHyper_0rg_Mono/raw/movie/ev1770.usm
+add RifleEndHyper_0rg_Mono/raw/movie/ev1770_4k.usm
+add RifleEndHyper_0rg_Mono/raw/movie/ev5020.usm
 add RifleEndHyper_0rg_Mono/raw/movie/bo6110.usm
 add RifleEndHyper_0rg_Mono/raw/movie/bo6110_4k.usm
 add RifleEndHyper_0rg_Mono/raw/movie/bo6120.usm
@@ -113,6 +76,9 @@ add RifleEndHyper_0rg_Mono/raw/sound/riflebeast_sound/bgm_boss05.acb
 add RifleEndHyper_0rg_Mono/raw/sound/riflebeast_sound/bgm_boss05.awb
 
 add RifleEndHyper_0rg_Silent/raw/event/scene/bo6xxx.pac
+add RifleEndHyper_0rg_Silent/raw/movie/ev1770.usm
+add RifleEndHyper_0rg_Silent/raw/movie/ev1770_4k.usm
+add RifleEndHyper_0rg_Silent/raw/movie/ev5020.usm
 add RifleEndHyper_0rg_Silent/raw/movie/bo6110.usm
 add RifleEndHyper_0rg_Silent/raw/movie/bo6110_4k.usm
 add RifleEndHyper_0rg_Silent/raw/movie/bo6120.usm
@@ -126,6 +92,9 @@ add RifleEndHyper_0rg_Silent/raw/movie/bo6190.usm
 add RifleEndHyper_0rg_Silent/raw/movie/bo6190_4k.usm
 
 add RifleEnd01_Mono/raw/event/scene/bo6xxx.pac
+add RifleEnd01_Mono/raw/movie/ev1770.usm
+add RifleEnd01_Mono/raw/movie/ev1770_4k.usm
+add RifleEnd01_Mono/raw/movie/ev5020.usm
 add RifleEnd01_Mono/raw/movie/bo6110.usm
 add RifleEnd01_Mono/raw/movie/bo6110_4k.usm
 add RifleEnd01_Mono/raw/movie/bo6120.usm
@@ -141,6 +110,9 @@ add RifleEnd01_Mono/raw/sound/riflebeast_sound/bgm_boss05.acb
 add RifleEnd01_Mono/raw/sound/riflebeast_sound/bgm_boss05.awb
 
 add RifleEnd01_Silent/raw/event/scene/bo6xxx.pac
+add RifleEnd01_Silent/raw/movie/ev1770.usm
+add RifleEnd01_Silent/raw/movie/ev1770_4k.usm
+add RifleEnd01_Silent/raw/movie/ev5020.usm
 add RifleEnd01_Silent/raw/movie/bo6110.usm
 add RifleEnd01_Silent/raw/movie/bo6110_4k.usm
 add RifleEnd01_Silent/raw/movie/bo6120.usm
@@ -154,6 +126,9 @@ add RifleEnd01_Silent/raw/movie/bo6190.usm
 add RifleEnd01_Silent/raw/movie/bo6190_4k.usm
 
 add RifleEndHyper_Mono/raw/event/scene/bo6xxx.pac
+add RifleEndHyper_Mono/raw/movie/ev1770.usm
+add RifleEndHyper_Mono/raw/movie/ev1770_4k.usm
+add RifleEndHyper_Mono/raw/movie/ev5020.usm
 add RifleEndHyper_Mono/raw/movie/bo6110.usm
 add RifleEndHyper_Mono/raw/movie/bo6110_4k.usm
 add RifleEndHyper_Mono/raw/movie/bo6120.usm
@@ -169,6 +144,9 @@ add RifleEndHyper_Mono/raw/sound/riflebeast_sound/bgm_boss05.acb
 add RifleEndHyper_Mono/raw/sound/riflebeast_sound/bgm_boss05.awb
 
 add RifleEndHyper_Silent/raw/event/scene/bo6xxx.pac
+add RifleEndHyper_Silent/raw/movie/ev1770.usm
+add RifleEndHyper_Silent/raw/movie/ev1770_4k.usm
+add RifleEndHyper_Silent/raw/movie/ev5020.usm
 add RifleEndHyper_Silent/raw/movie/bo6110.usm
 add RifleEndHyper_Silent/raw/movie/bo6110_4k.usm
 add RifleEndHyper_Silent/raw/movie/bo6120.usm
@@ -185,20 +163,13 @@ add RifleParrymiss_0rg/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_0rg/raw/event/scene/zev_parrymiss_riflebeast.pac
 add RifleParrymiss_0rg/raw/movie/bo4140.usm
 add RifleParrymiss_0rg/raw/movie/bo4160.usm
-add RifleParrymiss_0rg/raw/movie/ev1770.usm
-add RifleParrymiss_0rg/raw/movie/ev1770_4k.usm
-add RifleParrymiss_0rg/raw/movie/ev5020.usm
 add RifleParrymiss_0rg/raw/movie/zev_sp_riflebeast.usm
 add RifleParrymiss_0rg/raw/movie/zev_sp_riflebeast_4k.usm
 add RifleParrymiss_0rg/raw/sound/rifle01_sound/se_rangers_giant04.acb
-
 add RifleParrymiss_0rg_Hyper/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_0rg_Hyper/raw/event/scene/zev_parrymiss_riflebeast.pac
 add RifleParrymiss_0rg_Hyper/raw/movie/bo4140.usm
 add RifleParrymiss_0rg_Hyper/raw/movie/bo4160.usm
-add RifleParrymiss_0rg_Hyper/raw/movie/ev1770.usm
-add RifleParrymiss_0rg_Hyper/raw/movie/ev1770_4k.usm
-add RifleParrymiss_0rg_Hyper/raw/movie/ev5020.usm
 add RifleParrymiss_0rg_Hyper/raw/movie/zev_sp_riflebeast.usm
 add RifleParrymiss_0rg_Hyper/raw/movie/zev_sp_riflebeast_4k.usm
 add RifleParrymiss_0rg_Hyper/raw/sound/rifle01_sound/se_rangers_giant04.acb
@@ -207,9 +178,6 @@ add RifleParrymiss_01/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_01/raw/event/scene/zev_parrymiss_riflebeast.pac
 add RifleParrymiss_01/raw/movie/bo4140.usm
 add RifleParrymiss_01/raw/movie/bo4160.usm
-add RifleParrymiss_01/raw/movie/ev1770.usm
-add RifleParrymiss_01/raw/movie/ev1770_4k.usm
-add RifleParrymiss_01/raw/movie/ev5020.usm
 add RifleParrymiss_01/raw/movie/zev_sp_riflebeast.usm
 add RifleParrymiss_01/raw/movie/zev_sp_riflebeast_4k.usm
 add RifleParrymiss_01/raw/sound/rifle01_sound/se_rangers_giant04.acb
@@ -218,9 +186,6 @@ add RifleParrymiss_Hyper/raw/event/scene/zev_sp_riflebeast.pac
 add RifleParrymiss_Hyper/raw/event/scene/zev_parrymiss_riflebeast.pac
 add RifleParrymiss_Hyper/raw/movie/bo4140.usm
 add RifleParrymiss_Hyper/raw/movie/bo4160.usm
-add RifleParrymiss_Hyper/raw/movie/ev1770.usm
-add RifleParrymiss_Hyper/raw/movie/ev1770_4k.usm
-add RifleParrymiss_Hyper/raw/movie/ev5020.usm
 add RifleParrymiss_Hyper/raw/movie/zev_sp_riflebeast.usm
 add RifleParrymiss_Hyper/raw/movie/zev_sp_riflebeast_4k.usm
 add RifleParrymiss_Hyper/raw/sound/rifle01_sound/se_rangers_giant04.acb
@@ -256,5 +221,63 @@ add BossRifle01Combat.hmm
 add BossRifleATSHOT2-4.hmm
 add BossRifleBeastCombat.hmm
 add BossRifleBeastTackle.hmm
-
 add mod.ini
+
+delete Main/raw/event/sound/rifle01_sound/bgm_boss04.acb
+delete Main/raw/event/sound/rifle01_sound/bgm_boss04.awb
+
+delete Main/raw/movie/bo4140.usm
+delete Main/raw/movie/bo4160.usm
+delete Main/raw/movie/ev5020.usm
+delete Main/raw/movie/ev1770.usm
+delete Main/raw/movie/ev1770_4k.usm
+delete Main/raw/movie/bo6110.usm
+delete Main/raw/movie/bo6110_4k.usm
+delete Main/raw/movie/bo6120.usm
+delete Main/raw/movie/bo6120_4k.usm
+delete Main/raw/movie/bo6140.usm
+delete Main/raw/movie/bo6140_4k.usm
+delete Main/raw/movie/bo6160.usm
+delete Main/raw/movie/bo6165.usm
+delete Main/raw/movie/bo6165_4k.usm
+delete Main/raw/movie/bo6190.usm
+delete Main/raw/movie/bo6190_4k.usm
+
+delete Main/raw/sound/rifle01_sound/se_rangers_giant04.acb
+
+delete RifleQTE01/raw/event/scene/test_sage_move.pac
+delete RifleQTE01/raw/event/scene/zev_rfl_sp00.pac
+
+delete RifleQTE02/raw/event/scene/test_sage_move.pac
+delete RifleQTE02/raw/event/scene/zev_rfl_sp00.pac
+
+delete RifleParrymiss_0rg/raw/movie/ev1770.usm
+delete RifleParrymiss_0rg/raw/movie/ev1770_4k.usm
+delete RifleParrymiss_0rg/raw/movie/ev5020.usm
+delete RifleParrymiss_0rg_Hyper/raw/movie/ev1770.usm
+delete RifleParrymiss_0rg_Hyper/raw/movie/ev1770_4k.usm
+delete RifleParrymiss_0rg_Hyper/raw/movie/ev5020.usm
+
+delete RifleParrymiss_01/raw/movie/ev1770.usm
+delete RifleParrymiss_01/raw/movie/ev1770_4k.usm
+delete RifleParrymiss_01/raw/movie/ev5020.usm
+
+delete RifleParrymiss_Hyper/raw/movie/ev1770.usm
+delete RifleParrymiss_Hyper/raw/movie/ev1770_4k.usm
+delete RifleParrymiss_Hyper/raw/movie/ev5020.usm
+
+delete RifleParrymiss/raw/event/scene/bo6xxx.pac
+delete RifleParrymiss/raw/event/scene/zev_parrymiss_riflebeast.pac
+delete RifleParrymiss/raw/event/scene/zev_sp_riflebeast.pac
+delete RifleParrymiss/raw/movie/zev_sp_riflebeast.usm
+delete RifleParrymiss/raw/movie/zev_sp_riflebeast_4k.usm
+delete RifleParrymiss/raw/movie/
+delete RifleParrymiss/raw/sound/rifle01_sound/se_rangers_giant04.acb
+delete RifleParrymiss/raw/sound/rifle01_sound/se_rangers_giant04.acb
+delete RifleParrymiss/raw/sound/
+delete RifleParrymiss/raw/
+delete RifleParrymiss
+delete RifleParrymiss_Hyper/raw/event/scene/bo6xxx.pac
+
+delete BossRifle_SHOT2-4_v1.41.hmm
+delete BossRifle_SHOT2-4_v1.42.hmm
