@@ -2,8 +2,6 @@ add Main/raw/boss/bosscommon.pac
 add Main/raw/boss/rifle01.pac
 add Main/raw/boss/riflebeast.pac
 
-add profiles/Default.ini
-
 add Main/raw/event/scene/bo4xxx.pac
 add Main/raw/event/scene/ev1770.pac
 add Main/raw/event/scene/ev5020.pac
