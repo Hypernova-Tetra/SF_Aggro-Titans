@@ -21,7 +21,6 @@ Contributors:
 - Skrud
 - The Duck Dealer
 - GordinRamsay
-- Nowasu
 
 Special Thanks to everyone.
 

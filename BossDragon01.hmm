@@ -1,0 +1,1504 @@
+Code "ATK_Scratch 1" by "Ashrindy"
+//
+    static long Address = 0;
+    static string[] qte_L = new[]
+    {
+        /* sup */
+        "attack_light_scratch01_l",  
+    };
+//
+{
+     if (Address == 0)
+    {
+        /* 0x14144AB18 */
+        Address = ScanSignature
+        (
+            "attack_light_scratch01_l",
+            "xxxxxxxxxxxxxxxxxxxxxxxx"
+        );
+    }
+    else
+    {
+        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
+    }
+}
+
+Code "ATK_Scratch 2" by "Ashrindy"
+//
+    static long Address = 0;
+    static string[] qte_L = new[]
+    {
+        /* sup */
+        "attack_scratch02_l", "attack_scratch02_l", "attack_scratch02_l", "attack_scratch01_l", "attack_scratch01_l",
+    };
+//
+{
+     if (Address == 0)
+    {
+        /* 0x14144AB00 */
+        Address = ScanSignature
+        (
+            "attack_scratch02_l",
+            "xxxxxxxxxxxxxxxxxx"
+        );
+    }
+    else
+    {
+        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
+    }
+}
+
+Code "Counter_Tail Attack" by "Ashrindy"
+//
+    static long Address = 0;
+    static string[] qte_L = new[]
+    {
+        /* sup */
+        "attack_armer02_l", "attack_armer02_l", "attack_armer02_l", "attack_armer02_l", "attack_armer02_l", "attack_armer01_l", "attack_armer01_l"
+    };
+//
+{
+     if (Address == 0)
+    {
+        /* 0x14144ABF8 */
+        Address = ScanSignature
+        (
+            "attack_armer02_l",
+            "xxxxxxxxxxxxxxxx"
+        );
+    }
+    else
+    {
+        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
+    }
+}
+
+Code "QTE_Missile" by "Ashrindy"
+//
+    static long Address = 0;
+    static string[] qte_L = new[]
+    {
+        /* sup */
+        "zev_dragon_sp_missile", "zev_dragon_sp_missile", "zev_dragon_sp_missile", "zev_dragon_sp_missile", "test_qe1080_result\x00\x00\x00", "test_qe1080_result\x00\x00\x00", "test_qe1080_result\x00\x00\x00"
+    };
+//
+{
+     if (Address == 0)
+    {
+        /* 0x14144C9F8 */
+        Address = ScanSignature
+        (
+            "zev_dragon_sp_missile",
+            "xxxxxxxxxxxxxxxxxxxxx"
+        );
+    }
+    else
+    {
+        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
+    }
+}
+
+Code "QTE_Psycho" by "Hypernova"
+//
+    static long Address = 0;
+    static string[] qte_L = new[]
+    {
+        /* sup */
+        "zev_dragon_sp_psycho",  
+    };
+//
+{
+     if (Address == 0)
+    {
+        /* 0x14144CA10 */
+        Address = ScanSignature
+        (
+            "zev_dragon_sp_psycho",
+            "xxxxxxxxxxxxxxxxxxxx"
+        );
+    }
+    else
+    {
+        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
+    }
+}
+
+Code "Wyvern_Combat"
+//
+	#include "Reflection" noemit
+	#lib "Reflection"
+	#lib "BossDragonConfig"
+    #lib "HMM"
+	#lib "INI"
+    #import "Services"
+
+    static bool IsConfigInitialised = false;
+	static int BossHP = 0;
+    static bool healthBool = false;
+//
+{
+    if (!IsConfigInitialised)
+    {
+		var mod = HMM.GetModByID("H1661727NB");
+
+		if (mod == null)
+			return;
+
+		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
+		var ini = INI.Read(modConfigIniPath);
+
+		BossHP = INI.Parse<int>(ini["Main"]["BossCombat"], BossHP);
+        IsConfigInitialised = true;
+
+        if (BossHP == 1)
+        {
+            healthBool = true;
+        }
+        else
+        {
+            healthBool = false;
+        }
+    }
+	
+	if (!healthBool)
+		return;
+
+	var BossDragonConfigInfo = Reflection.GetDataInfo<BossDragonConfig.Root>("boss_dragon");
+
+	if (BossDragonConfigInfo.pData == null)
+		return;
+	{
+		RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 150000);
+		RFL_SET_PARAM(BossDragonConfigInfo, specialAttackDamage, 7800);
+		RFL_SET_PARAM(BossDragonConfigInfo, qte1Damage, 3700);
+	}
+};
+
+Code "Gamemode Battle Rush Wyvern" 
+//
+    using System.Numerics;
+    using System.Collections.Generic;
+    using System.IO;
+	#import "Services"
+	#include "Reflection" noemit
+    #load "WindowsBase.dll"
+    #load "PresentationCore.dll"
+    #load "System.Numerics.dll"
+	#lib "Reflection"
+	#lib "BlackboardStatus"
+    #lib "HMM"
+	#lib "INI"
+	#lib "GameMode"
+	#lib "BossDragonConfig"
+//
+
+bool gameModeBattleRush = GameMode.GetName() == "GameModeBattleRush"
+if (gameModeBattleRush)
+{
+	{
+		var BossDragonConfigInfo = Reflection.GetDataInfo<BossDragonConfig.Root>("boss_dragon");
+		if (BossDragonConfigInfo.pData == null)
+			return;
+
+		RFL_SET_PARAM(BossDragonConfigInfo, bossBaseConfig.status.healthPoint, 83300);
+	}
+};
+
+Library "BossDragonConfig"
+{
+    #load "System.Numerics.dll"
+
+    using System.Numerics;
+    using System.Runtime.InteropServices;
+
+    public struct CSetObjectID
+    {
+        public unsafe fixed byte GUID[16];
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
+    public struct CSetObjectIDArray
+    {
+        [FieldOffset(0)] public long pData;
+        [FieldOffset(8)] public long Size;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
+    public struct UnmanagedString
+    {
+        [FieldOffset(0)] public long pValue;
+
+        public string Value
+        {
+            get
+            {
+                if (pValue == 0)
+                    return string.Empty;
+
+                return Marshal.PtrToStringAnsi((nint)pValue);
+            }
+
+            set => pValue = (long)Marshal.StringToHGlobalAnsi(value);
+        }
+
+        public UnmanagedString(string in_value)
+        {
+            Value = in_value;
+        }
+
+        public static implicit operator UnmanagedString(string in_value)
+        {
+            return new UnmanagedString(in_value);
+        }
+
+        public static bool operator ==(UnmanagedString in_left, string in_right)
+        {
+            return in_left.Value == in_right;
+        }
+
+        public static bool operator !=(UnmanagedString in_left, string in_right)
+        {
+            return !(in_left == in_right);
+        }
+
+        public override bool Equals(object in_obj)
+        {
+            if (in_obj is string str)
+                return Value == str;
+
+            return base.Equals(in_obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return Value;
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x58)]
+    public struct PlayerMoveableRangeParam
+    {
+        [FieldOffset(0x00)] public CSetObjectIDArray initPositions;
+        [FieldOffset(0x20)] public UnmanagedString heightTargetNodeName;
+        [FieldOffset(0x30)] public float heightMoveSpeed;
+        [FieldOffset(0x34)] public float bossToPlayerDistanceMin;
+        [FieldOffset(0x38)] public float bossToPlayerDistanceMax;
+        [FieldOffset(0x3C)] public float offsetHeightMin;
+        [FieldOffset(0x40)] public float offsetHeightMax;
+        [FieldOffset(0x44)] public float areaDistanceMin;
+        [FieldOffset(0x48)] public float areaDistanceMax;
+        [FieldOffset(0x4C)] public float playerSpawnDistance;
+        [FieldOffset(0x50)] public float playerRespawnDistance;
+        [FieldOffset(0x54)] public float playerRespawnDistance2;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x08)]
+    public struct BossPhaseParam
+    {
+        [FieldOffset(0x00)] public bool isUse;
+        [FieldOffset(0x01)] public bool isUsePillar;
+        [FieldOffset(0x04)] public float phaseChangeHpRatio;
+    }
+
+    public enum EaseType : sbyte
+    {
+        ET_Sin = 0,
+        ET_Cubic = 1,
+        ET_Quadratic = 2
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x70)]
+    public struct BossLockOnCameraParam
+    {
+        [FieldOffset(0x00)] public float easeTime;
+        [FieldOffset(0x04)] public EaseType easeType;
+        [FieldOffset(0x08)] public UnmanagedString mainLookAtNodeName;
+        [FieldOffset(0x20)] public Vector3 mainLookOffsetPos;
+        [FieldOffset(0x30)] public UnmanagedString subLookAtNodeName;
+        [FieldOffset(0x40)] public Vector3 subLookOffsetPos;
+        [FieldOffset(0x50)] public float distance;
+        [FieldOffset(0x60)] public Vector3 playerOffsetPos;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x1A0)]
+    public struct BossStatusConfig
+    {
+        [FieldOffset(0x00)] public uint healthPoint;
+        [FieldOffset(0x04)] public float stunTime;
+        [FieldOffset(0x08)] public unsafe fixed float maxStunPoint[3];
+        [FieldOffset(0x14)] public unsafe fixed float maxStaggerPoint[5];
+        [FieldOffset(0x28)] public ushort exp;
+        [FieldOffset(0x30)] public PlayerMoveableRangeParam moveRangeParam;
+        [FieldOffset(0x88)] public PlayerMoveableRangeParam cyloopDamageMoveRangeParam;
+        [FieldOffset(0xE0)] public unsafe fixed byte /* BossPhaseParam[8] */ _phaseParams[64];
+
+        public unsafe BossPhaseParam* phaseParams
+        {
+            get
+            {
+                fixed (byte* p_phaseParams = _phaseParams)
+                    return (BossPhaseParam*)p_phaseParams;
+            }
+        }
+
+        [FieldOffset(0x120)] public BossLockOnCameraParam cameraParam;
+        [FieldOffset(0x190)] public bool isDebugDraw;
+        [FieldOffset(0x194)] public uint debugDrawPhaseIndex;
+    }
+
+    public enum GimmickType : sbyte
+    {
+        GT_A = 0,
+        GT_B = 1,
+        GT_C = 2,
+        GT_D = 3,
+        GT_E = 4,
+        NUM_GIMMICK_TYPE = 5
+    }
+
+    public enum AttackType : sbyte
+    {
+        AT_A = 0,
+        AT_B = 1,
+        AT_C = 2,
+        AT_D = 3,
+        AT_E = 4,
+        NUM_ATTACK_TYPE = 5
+    }
+
+    public enum BossPillarParam_GimmickType : sbyte
+    {
+        BossPillarParam_GimmickType_GT_A = 0,
+        BossPillarParam_GimmickType_GT_B = 1,
+        BossPillarParam_GimmickType_GT_C = 2,
+        BossPillarParam_GimmickType_GT_D = 3,
+        BossPillarParam_GimmickType_GT_E = 4,
+        BossPillarParam_GimmickType_NUM_GIMMICK_TYPE = 5
+    }
+
+    public enum BossPillarParam_AttackType : sbyte
+    {
+        BossPillarParam_AttackType_AT_A = 0,
+        BossPillarParam_AttackType_AT_B = 1,
+        BossPillarParam_AttackType_AT_C = 2,
+        BossPillarParam_AttackType_AT_D = 3,
+        BossPillarParam_AttackType_AT_E = 4,
+        BossPillarParam_AttackType_NUM_ATTACK_TYPE = 5
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x1C)]
+    public struct BossPillarParam
+    {
+        [FieldOffset(0x00)] public bool isUse;
+        [FieldOffset(0x04)] public float gimmickPhaseTime;
+        [FieldOffset(0x08)] public float attackPhaseTime;
+        [FieldOffset(0x0C)] public bool isUnique;
+        [FieldOffset(0x0D)] public BossPillarParam_GimmickType gimmickType;
+        [FieldOffset(0x10)] public float gimmickIntervalTime;
+        [FieldOffset(0x14)] public BossPillarParam_AttackType attackType;
+        [FieldOffset(0x18)] public float attackIntervalTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x3B8)]
+    public struct BossPillarConfig
+    {
+        [FieldOffset(0x00)] public GimmickType gimmickTypeAll;
+        [FieldOffset(0x04)] public float gimmickIntervalTimeAll;
+        [FieldOffset(0x08)] public AttackType attackTypeAll;
+        [FieldOffset(0x0C)] public float attackIntervalTimeAll;
+        [FieldOffset(0x10)] public unsafe fixed byte /* BossPillarParam[32] */ _pillars[896];
+
+        public unsafe BossPillarParam* pillars
+        {
+            get
+            {
+                fixed (byte* p_pillars = _pillars)
+                    return (BossPillarParam*)p_pillars;
+            }
+        }
+
+        [FieldOffset(0x390)] public UnmanagedString spawnPositionName;
+        [FieldOffset(0x3A0)] public uint pillarHealthPoint;
+        [FieldOffset(0x3A4)] public uint pillarBreakDamage;
+        [FieldOffset(0x3A8)] public float pillarBreakStun;
+        [FieldOffset(0x3AC)] public bool isDebugDraw;
+        [FieldOffset(0x3B0)] public uint DebugDrawType;
+    }
+
+    public enum CollisionType : sbyte
+    {
+        CT_SPHERE = 0,
+        CT_CAPSULE = 1,
+        CT_CYLINDER = 2,
+        CT_BOX = 3,
+        NUM_COLLISION_TYPE = 4
+    }
+
+    public enum ColliderActiveType : sbyte
+    {
+        Always = 0,
+        OnContactActive = 1,
+        OnContactInactive = 2,
+        OnMotionActive = 3,
+        OnMotionInactive = 4,
+        Manual = 5,
+        NUM_COLLIDER_ACTIVE_TYPE = 6
+    }
+
+    public enum ColliderProperty : short
+    {
+        CpNone = 0,
+        CpBattleUse = 1,
+        CpBattleUnuse = 2,
+        CpRestPoint = 3,
+        CpHomingTarget = 4,
+        CpPerceive = 5,
+        CpDamage = 6,
+        CpAttack = 7,
+        CpContactActive = 8,
+        CpContactInactive = 9,
+        CpMotionActive = 10,
+        CpMotionInactive = 11,
+        CpManual = 12,
+        CpUpperSide = 13,
+        CpLowerSide = 14,
+        CpFrontSide = 15,
+        CpBackSide = 16,
+        CpLeftSide = 17,
+        CpRightSide = 18,
+        CpPointA = 19,
+        CpPointB = 20,
+        CpPointC = 21,
+        CpPointD = 22,
+        CpCyloopDownUnuse = 23,
+        CpDummyDamage = 24,
+        CpCable = 25,
+        CpTackleHand = 26,
+        NUM_COLLIDER_PROPERTY = 27
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x20)]
+    public struct BossColliderStatus
+    {
+        [FieldOffset(0x00)] public ColliderActiveType type;
+        [FieldOffset(0x02)] public unsafe fixed byte /* ColliderProperty[4] */ _propertys[8];
+
+        public unsafe ColliderProperty* propertys
+        {
+            get
+            {
+                fixed (byte* p_propertys = _propertys)
+                    return (ColliderProperty*)p_propertys;
+            }
+        }
+
+        [FieldOffset(0x10)] public UnmanagedString text;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x80)]
+    public struct BossPerceiveCollisionParam
+    {
+        [FieldOffset(0x00)] public bool isUse;
+        [FieldOffset(0x02)] public short priority;
+        [FieldOffset(0x04)] public CollisionType type;
+        [FieldOffset(0x08)] public UnmanagedString attachNodeName;
+        [FieldOffset(0x18)] public UnmanagedString name;
+        [FieldOffset(0x28)] public BossColliderStatus status;
+        [FieldOffset(0x50)] public Vector3 size;
+        [FieldOffset(0x60)] public Vector3 offset;
+        [FieldOffset(0x70)] public Vector3 rotation;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x2010)]
+    public struct BossPerceivePartsWithCollisionConfig
+    {
+        [FieldOffset(0x00)] public unsafe fixed byte /* BossPerceiveCollisionParam[64] */ _perceiveCollisions[8192];
+
+        public unsafe BossPerceiveCollisionParam* perceiveCollisions
+        {
+            get
+            {
+                fixed (byte* p_perceiveCollisions = _perceiveCollisions)
+                    return (BossPerceiveCollisionParam*)p_perceiveCollisions;
+            }
+        }
+
+        [FieldOffset(0x2000)] public bool isDebugDraw;
+    }
+
+    public enum PointType : sbyte
+    {
+        PT_HOMINGPOINT = 0,
+        PT_HEROSAGE = 1,
+        PT_MINIONGENERATOR = 2,
+        PT_TRIGGER = 3,
+        PT_ANCHOR = 4,
+        PT_DAMAGEPOINT = 5,
+        PT_STICK = 6,
+        PT_DAMAGEEFFECT = 7,
+        PT_DASHCIRCLE = 8,
+        NUM_POINT_TYPE = 9
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x28)]
+    public struct BossHomingPointParam
+    {
+        [FieldOffset(0x00)] public BossColliderStatus status;
+        [FieldOffset(0x20)] public float distance;
+        [FieldOffset(0x24)] public float nextSearchDistance;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x10)]
+    public struct BossMinionParam
+    {
+        [FieldOffset(0x00)] public uint num;
+        [FieldOffset(0x04)] public float interval;
+        [FieldOffset(0x08)] public float liveTime;
+        [FieldOffset(0x0C)] public float waitTime;
+    }
+
+    public enum Shape : sbyte
+    {
+        SHAPE_BOX = 0,
+        SHAPE_SPHERE = 1,
+        SHAPE_CYLINDER = 2,
+        SHAPE_CAPSULE = 3
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x10)]
+    public struct BossTrigerParam
+    {
+        [FieldOffset(0x00)] public Shape ShapeType;
+        [FieldOffset(0x04)] public float CollisionWidth;
+        [FieldOffset(0x08)] public float CollisionHeight;
+        [FieldOffset(0x0C)] public float CollisionDepth;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x04)]
+    public struct BossStickParam
+    {
+        [FieldOffset(0x00)] public float phaseTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x18)]
+    public struct BossDamagePointParam
+    {
+        [FieldOffset(0x00)] public bool isCyloopDownUnuse;
+        [FieldOffset(0x08)] public UnmanagedString text;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x28)]
+    public struct BossDashCirclPointParam
+    {
+        [FieldOffset(0x00)] public int focusGeometryIndex;
+        [FieldOffset(0x04)] public int focusTriangleIndex;
+        [FieldOffset(0x08)] public float sizeScale;
+        [FieldOffset(0x0C)] public float impulseSpeed;
+        [FieldOffset(0x10)] public float ocTime;
+        [FieldOffset(0x14)] public float slowRateBoss;
+        [FieldOffset(0x18)] public float slowRatePlayer;
+        [FieldOffset(0x1C)] public float slowTime;
+        [FieldOffset(0x20)] public float slowEaseInTime;
+        [FieldOffset(0x24)] public float slowEaseOutTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0xE0)]
+    public struct BossMeshFrameParam
+    {
+        [FieldOffset(0x00)] public bool isUse;
+        [FieldOffset(0x04)] public uint geometryIndex;
+        [FieldOffset(0x08)] public uint triangleIndex;
+        [FieldOffset(0x0C)] public PointType type;
+        [FieldOffset(0x10)] public BossHomingPointParam homingPoint;
+        [FieldOffset(0x38)] public BossMinionParam minionParam;
+        [FieldOffset(0x48)] public BossTrigerParam trigger;
+        [FieldOffset(0x58)] public BossStickParam stickParam;
+        [FieldOffset(0x60)] public BossDamagePointParam damagePoint;
+        [FieldOffset(0x78)] public BossDashCirclPointParam dashCirclPoint;
+        [FieldOffset(0xA0)] public unsafe fixed int linkNums[5];
+        [FieldOffset(0xC0)] public Vector3 offsetPos;
+        [FieldOffset(0xD0)] public Vector3 offsetRot;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0xE010)]
+    public struct BossMeshFrameConfig
+    {
+        [FieldOffset(0x00)] public unsafe fixed byte /* BossMeshFrameParam[256] */ _meshShapeKeyFrames[57344];
+
+        public unsafe BossMeshFrameParam* meshShapeKeyFrames
+        {
+            get
+            {
+                fixed (byte* p_meshShapeKeyFrames = _meshShapeKeyFrames)
+                    return (BossMeshFrameParam*)p_meshShapeKeyFrames;
+            }
+        }
+
+        [FieldOffset(0xE000)] public bool isDebugDraw;
+        [FieldOffset(0xE001)] public bool isDebugDrawPoint;
+        [FieldOffset(0xE002)] public bool isDebugDrawMesh;
+        [FieldOffset(0xE003)] public bool isDebugDrawMeshIndivid;
+        [FieldOffset(0xE004)] public float debugDrawMeshTriangleDistance;
+        [FieldOffset(0xE008)] public uint debugDrawMeshTriangleNum;
+    }
+
+    public enum BossAttackCollisionParam_AttackType : sbyte
+    {
+        AT_NONE = 0,
+        AT_BLOWOFF = 1,
+        AT_SLAMDOWNWARD = 2,
+        AT_KILLING = 3,
+        AT_NOTPARRY = 4,
+        AT_NOTDAMAGE = 5,
+        AT_NOTDAMAGETRIGGER = 6,
+        BossAttackCollisionParam_AttackType_NUM_ATTACK_TYPE = 7
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x70)]
+    public struct BossAttackCollisionParam
+    {
+        [FieldOffset(0x00)] public bool isUse;
+        [FieldOffset(0x08)] public UnmanagedString attachNodeName;
+        [FieldOffset(0x18)] public float damageVelocityRaito;
+        [FieldOffset(0x1C)] public unsafe fixed byte /* BossAttackCollisionParam_AttackType[4] */ _types[4];
+
+        public unsafe BossAttackCollisionParam_AttackType* types
+        {
+            get
+            {
+                fixed (byte* p_types = _types)
+                    return (BossAttackCollisionParam_AttackType*)p_types;
+            }
+        }
+
+        [FieldOffset(0x20)] public BossColliderStatus status;
+        [FieldOffset(0x40)] public float size;
+        [FieldOffset(0x50)] public Vector3 offset;
+        [FieldOffset(0x60)] public UnmanagedString parryCounterTargetCollisionName;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x1C10)]
+    public struct BossAttackCollisionConfig
+    {
+        [FieldOffset(0x00)] public unsafe fixed byte /* BossAttackCollisionParam[64] */ _attackCollisions[7168];
+
+        public unsafe BossAttackCollisionParam* attackCollisions
+        {
+            get
+            {
+                fixed (byte* p_attackCollisions = _attackCollisions)
+                    return (BossAttackCollisionParam*)p_attackCollisions;
+            }
+        }
+
+        [FieldOffset(0x1C00)] public bool isDebugDraw;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x60)]
+    public struct BossBattlePhaseCollisionParam
+    {
+        [FieldOffset(0x00)] public bool isUse;
+        [FieldOffset(0x08)] public UnmanagedString attachNodeName;
+        [FieldOffset(0x18)] public UnmanagedString name;
+        [FieldOffset(0x28)] public float size;
+        [FieldOffset(0x30)] public Vector3 offset;
+        [FieldOffset(0x40)] public Vector3 rotation;
+        [FieldOffset(0x50)] public bool isParryActive;
+        [FieldOffset(0x54)] public float cyloopRadius;
+        [FieldOffset(0x58)] public bool onlyRigidBody;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x610)]
+    public struct BossBattlePhaseCollisionConfig
+    {
+        [FieldOffset(0x00)] public unsafe fixed byte /* BossBattlePhaseCollisionParam[16] */ _battleCollisions[1536];
+
+        public unsafe BossBattlePhaseCollisionParam* battleCollisions
+        {
+            get
+            {
+                fixed (byte* p_battleCollisions = _battleCollisions)
+                    return (BossBattlePhaseCollisionParam*)p_battleCollisions;
+            }
+        }
+
+        [FieldOffset(0x600)] public bool isDebugDraw;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x14)]
+    public struct BossDropRingConfig
+    {
+        [FieldOffset(0x00)] public uint ringNumQuickCyloopUp;
+        [FieldOffset(0x04)] public uint ringNumQuickCyloopDown;
+        [FieldOffset(0x08)] public uint ringNumSonicSpecial;
+        [FieldOffset(0x0C)] public float ringSpawnDistance;
+        [FieldOffset(0x10)] public float ringSuckedVelocity;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x127C0)]
+    public struct BossBaseConfig
+    {
+        [FieldOffset(0x00)] public BossStatusConfig status;
+        [FieldOffset(0x1A0)] public BossPillarConfig pillar;
+        [FieldOffset(0x560)] public BossPerceivePartsWithCollisionConfig perceivPartsWithCollision;
+        [FieldOffset(0x2570)] public BossMeshFrameConfig meshShapeKeyFrame;
+        [FieldOffset(0x10580)] public BossAttackCollisionConfig attackCollision;
+        [FieldOffset(0x12190)] public BossBattlePhaseCollisionConfig battleCollision;
+        [FieldOffset(0x127A0)] public BossDropRingConfig dropRing;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x50)]
+    public struct BossDragonCollisionParamBase
+    {
+        [FieldOffset(0x00)] public UnmanagedString name;
+        [FieldOffset(0x10)] public UnmanagedString parentFrame;
+        [FieldOffset(0x20)] public Vector3 size;
+        [FieldOffset(0x30)] public Vector3 localPosition;
+        [FieldOffset(0x40)] public Vector3 localRotation;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x60)]
+    public struct BossDragonHitBoxParam
+    {
+        [FieldOffset(0)]  public BossDragonCollisionParamBase bossDragonCollisionParamBase;
+        [FieldOffset(0x50)] public Vector3 damageVelocity;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x90)]
+    public struct BossDragonHurtBoxParam
+    {
+        [FieldOffset(0)]   public BossDragonCollisionParamBase bossDragonCollisionParamBase;
+        [FieldOffset(0x50)] public bool isEnableHoming;
+        [FieldOffset(0x58)] public UnmanagedString homingNode;
+        [FieldOffset(0x68)] public UnmanagedString homingNodeMirror;
+        [FieldOffset(0x80)] public Vector3 homingPosition;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x08)]
+    public struct BossDragonScratchParam
+    {
+        [FieldOffset(0x00)] public float aimTime;
+        [FieldOffset(0x04)] public float stunTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x28)]
+    public struct BossDragonReflectShotParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float speed;
+        [FieldOffset(0x08)] public float maxSpeed;
+        [FieldOffset(0x0C)] public float accel;
+        [FieldOffset(0x10)] public float reflectSpeedScale;
+        [FieldOffset(0x14)] public float intervalTime;
+        [FieldOffset(0x18)] public float lifeTime;
+        [FieldOffset(0x1C)] public float pitchOffsetRange;
+        [FieldOffset(0x20)] public float yawOffsetRange;
+        [FieldOffset(0x24)] public bool isBound;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x20)]
+    public struct BossDragonShotParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float speed;
+        [FieldOffset(0x08)] public float intervalTime;
+        [FieldOffset(0x0C)] public float lifeTime;
+        [FieldOffset(0x10)] public float pitchOffsetRange;
+        [FieldOffset(0x14)] public float yawOffsetRange;
+        [FieldOffset(0x18)] public int count;
+        [FieldOffset(0x1C)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x28)]
+    public struct BossDragonSpiralShotParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float speed;
+        [FieldOffset(0x08)] public float intervalTime;
+        [FieldOffset(0x0C)] public float lifeTime;
+        [FieldOffset(0x10)] public float pitchSpeed;
+        [FieldOffset(0x14)] public float yawSpeed;
+        [FieldOffset(0x18)] public float circleIntervalTime;
+        [FieldOffset(0x1C)] public int count;
+        [FieldOffset(0x20)] public int parriableCount;
+        [FieldOffset(0x24)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x2C)]
+    public struct BossDragonSplashShotParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float speed;
+        [FieldOffset(0x08)] public float gravity;
+        [FieldOffset(0x0C)] public float intervalTime;
+        [FieldOffset(0x10)] public float lifeTime;
+        [FieldOffset(0x14)] public float pitch;
+        [FieldOffset(0x18)] public float pitchInterval;
+        [FieldOffset(0x1C)] public float yawInterval;
+        [FieldOffset(0x20)] public int count;
+        [FieldOffset(0x24)] public int parriableCount;
+        [FieldOffset(0x28)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x2C)]
+    public struct BossDragonHomingLaserParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float speed;
+        [FieldOffset(0x08)] public float maxAccel;
+        [FieldOffset(0x0C)] public float intervalTime;
+        [FieldOffset(0x10)] public float arrivalTime;
+        [FieldOffset(0x14)] public float lifeTime;
+        [FieldOffset(0x18)] public float minPitchOffset;
+        [FieldOffset(0x1C)] public float maxPitchOffset;
+        [FieldOffset(0x20)] public float yawOffsetRange;
+        [FieldOffset(0x24)] public int count;
+        [FieldOffset(0x28)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x28)]
+    public struct BossDragonHomingMissileParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float length;
+        [FieldOffset(0x08)] public float speed;
+        [FieldOffset(0x0C)] public float intervalTime;
+        [FieldOffset(0x10)] public float lifeTime;
+        [FieldOffset(0x14)] public float minPitchOffset;
+        [FieldOffset(0x18)] public float maxPitchOffset;
+        [FieldOffset(0x1C)] public float yawOffsetRange;
+        [FieldOffset(0x20)] public int count;
+        [FieldOffset(0x24)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x30)]
+    public struct BossDragonRippleLaserParam
+    {
+        [FieldOffset(0x00)] public float innerRadius;
+        [FieldOffset(0x04)] public float outerRadius;
+        [FieldOffset(0x08)] public float speed;
+        [FieldOffset(0x0C)] public float intervalTime;
+        [FieldOffset(0x10)] public float lifeTime;
+        [FieldOffset(0x14)] public float pitchOffsetRange;
+        [FieldOffset(0x18)] public float yawOffsetRange;
+        [FieldOffset(0x1C)] public int count;
+        [FieldOffset(0x20)] public int parriableCount;
+        [FieldOffset(0x24)] public float intervalTimeInGroup;
+        [FieldOffset(0x28)] public int countInGroup;
+        [FieldOffset(0x2C)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x38)]
+    public struct BossDragonRippleLaserRageParam
+    {
+        [FieldOffset(0x00)] public float innerRadius;
+        [FieldOffset(0x04)] public float outerRadius;
+        [FieldOffset(0x08)] public float speed;
+        [FieldOffset(0x0C)] public float intervalTime;
+        [FieldOffset(0x10)] public float lifeTime;
+        [FieldOffset(0x14)] public float maxPitch;
+        [FieldOffset(0x18)] public float maxYaw;
+        [FieldOffset(0x1C)] public int verticalCount;
+        [FieldOffset(0x20)] public int horizontalCount;
+        [FieldOffset(0x24)] public int extraFrontCount;
+        [FieldOffset(0x28)] public int parriableCount;
+        [FieldOffset(0x2C)] public float intervalTimeInGroup;
+        [FieldOffset(0x30)] public int countInGroup;
+        [FieldOffset(0x34)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x28)]
+    public struct BossDragonRippleLaserDummyParam
+    {
+        [FieldOffset(0x00)] public float innerRadius;
+        [FieldOffset(0x04)] public float outerRadius;
+        [FieldOffset(0x08)] public float speed;
+        [FieldOffset(0x0C)] public float intervalTime;
+        [FieldOffset(0x10)] public float lifeTime;
+        [FieldOffset(0x14)] public float pitchOffsetRange;
+        [FieldOffset(0x18)] public float yawOffsetRange;
+        [FieldOffset(0x1C)] public int count;
+        [FieldOffset(0x20)] public float intervalTimeInGroup;
+        [FieldOffset(0x24)] public int countInGroup;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x28)]
+    public struct BossDragonWaveParam
+    {
+        [FieldOffset(0x00)] public float speed;
+        [FieldOffset(0x04)] public float rotSpeed;
+        [FieldOffset(0x08)] public float accel;
+        [FieldOffset(0x0C)] public float rotAccel;
+        [FieldOffset(0x10)] public float intervalTime;
+        [FieldOffset(0x14)] public float lifeTime;
+        [FieldOffset(0x18)] public int segmentCount;
+        [FieldOffset(0x1C)] public float waveRate;
+        [FieldOffset(0x20)] public int count;
+        [FieldOffset(0x24)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x24)]
+    public struct BossDragonLaserParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float length;
+        [FieldOffset(0x08)] public float rotSpeed;
+        [FieldOffset(0x0C)] public float rotAccel;
+        [FieldOffset(0x10)] public float roll;
+        [FieldOffset(0x14)] public float intervalTime;
+        [FieldOffset(0x18)] public float standbyTime;
+        [FieldOffset(0x1C)] public int count;
+        [FieldOffset(0x20)] public float waitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x0C)]
+    public struct BossDragonCounterLaserParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float speed;
+        [FieldOffset(0x08)] public float lifeTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x08)]
+    public struct BossDragonRingSupplyMissileParam
+    {
+        [FieldOffset(0x00)] public int missileNum;
+        [FieldOffset(0x04)] public float missileWaitTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x40)]
+    public struct BossDragonRingSupplyParam
+    {
+        [FieldOffset(0x00)] public Vector3 playerPosition;
+        [FieldOffset(0x10)] public float moveTime;
+        [FieldOffset(0x14)] public float moveRange;
+        [FieldOffset(0x18)] public float rotSpeed;
+        [FieldOffset(0x1C)] public unsafe fixed byte /* BossDragonRingSupplyMissileParam[3] */ _missile[24];
+
+        public unsafe BossDragonRingSupplyMissileParam* missile
+        {
+            get
+            {
+                fixed (byte* p_missile = _missile)
+                    return (BossDragonRingSupplyMissileParam*)p_missile;
+            }
+        }
+    }
+
+    public enum BossDragonLayoutParam_EaseType : sbyte
+    {
+        SMOOTH = 0,
+        EASE_IN = 1,
+        EASE_OUT = 2,
+        EASE_IN_OUT = 3
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x50)]
+    public struct BossDragonLayoutParam
+    {
+        [FieldOffset(0x00)] public Vector3 bossPosition;
+        [FieldOffset(0x10)] public float bossYaw;
+        [FieldOffset(0x14)] public BossDragonLayoutParam_EaseType bossEaseType;
+        [FieldOffset(0x18)] public float bossEaseTime;
+        [FieldOffset(0x20)] public Vector3 playerPosition;
+        [FieldOffset(0x30)] public float playerFieldRange;
+        [FieldOffset(0x34)] public float playerFieldHeight;
+        [FieldOffset(0x38)] public float playerFieldYaw;
+        [FieldOffset(0x3C)] public BossDragonLayoutParam_EaseType playerEaseType;
+        [FieldOffset(0x40)] public float playerEaseTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x70)]
+    public struct BossDragonCameraParam
+    {
+        [FieldOffset(0x00)] public UnmanagedString gazeFrame;
+        [FieldOffset(0x10)] public UnmanagedString gazeFrameMirror;
+        [FieldOffset(0x20)] public Vector3 gazeOffset;
+        [FieldOffset(0x30)] public float distance;
+        [FieldOffset(0x40)] public Vector3 playerOffset;
+        [FieldOffset(0x50)] public float elevationOffset;
+        [FieldOffset(0x60)] public Vector3 followRate;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x110)]
+    public struct BossDragonMoveParam
+    {
+        [FieldOffset(0x00)] public unsafe fixed byte /* Vector3[8] */ _playerNodes[128];
+
+        public unsafe Vector3* playerNodes
+        {
+            get
+            {
+                fixed (byte* p_playerNodes = _playerNodes)
+                    return (Vector3*)p_playerNodes;
+            }
+        }
+
+        [FieldOffset(0x80)] public unsafe fixed byte /* Vector3[8] */ _bossNodes[128];
+
+        public unsafe Vector3* bossNodes
+        {
+            get
+            {
+                fixed (byte* p_bossNodes = _bossNodes)
+                    return (Vector3*)p_bossNodes;
+            }
+        }
+
+        [FieldOffset(0x100)] public int playerNodeCount;
+        [FieldOffset(0x104)] public int bossNodeCount;
+        [FieldOffset(0x108)] public float time;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x0C)]
+    public struct BossDragonFireBarParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float length;
+        [FieldOffset(0x08)] public float rotSpeed;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x1C)]
+    public struct BossDragonEscapeShotParam
+    {
+        [FieldOffset(0x00)] public unsafe fixed uint vertRatio[3];
+        [FieldOffset(0x0C)] public float initSpeed;
+        [FieldOffset(0x10)] public float maxSpeed;
+        [FieldOffset(0x14)] public float acc;
+        [FieldOffset(0x18)] public float lifeTime;
+    }
+
+    public enum Type : sbyte
+    {
+        None = 0,
+        FireBar = 1,
+        FireBar4 = 2,
+        Spark = 3
+    }
+
+    public enum Location : sbyte
+    {
+        Left = 0,
+        Center = 1,
+        Right = 2
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x08)]
+    public struct BossDragonObstacleParam
+    {
+        [FieldOffset(0x00)] public float distance;
+        [FieldOffset(0x04)] public Type type;
+        [FieldOffset(0x05)] public Location location;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x08)]
+    public struct BossDragonHoleParam
+    {
+        [FieldOffset(0x00)] public float start;
+        [FieldOffset(0x04)] public float end;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x2B4)]
+    public struct BossDragonRoadParam
+    {
+        [FieldOffset(0x00)] public float interval;
+        [FieldOffset(0x04)] public int recordNum;
+        [FieldOffset(0x08)] public float width;
+        [FieldOffset(0x0C)] public BossDragonFireBarParam fireBar;
+        [FieldOffset(0x18)] public BossDragonEscapeShotParam shot;
+        [FieldOffset(0x34)] public unsafe fixed byte /* BossDragonObstacleParam[64] */ _obstacles[512];
+
+        public unsafe BossDragonObstacleParam* obstacles
+        {
+            get
+            {
+                fixed (byte* p_obstacles = _obstacles)
+                    return (BossDragonObstacleParam*)p_obstacles;
+            }
+        }
+
+        [FieldOffset(0x234)] public unsafe fixed byte /* BossDragonHoleParam[16] */ _holes[128];
+
+        public unsafe BossDragonHoleParam* holes
+        {
+            get
+            {
+                fixed (byte* p_holes = _holes)
+                    return (BossDragonHoleParam*)p_holes;
+            }
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0xA0)]
+    public struct BossDragonLaunchParam
+    {
+        [FieldOffset(0x00)] public float outStrength;
+        [FieldOffset(0x04)] public float inStrength;
+        [FieldOffset(0x08)] public float outElev;
+        [FieldOffset(0x0C)] public float inElev;
+        [FieldOffset(0x10)] public float speed;
+        [FieldOffset(0x20)] public Vector3 targetOffset;
+        [FieldOffset(0x30)] public float launchCameraInterpolateTime;
+        [FieldOffset(0x40)] public Vector3 launchCameraPos;
+        [FieldOffset(0x50)] public Vector3 launchCameraTarget;
+        [FieldOffset(0x60)] public float launchCameraRoll;
+        [FieldOffset(0x64)] public float launchCameraTime;
+        [FieldOffset(0x68)] public float fallCameraInterpolateTime;
+        [FieldOffset(0x6C)] public float fallCameraDistance;
+        [FieldOffset(0x70)] public float fallCameraElavation;
+        [FieldOffset(0x74)] public float landingCameraInterpolateTime;
+        [FieldOffset(0x78)] public float landingCameraDistance;
+        [FieldOffset(0x7C)] public float landingCameraElavation;
+        [FieldOffset(0x80)] public float landingCameraAzimuth;
+        [FieldOffset(0x84)] public float landingCameraChangeDistance;
+        [FieldOffset(0x88)] public float landingCameraNearInterpolateTime;
+        [FieldOffset(0x8C)] public float landingCameraNearDistance;
+        [FieldOffset(0x90)] public float landingCameraNearElavation;
+        [FieldOffset(0x94)] public float landingCameraNearAzimuth;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x0C)]
+    public struct BossDragonQuickStepParam
+    {
+        [FieldOffset(0x00)] public float speed;
+        [FieldOffset(0x04)] public float boostSpeed;
+        [FieldOffset(0x08)] public float boostSpeedMax;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x38)]
+    public struct BossDragonChaseParam
+    {
+        [FieldOffset(0x00)] public float distance;
+        [FieldOffset(0x04)] public float goalOffset;
+        [FieldOffset(0x08)] public float speed;
+        [FieldOffset(0x0C)] public float boostSpeed;
+        [FieldOffset(0x10)] public float width;
+        [FieldOffset(0x14)] public float height;
+        [FieldOffset(0x18)] public float closeDistance;
+        [FieldOffset(0x1C)] public float closeSpeedScale;
+        [FieldOffset(0x20)] public float fastMoveDistance;
+        [FieldOffset(0x24)] public float stunTime;
+        [FieldOffset(0x28)] public float stunSpeedScale;
+        [FieldOffset(0x2C)] public float superBoostDelayTime;
+        [FieldOffset(0x30)] public float superBoostTime;
+        [FieldOffset(0x34)] public float superBoostSpeed;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x18)]
+    public struct BossDragonMissileIndividualParam
+    {
+        [FieldOffset(0x00)] public bool isValid;
+        [FieldOffset(0x04)] public float rotForce;
+        [FieldOffset(0x08)] public float maxRotForce;
+        [FieldOffset(0x0C)] public float rotForceSpeed;
+        [FieldOffset(0x10)] public float rotDamper;
+        [FieldOffset(0x14)] public float straightTime;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x14)]
+    public struct BossDragonMissileFirePattern
+    {
+        [FieldOffset(0x00)] public float hpRatioThreshold;
+        [FieldOffset(0x04)] public int count;
+        [FieldOffset(0x08)] public float intervalTime;
+        [FieldOffset(0x0C)] public float waitTime;
+        [FieldOffset(0x10)] public float badRatio;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x2F8)]
+    public struct BossDragonMissileParam
+    {
+        [FieldOffset(0x00)] public float radius;
+        [FieldOffset(0x04)] public float length;
+        [FieldOffset(0x08)] public float speed;
+        [FieldOffset(0x0C)] public float maxSpeed;
+        [FieldOffset(0x10)] public float accel;
+        [FieldOffset(0x14)] public float lifeTime;
+        [FieldOffset(0x18)] public unsafe fixed byte /* BossDragonMissileIndividualParam[16] */ _individuals[384];
+
+        public unsafe BossDragonMissileIndividualParam* individuals
+        {
+            get
+            {
+                fixed (byte* p_individuals = _individuals)
+                    return (BossDragonMissileIndividualParam*)p_individuals;
+            }
+        }
+
+        [FieldOffset(0x198)] public unsafe fixed byte /* BossDragonMissileIndividualParam[8] */ _badIndividuals[192];
+
+        public unsafe BossDragonMissileIndividualParam* badIndividuals
+        {
+            get
+            {
+                fixed (byte* p_badIndividuals = _badIndividuals)
+                    return (BossDragonMissileIndividualParam*)p_badIndividuals;
+            }
+        }
+
+        [FieldOffset(0x258)] public unsafe fixed byte /* BossDragonMissileFirePattern[8] */ _firePatterns[160];
+
+        public unsafe BossDragonMissileFirePattern* firePatterns
+        {
+            get
+            {
+                fixed (byte* p_firePatterns = _firePatterns)
+                    return (BossDragonMissileFirePattern*)p_firePatterns;
+            }
+        }
+    }
+
+    public enum BossDragonSequence : sbyte
+    {
+        NOP = 0,
+        BITE = 1,
+        LIGHT_SCRATCH = 2,
+        SCRATCH = 3,
+        SHOOT = 4,
+        SHOOT_NORMAL = 5,
+        SHOOT_SPIRAL = 6,
+        SHOOT_SPIRAL_ALTERNATE = 7,
+        SHOOT_SPIRAL_VERTICAL = 8,
+        SHOOT_SPLASH = 9,
+        SHOOT_HOMING_LASER = 10,
+        SHOOT_HOMING_MISSILE = 11,
+        SHOOT_RIPPLE_LASER = 12,
+        SHOOT_RIPPLE_LASER_RAGE = 13,
+        SHOOT_WAVE = 14,
+        SHOOT_LASER_WINDER = 15,
+        SHOOT_RANDOM_LASER = 16,
+        SHOOT_END = 17,
+        SWAP_SIDE = 18,
+        CHASE = 19
+    }
+
+    public enum BossDragonInterrupt : sbyte
+    {
+        BossDragonInterrupt_NOP = 0,
+        RAGE = 1,
+        SPECIAL_ATTACK = 2,
+        SPECIAL_ATTACK2 = 3
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x08)]
+    public struct BossDragonInterruptParam
+    {
+        [FieldOffset(0x00)] public float hpRatio;
+        [FieldOffset(0x04)] public BossDragonInterrupt interrupt;
+        [FieldOffset(0x05)] public bool forceInterrupt;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x10)]
+    public struct BossDragonCyloopBindParam
+    {
+        [FieldOffset(0x00)] public unsafe fixed float postCameraTime[4];
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x10)]
+    public struct BossDragonParrySlowParam
+    {
+        [FieldOffset(0x00)] public float scale;
+        [FieldOffset(0x04)] public float time;
+        [FieldOffset(0x08)] public float easeOutTime;
+        [FieldOffset(0x0C)] public bool cameraSlow;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x20)]
+    public struct BossDragonParryParam
+    {
+        [FieldOffset(0x00)] public unsafe fixed byte /* BossDragonParrySlowParam[2] */ _slowParams[32];
+
+        public unsafe BossDragonParrySlowParam* slowParams
+        {
+            get
+            {
+                fixed (byte* p_slowParams = _slowParams)
+                    return (BossDragonParrySlowParam*)p_slowParams;
+            }
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x18)]
+    public struct BossDragonAttackSignParam
+    {
+        [FieldOffset(0x00)] public unsafe fixed float delayTime[6];
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x03)]
+    public struct EnemyPracticeNotifierConfig
+    {
+        [FieldOffset(0x00)] public bool usePracticeNotifier;
+        [FieldOffset(0x01)] public sbyte practiceNo;
+        [FieldOffset(0x02)] public sbyte tipsNo;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x06)]
+    public struct BossDragonNotifierParam
+    {
+        [FieldOffset(0x00)] public EnemyPracticeNotifierConfig notifierConfigClimb;
+        [FieldOffset(0x03)] public EnemyPracticeNotifierConfig notifierConfigBattle;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x17590)]
+    public struct Root
+    {
+        [FieldOffset(0)]     public BossBaseConfig bossBaseConfig;
+        [FieldOffset(0x127C0)] public float cruisePathSpeed;
+        [FieldOffset(0x127C4)] public float patrolPathSpeed;
+        [FieldOffset(0x127C8)] public float approachPathSpeedMin;
+        [FieldOffset(0x127CC)] public float approachPathSpeedMax;
+        [FieldOffset(0x127D0)] public float climbPathSpeed;
+        [FieldOffset(0x127D4)] public float pathSpeed;
+        [FieldOffset(0x127D8)] public float ringSupplyPathSpeed;
+        [FieldOffset(0x127DC)] public float sideDistance;
+        [FieldOffset(0x127E0)] public float shootEndTime;
+        [FieldOffset(0x127E4)] public int staggerPoint;
+        [FieldOffset(0x127E8)] public int staggerPointRage;
+        [FieldOffset(0x127EC)] public float staggerTime;
+        [FieldOffset(0x127F0)] public float biteParriedTime;
+        [FieldOffset(0x127F4)] public float scratchParriedTime;
+        [FieldOffset(0x127F8)] public int knockBackStaggerCount;
+        [FieldOffset(0x127FC)] public int knockBackPoint;
+        [FieldOffset(0x12800)] public float knockBackTime;
+        [FieldOffset(0x12804)] public float hardStunTime;
+        [FieldOffset(0x12808)] public float cyloopBindTime;
+        [FieldOffset(0x1280C)] public float cyloopBind2Time;
+        [FieldOffset(0x12810)] public float cyloopEscapeHpRatio;
+        [FieldOffset(0x12814)] public float cyloopEscapeTime;
+        [FieldOffset(0x12818)] public float fallDeadHeight;
+        [FieldOffset(0x1281C)] public int specialAttackDamage;
+        [FieldOffset(0x12820)] public int qte1Damage;
+        [FieldOffset(0x12828)] public unsafe fixed byte /* UnmanagedString[16] */ _accessNodeNames[4080];
+
+        public unsafe UnmanagedString* accessNodeNames
+        {
+            get
+            {
+                fixed (byte* p_accessNodeNames = _accessNodeNames)
+                    return (UnmanagedString*)p_accessNodeNames;
+            }
+        }
+
+        [FieldOffset(0x12930)] public unsafe fixed byte /* BossDragonHitBoxParam[32] */ _hitBoxes[3072];
+
+        public unsafe BossDragonHitBoxParam* hitBoxes
+        {
+            get
+            {
+                fixed (byte* p_hitBoxes = _hitBoxes)
+                    return (BossDragonHitBoxParam*)p_hitBoxes;
+            }
+        }
+
+        [FieldOffset(0x13530)] public unsafe fixed byte /* BossDragonHurtBoxParam[32] */ _hurtBoxes[4608];
+
+        public unsafe BossDragonHurtBoxParam* hurtBoxes
+        {
+            get
+            {
+                fixed (byte* p_hurtBoxes = _hurtBoxes)
+                    return (BossDragonHurtBoxParam*)p_hurtBoxes;
+            }
+        }
+
+        [FieldOffset(0x14730)] public BossDragonScratchParam scratch;
+        [FieldOffset(0x14738)] public BossDragonReflectShotParam reflect;
+        [FieldOffset(0x14760)] public BossDragonShotParam shot;
+        [FieldOffset(0x14780)] public BossDragonSpiralShotParam spiral;
+        [FieldOffset(0x147A8)] public BossDragonSpiralShotParam spiralAlternate;
+        [FieldOffset(0x147D0)] public BossDragonSpiralShotParam spiralVertical;
+        [FieldOffset(0x147F8)] public BossDragonSplashShotParam splash;
+        [FieldOffset(0x14824)] public BossDragonHomingLaserParam homingLaser;
+        [FieldOffset(0x14850)] public BossDragonHomingMissileParam homingMissile;
+        [FieldOffset(0x14878)] public BossDragonRippleLaserParam rippleLaser;
+        [FieldOffset(0x148A8)] public BossDragonRippleLaserRageParam rippleLaserRage;
+        [FieldOffset(0x148E0)] public BossDragonRippleLaserDummyParam rippleLaserDummy;
+        [FieldOffset(0x14908)] public BossDragonWaveParam wave;
+        [FieldOffset(0x14930)] public BossDragonLaserParam laserWinder;
+        [FieldOffset(0x14954)] public BossDragonLaserParam randomLaser;
+        [FieldOffset(0x14978)] public BossDragonCounterLaserParam counterLaser;
+        [FieldOffset(0x14990)] public BossDragonRingSupplyParam ringSupply;
+        [FieldOffset(0x149D0)] public unsafe fixed float damageRates[4];
+        [FieldOffset(0x149E0)] public unsafe fixed byte /* BossDragonLayoutParam[46] */ _layouts[3680];
+
+        public unsafe BossDragonLayoutParam* layouts
+        {
+            get
+            {
+                fixed (byte* p_layouts = _layouts)
+                    return (BossDragonLayoutParam*)p_layouts;
+            }
+        }
+
+        [FieldOffset(0x15840)] public unsafe fixed byte /* BossDragonCameraParam[47] */ _cameras[5264];
+
+        public unsafe BossDragonCameraParam* cameras
+        {
+            get
+            {
+                fixed (byte* p_cameras = _cameras)
+                    return (BossDragonCameraParam*)p_cameras;
+            }
+        }
+
+        [FieldOffset(0x16CD0)] public BossDragonMoveParam swapMove;
+        [FieldOffset(0x16DE0)] public BossDragonRoadParam road;
+        [FieldOffset(0x170A0)] public BossDragonLaunchParam launch;
+        [FieldOffset(0x17140)] public BossDragonQuickStepParam quickStep;
+        [FieldOffset(0x1714C)] public BossDragonChaseParam chase;
+        [FieldOffset(0x17184)] public BossDragonMissileParam missile;
+        [FieldOffset(0x1747C)] public unsafe fixed byte /* BossDragonSequence[16] */ _seq[16];
+
+        public unsafe BossDragonSequence* seq
+        {
+            get
+            {
+                fixed (byte* p_seq = _seq)
+                    return (BossDragonSequence*)p_seq;
+            }
+        }
+
+        [FieldOffset(0x1748C)] public unsafe fixed byte /* BossDragonSequence[16] */ _seq2[16];
+
+        public unsafe BossDragonSequence* seq2
+        {
+            get
+            {
+                fixed (byte* p_seq2 = _seq2)
+                    return (BossDragonSequence*)p_seq2;
+            }
+        }
+
+        [FieldOffset(0x1749C)] public unsafe fixed byte /* BossDragonInterruptParam[8] */ _interrupts[64];
+
+        public unsafe BossDragonInterruptParam* interrupts
+        {
+            get
+            {
+                fixed (byte* p_interrupts = _interrupts)
+                    return (BossDragonInterruptParam*)p_interrupts;
+            }
+        }
+
+        [FieldOffset(0x174DC)] public BossDragonCyloopBindParam cyloopBind;
+        [FieldOffset(0x174EC)] public unsafe fixed byte /* BossDragonParryParam[4] */ _parry[128];
+
+        public unsafe BossDragonParryParam* parry
+        {
+            get
+            {
+                fixed (byte* p_parry = _parry)
+                    return (BossDragonParryParam*)p_parry;
+            }
+        }
+
+        [FieldOffset(0x1756C)] public BossDragonAttackSignParam attackSign;
+        [FieldOffset(0x17584)] public BossDragonNotifierParam notifier;
+    }
+
+}

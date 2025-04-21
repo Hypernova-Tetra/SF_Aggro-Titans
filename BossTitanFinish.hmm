@@ -1,0 +1,100 @@
+Code "Giganto Finale Beta"
+//
+	#include "Reflection" noemit
+	#lib "Reflection"
+    #lib "HMM"
+	#lib "INI"
+    #import "Services"
+    static bool IsConfigInitialised = false;
+    static bool scene50Bool = false;
+	static bool scene70Bool = false;
+	static int BossGiantFinale = 0;
+//
+{
+    if (!IsConfigInitialised)
+    {
+		var mod = HMM.GetModByID("H1661727NB");
+		if (mod == null)
+			return;
+
+		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
+		var ini = INI.Read(modConfigIniPath);
+
+		BossGiantFinale = INI.Parse<int>(ini["Main"]["BossGiant1160"], BossGiantFinale);
+        IsConfigInitialised = true;
+
+        if (BossGiantFinale == 1)
+        { scene50Bool = true; }
+        else
+        { scene50Bool = false; }
+		
+		if (BossGiantFinale == 2)
+        { scene70Bool = true; }
+        else
+        { scene70Bool = false; }
+    }
+
+	if (!scene50Bool)
+		return;
+	{
+		WriteProtected<byte>
+		(
+			/* 0x141453520 */ ScanSignature
+			( "bo1160", "xxxxxx" ),
+			System.Text.Encoding.UTF8.GetBytes("bo1150")
+		);
+	}
+
+	if (!scene70Bool)
+		return;
+	{
+		WriteProtected<byte>
+		(
+			/* 0x141453520 */ ScanSignature
+			( "bo1160", "xxxxxx" ),
+			System.Text.Encoding.UTF8.GetBytes("bo1170")
+		);
+	}
+}
+
+Code "Wyvern Finale Beta"
+//
+	#include "Reflection" noemit
+	#lib "Reflection"
+    #lib "HMM"
+	#lib "INI"
+    #import "Services"
+    static bool IsConfigInitialised = false;
+    static bool dragoFin00Bool = false;
+	static int BossDragonFinal = 0;
+//
+{
+    if (!IsConfigInitialised)
+    {
+		var mod = HMM.GetModByID("H1661727NB");
+		if (mod == null)
+			return;
+
+		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
+		var ini = INI.Read(modConfigIniPath);
+
+		BossDragonFinal = INI.Parse<int>(ini["Main"]["BossDragonFinish"], BossDragonFinal);
+        IsConfigInitialised = true;
+
+        if (BossDragonFinal == 1)
+        { dragoFin00Bool = true; }
+        else
+        { dragoFin00Bool = false; }
+    }
+	
+	if (!dragoFin00Bool)
+		return;
+	{
+		WriteProtected<byte>
+		(
+			/* 0x14144CA38 */ ScanSignature
+			( "zev_dragon_finish_01", "xxxxxxxxxxxxxxxxxxxx" ),
+			System.Text.Encoding.UTF8.GetBytes("zev_dragon_finish_00")
+		);
+	}
+}

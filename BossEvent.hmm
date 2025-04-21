@@ -1,0 +1,362 @@
+Code "Skippable Phase 2 cutscene" by "Hypernova and Ashrindy"
+//
+	#lib "GameManager"
+    #lib "EventPlayer"
+	#lib "Lua"
+	#lib "GameObject"
+	#lib "BlackboardStatus"
+	#import "Services"
+	#import "GOComponents"
+	#import "Graphics"
+	#import "Plugins"
+//
+{
+	WriteProtected<byte>
+	(
+		/* 0x141556024 */ ScanSignature ("bo1150", "xxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("qe1310")
+	);
+
+	bool eventGiantPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo1140") == 1;
+	if (eventGiantPhase2)
+	{
+		var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+		var setupData = new EventPlayer.EventSetupData("bo1145");
+		evtPlayer->PlayEvent(ref setupData);
+	}
+
+	bool eventDragonPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo2140") == 1;
+	if (eventDragonPhase2)
+	{
+		var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+		var setupData = new EventPlayer.EventSetupData("bo2145");
+		evtPlayer->PlayEvent(ref setupData);
+	}
+
+	WriteProtected<byte>
+	(
+		/* 0x14140F5D0 */ ScanSignature ("ga3220", "xxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("bo3145")
+	);
+	
+	bool eventKnightPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo3140") == 1;
+	if (eventKnightPhase2)
+	{
+		var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+		var setupData = new EventPlayer.EventSetupData("bo3145");
+		evtPlayer->PlayEvent(ref setupData);
+	}
+
+	string currentStage = LevelInfo.GetCurrentStageID();
+	List<string> excludedStages = new List<string> { "w1r04", "w1r06" };
+
+	if (LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06")
+	{
+		bool eventRiflePhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo4140") == 1;
+		if (eventRiflePhase2)
+		{
+			var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+			var setupData = new EventPlayer.EventSetupData("bo4141");
+			evtPlayer->PlayEvent(ref setupData);
+			
+			Lua.Call("MovedPlayer", "-125.826", "200", "-1155.940")
+		}
+	}
+}
+
+Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holoska, and"Ashrindy"
+//
+	using System.Numerics;
+    using System.Collections.Generic;
+    using System.IO;
+	using System.Windows.Input;
+	#import "Services"
+	#import "GOComponents"
+	#import "Graphics"
+	#import "Plugins"
+	#include "Reflection" noemit
+	#lib "Reflection"
+	#lib "BlackboardItem"
+	#lib "BlackboardStatus"
+    #lib "HMM"
+	#lib "INI"
+	#lib "Player"
+	#lib "Sonic"
+	#lib "SonicParameters"
+    #lib "Lua"
+	#lib "XInput"
+	#lib "GameObject"
+	#lib "GameManager"
+    #lib "EventPlayer"
+    #load "WindowsBase.dll"
+    #load "PresentationCore.dll"
+    #load "System.Numerics.dll"
+	static int BossHP = 0;
+	static int BossRifleSp00 = 0;
+    static bool healthBool = false;
+	static bool smashBool = false;
+	static bool initialized = false;
+	static bool IsConfigInitialised = false;
+//
+{
+	if (!IsConfigInitialised)
+    {
+		var mod = HMM.GetModByID("H1661727NB");
+
+		if (mod == null)
+			return;
+
+		string modConfigIniPath = System.IO.Path.Combine(mod.Path, "mod.ini");
+		var ini = INI.Read(modConfigIniPath);
+
+		BossRifleSp00 = INI.Parse<int>(ini["Main"]["BossZevRifleSp00"], BossRifleSp00);
+        IsConfigInitialised = true;
+		
+		BossHP = INI.Parse<int>(ini["Main"]["BossCombat"], BossHP);
+        IsConfigInitialised = true;
+
+        if (BossRifleSp00 == 1)
+        {
+            smashBool = true;
+        }
+        else
+        {
+            smashBool = false;
+        }
+		
+		if (BossHP == 1)
+        {
+            healthBool = true;
+        }
+        else
+        {
+            healthBool = false;
+        }
+    }
+
+	if (!smashBool)
+		return;
+	{
+		string currentStage = LevelInfo.GetCurrentStageID();
+		List<string> excludedStages = new List<string> { "w1r04", "w1r06" };
+
+		if (LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06")
+		{
+			if (IS_WORLD_FLAG(IsBattle))
+			{ 
+				if (BlackboardStatus.IsSuper())
+				{
+					bool smashQTE_Xi = (XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B)) && (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS);
+					if (smashQTE_Xi)
+					{
+						var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+						var setupData = new EventPlayer.EventSetupData("zev_rfl_sp00");
+						evtPlayer->PlayEvent(ref setupData);
+					}
+
+					bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
+					if (eventGrandSp)
+					{
+						Lua.Call("HideObjectInEvent", "Rifle", !eventGrandSp);
+						Lua.Call("HideObjectInEvent", "Rifle0", !eventGrandSp);
+						Lua.Call("HideObjectInEvent", "ARifle", !eventGrandSp);
+
+						WriteProtected<byte>
+						(
+							/* 0x14140F5D0 */ ScanSignature ("special_atk_damage", "xxxxxxxxxxxxxxxxxx"),
+							System.Text.Encoding.UTF8.GetBytes("atk_beam02_loop\x00\x00\x00")
+						);
+
+						WriteProtected<byte>
+						(
+							/* 0x14140F5E8 */ ScanSignature ("special_atk_damage_end", "xxxxxxxxxxxxxxxxxxxxxx"),
+							System.Text.Encoding.UTF8.GetBytes("atk_beam02_end\x00\x00\x00\x00\x00\x00\x00\x00")
+						);
+
+					}
+					else 
+					{
+						Lua.Call("HideObjectInEvent", "Rifle", !false);
+						Lua.Call("HideObjectInEvent", "Rifle0", !false);
+						Lua.Call("HideObjectInEvent", "ARifle", !false);
+
+						WriteProtected<byte>
+						(
+							/* 0x14140F5D0 */ ScanSignature ("atk_beam02_loop\x00\x00\x00", "xxxxxxxxxxxxxxxxxx"),
+							System.Text.Encoding.UTF8.GetBytes("special_atk_damage")
+						);
+
+						WriteProtected<byte>
+						(
+							/* 0x14140F5E8 */ ScanSignature ("atk_beam02_end\x00\x00\x00\x00\x00\x00\x00\x00", "xxxxxxxxxxxxxxxxxxxxxx"),
+							System.Text.Encoding.UTF8.GetBytes("special_atk_damage_end")
+						);
+					}
+				}
+			}
+		}
+
+		if ((LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06") && (IS_WORLD_FLAG(IsBattle) && BlackboardStatus.IsSuper()))
+		{
+			var SonicParametersInfo = Reflection.GetDataInfo<SonicParameters.Root>("player_common");
+			if (SonicParametersInfo.pData == null)
+				return;
+
+			RFL_SET_PARAM(SonicParametersInfo, common.commonPackage.attack.smash.attributes, 164);
+			RFL_SET_PARAM(SonicParametersInfo, common.commonPackage.attack.smashLast.attributes, 164);
+		}
+
+		if ((LevelInfo.GetCurrentStageID() == "w1r06") && (IS_WORLD_FLAG(IsBattle) && BlackboardStatus.IsSuper()))
+		{
+			var SonicParametersInfo = Reflection.GetDataInfo<SonicParameters.Root>("player_common");
+
+			if (SonicParametersInfo.pData == null)
+			return;
+
+			RFL_SET_PARAM(SonicParametersInfo, common.combo.comboTable.quickCyloop.transitExistTarget[2], SonicParameters.Action.Smash);
+		}
+	}
+
+	if (!healthBool && !smashBool)
+		return;
+
+	var pBlackboardStatus = BlackboardStatus.Get();
+	if (Player.GetPlayerType() != Player.PlayerType.Sonic)
+		return;
+
+	var pBlackboardItem = BlackboardItem.Get();
+	if (pBlackboardItem == null)
+		return;
+	{
+		string currentStage = LevelInfo.GetCurrentStageID();
+		List<string> excludedStages = new List<string> { "w1r04", "w1r06" };
+
+		if (IS_WORLD_FLAG(IsBattle) && BlackboardStatus.IsSuper())
+		{
+			if (LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06")
+			{
+				bool smashQTE_Xi = (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS) && (XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B));
+				int maxrings = pBlackboardItem->RingCapacity;
+				int rings = pBlackboardItem->RingCount;
+
+				if (smashQTE_Xi)
+				{
+					pBlackboardItem->RingCount += 20;
+					
+					if(rings > maxrings)
+					{pBlackboardItem->RingCount = maxrings;}
+					
+					if(rings < 0)
+					{pBlackboardItem->RingCount = 0;}
+				}
+			}
+		}
+	}
+}
+
+Library "EventPlayer" by "Ashrindy"
+{
+    #include "Helpers" noemit
+
+    #lib "GameManager"
+    #lib "Memory"
+    #lib "GameService"
+    #lib "Helpers"
+
+    #import "Allocators"
+    #import "Collections"
+
+    #load "System.Numerics.dll"
+
+    using System.Numerics;
+    using System.Runtime.InteropServices;
+    using System.Runtime.CompilerServices;
+
+    FUNCTION_PTR(void, fpPlayEvent, 0x140139010, Data* self, EventSetupData* setupData)
+    FUNCTION_PTR(void, fpSetupEventSetupData, 0x1401370C0, EventSetupData* self, Helpers.UnmanagedString cutsceneName)
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x160)]
+    public struct EventSetupData {
+        [Flags]
+        public enum PlayFlag : uint {
+            UseSetupTransform = 0x01,
+            StopFadeOut = 0x02,
+            CantSkip = 0x04,
+            EnableHUD = 0x20,
+            CappedFPS = 0x4000
+        }
+
+        [Flags]
+        public enum PlayerFlag : uint {
+            UsePosition = 0x01,
+            UseRotation = 0x02
+        }
+
+        [FieldOffset(0)] public fixed byte cutsceneName[40];
+        [FieldOffset(0x28)] public fixed byte soundName[40];
+        [FieldOffset(0x50)] public Vector3 position;
+        [FieldOffset(0x60)] public Quaternion rotation;
+        [FieldOffset(0x70)] public Vector3 scale;
+        [FieldOffset(0x84)] public float speed;
+        [FieldOffset(0x88)] public PlayFlag playFlags;
+        [FieldOffset(0x110)] public Vector3 playerPosition;
+        [FieldOffset(0x120)] public Quaternion playerRotation;
+        [FieldOffset(0x130)] public PlayerFlag playerFlags;
+
+        public void Setup(string cutsceneName){
+            fixed(EventSetupData* pThis = &this){
+                GET_FUNCTION_PTR(fpSetupEventSetupData)(pThis, new Helpers.UnmanagedString(cutsceneName));
+            }
+        }
+
+        public EventSetupData(){}
+
+        public EventSetupData(string cutsceneName){
+            Setup(cutsceneName);
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x10)]
+    public struct VariableString {
+        [FieldOffset(0)] public Helpers.UnmanagedString buffer;
+        [FieldOffset(0x8)] public long allocator;
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x58)]
+    public struct EventSceneManager {
+        [FieldOffset(0x38)] public ObjectMoveArray<VariableString> eventNames;
+
+        public bool IsEventPlaying(string name) {
+            foreach(var x in eventNames) {
+                if(x.buffer.Value == name){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit, Size = 0x160)]
+    public struct Data {
+        [FieldOffset(0xD0)] public Memory.Pointer<EventSceneManager> evtSceneMgr;
+
+        public void PlayEvent(ref EventSetupData setupData){
+            fixed(EventSetupData* pSetupData = &setupData)
+            fixed(Data* pThis = &this){
+                GET_FUNCTION_PTR(fpPlayEvent)(pThis, pSetupData);
+            }
+        }
+    }
+}
+
+WriteProtected<byte>
+(
+/* 0x14140F5D0 */ ScanSignature ("atk_beam02_loop\x00\x00\x00", "xxxxxxxxxxxxxxxxxx"),
+System.Text.Encoding.UTF8.GetBytes("special_atk_damage")
+);
+
+WriteProtected<byte>
+(
+/* 0x14140F5E8 */ ScanSignature ("atk_beam02_end\x00\x00\x00\x00\x00\x00\x00\x00", "xxxxxxxxxxxxxxxxxxxxxx"),
+System.Text.Encoding.UTF8.GetBytes("special_atk_damage_end")
+);
