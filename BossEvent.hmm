@@ -13,8 +13,14 @@ Code "Skippable Phase 2 cutscene" by "Hypernova and Ashrindy"
 {
 	WriteProtected<byte>
 	(
-		/* 0x141556024 */ ScanSignature ("bo1150", "xxxxxx"),
-		System.Text.Encoding.UTF8.GetBytes("qe1310")
+		/* 0x14145C160 */ ScanSignature   ("zev_knight_shieldride01_aerial", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("bo1145\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+	);
+
+	WriteProtected<byte>
+	(
+		/* 0x14145C140 */ ScanSignature   ("zev_knight_shieldride02_aerial", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"),
+		System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	);
 
 	bool eventGiantPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo1140") == 1;
@@ -33,6 +39,12 @@ Code "Skippable Phase 2 cutscene" by "Hypernova and Ashrindy"
 		evtPlayer->PlayEvent(ref setupData);
 	}
 
+    WriteProtected<byte>
+    (
+        /* 0x141556068 */ ScanSignature   ("obj_event_ga3220\x00\x00\x00", "xxxxxxxxxxxxxxxxxxx"),
+        System.Text.Encoding.UTF8.GetBytes("update_event_signal")
+    );
+	
 	WriteProtected<byte>
 	(
 		/* 0x14140F5D0 */ ScanSignature ("ga3220", "xxxxxx"),
@@ -47,6 +59,12 @@ Code "Skippable Phase 2 cutscene" by "Hypernova and Ashrindy"
 		evtPlayer->PlayEvent(ref setupData);
 	}
 
+	WriteProtected<byte>
+    (
+        /* 0x14144CA50 */ ScanSignature   ("boss_giant02_bo2160", "xxxxxxxxxxxxxxxxxxx"),
+        System.Text.Encoding.UTF8.GetBytes("bo4141\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+    );
+	
 	string currentStage = LevelInfo.GetCurrentStageID();
 	List<string> excludedStages = new List<string> { "w1r04", "w1r06" };
 

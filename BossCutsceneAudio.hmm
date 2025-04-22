@@ -9,7 +9,7 @@ Patch "Hardcoded Audio Patch" by "Hypernova"
 	WriteProtected<byte>
     (
         /* 0x141534F0 */ ScanSignature    ("boss_giant01_bo1140","xxxxxxxxxxxxxxxxxxx"),
-        System.Text.Encoding.UTF8.GetBytes("bo1145\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+        System.Text.Encoding.UTF8.GetBytes("update_event_signal")
     );
 
 	WriteProtected<byte>
@@ -48,12 +48,6 @@ Patch "Hardcoded Audio Patch" by "Hypernova"
         System.Text.Encoding.UTF8.GetBytes("update_event_signal")
     );
 
-    WriteProtected<byte>
-    (
-        /* 0x14144CA50 */ ScanSignature   ("boss_giant02_bo2160", "xxxxxxxxxxxxxxxxxxx"),
-        System.Text.Encoding.UTF8.GetBytes("bo4141\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-    );
-
 	WriteProtected<byte>
     (
         /* 0x14144C9A8 */ ScanSignature   ("boss_giant02_bo2180", "xxxxxxxxxxxxxxxxxxx"),
@@ -82,12 +76,6 @@ Patch "Hardcoded Audio Patch" by "Hypernova"
     WriteProtected<byte>
     (
         /* 0x14145C2C0 */ ScanSignature   ("boss_giant03_bo3180", "xxxxxxxxxxxxxxxxxxx"),
-        System.Text.Encoding.UTF8.GetBytes("update_event_signal")
-    );
-	
-	WriteProtected<byte>
-    (
-        /* 0x141556068 */ ScanSignature   ("obj_event_ga3220\x00\x00\x00", "xxxxxxxxxxxxxxxxxxx"),
         System.Text.Encoding.UTF8.GetBytes("update_event_signal")
     );
 }
