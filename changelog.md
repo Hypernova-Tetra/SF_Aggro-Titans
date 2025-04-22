@@ -10,7 +10,6 @@
 - Final Horizons Cutscenes updated.
 - bo6120: Added new effects from Sonic's stat boost cutscenes. Will be red when using the "Edited" option. Will be Red/Blue for the "Hyper_Blue Aura" options. The Power Boost eye effect has been repositioned properly so that it better overlaps the eyes better. (Can't change their color for now though.)
 - bo6165: The "blue-eye" effect for SS2 has been properly positioned to overlap the eyes.
-
 - Giganto, Wyvern, and Knight added to the mod.
 - Giganto received adjustments to restore unused attacks and have his attacks more aggressive.
 - New animation for Giganto's defeat using leftover files possibly from the beta have been added.
@@ -23,37 +22,41 @@
 - bo1160: Remains unchanged.
 - bo1170: Added as another variant for Giganto's defeat. This is a mixed version of the Beta and the Final's animations.
 - bo1180: Added the unused "Zero Ring Warning" sound effect. Other than that, mostly remains unchanged.
-
 - Wyvern's attack patterns are slightly adjusted.
 - Wyvern's scratch attack animation and animation speed are slightly adjusted.
-- Added more chances to attack Wyvern after failing to parry his attacks. (You only have 2 tries to attack before you have to chase Wyvern again.)
+- Added more chances to attack Wyvern after failing to parry his attacks.
 - Wyvern's "bo2xxx.pac" updated to have additional content.
 - bo2120: Updated Super Sonic's transformation cutscene.
-- bo2140: Phase 2 transition is skippable. Due to how it's implemented, it required editing the original file to play for 1 frame and adding an entirely new scene file to be played after bo2140 using code.
+- bo2140: Modified to play for 1 frame
+- bo2145: Added Dvscene file and an HMM script to play this scene to allow the cutscene to be skipped.
 - bo2180: New animation was added when Sonic loses his rings.
-- Phase 2 chase after the transition cutscene has been moved to after Wyvern's scratch attacks. So don't miss those parries.
+- Phase 2 "Chase" after the transition cutscene has been moved.
 - Parry slow effect adjusted.
 - Wyvern will counter attack more times before the laser.
 - New animation added in Wyvern's Missile QTE when failing.
 - New QTE Added to Wyvern and may play at a random chance instead of the Missile QTE.
 - Restored Unused "Counter_Laser" animation if you're on Wyvern's LEFT side.
-- Wyvern Final QTE has a beta-inspired recreation that utilizes leftover files (zev_dragon_finish_00.pac) and converts the animation to a QTE, has a config option in the settings.
-
+- Unused Beta-inspired Finale implemented and configurable.
 - Knight's climb phase updated to have the hand slam go by a bit faster
 - Knight's sword slash animations are adjusted a little. (Still in a WIP. I'll adjust them based on feedback.)
 - Knight's Battle Start animation was moved in to cutscene bo3120, making the fight start sooner instead of waiting for Knight to pull his sword out.
 - Knight's QTEs adjusted: 
 - shieldride01: Remains unchanged for the most part in terms of its animation, but the QTE prompt is a bit faster now.
-- shieldride01_short: Slight animation change in how Knight tosses the shield. QTE prompt changed, "timeslow" sound removed, and the QTE ends after Sonic lands on the shield. The extra camera panning that normally plays after has been removed.
+- shieldride01_short: Slight animation change in how Knight tosses the shield, QTE button changed, and ends early when winning the QTE.
 - shieldride02: New segment added so it's not a complete copy of "shieldride01_short" using a new file.
 - Knight's "bo3xxx.pac" updated to have additional content.
 - bo3120: Updated to include Knight's Battle Start animation where he pulls the sword out.
-- bo3140: Same implimentation as Wyvern to have Knight's Phase 2 be skippable.
+- bo3140: Same modification as Wyvern.
+- bo3145: Same implementation as Wyvern to have Knight's Phase 2 scene be skippable.
 - bo3180: New animation was added when Sonic loses his rings.
-- Knight's "Grand Slam" for Phase 2 may instead play a QTE at a random chance, otherwise the original Phase 2 Grand Slam is updated. Cylinders weren't portruding as they should be, and Sonic will punch the Titan as the final attack instead of kicking him down.
-- Knight's "Sword QTE" was updated to reflect his Phase 2 appearence. (No shield and exposed pillars). Also adds a cut segment where the camera will pan to Sonic preparing to catch the sword.
-
-- Master King Trials have been adjusted to reflect the changes to the bosses. All the above changes to Giganto, Wyvern, and Knight are automatically reflected in the MK trials since they use the same pac files. Rings will be granted between fights. Giganto and Knight can also grant rings via cylooping them and Grand Slam. Time of Day is adjusted, may take place at night on the first attempt.
+- Knight's "Grand Slam" for Phase 2 may instead play a QTE at a random chance.
+- Cutscene: "zev_knight_sonic_sp01_phase2" is updated. Cylinders weren't protruding as they should be, and Sonic will punch the Titan as the final attack instead of kicking him down.
+- Knight's "Sword QTE" was updated to reflect his Phase 2 appearance and adds a cut segment where the camera will pan to Sonic preparing to catch the sword.
+- Master King Trials have been adjusted to reflect the new changes.
+- All the above changes to Giganto, Wyvern, and Knight are automatically reflected in the MK trials since they use the same pac files. 
+- Rings will be granted between fights. 
+- Giganto and Knight can also grant rings via cylooping them and Grand Slam. 
+- Time of Day is adjusted for each fight.
 
 # Aggro-Titans Version 1.12
 - Improved a method in which to support the mod for version 1.41.
