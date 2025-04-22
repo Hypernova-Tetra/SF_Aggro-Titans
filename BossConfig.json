@@ -74,7 +74,7 @@
 				"Type":"SupremeB",
 				"MinValue":null,
 				"MaxValue":null,
-				"DefaultValue":"MBoss_Rifle01QTE_Restored"
+				"DefaultValue":"MBoss_RifleQTE_01"
 				},
 				{
 				"Name":"IncludeDir4",
@@ -208,17 +208,17 @@
 		[
 			{
 			"DisplayName":"Restored Vanilla",
-			"Value":"MBoss_Rifle01QTE_Restored",
+			"Value":"MBoss_RifleQTE_01",
 			"Description":["The original unused scenes restored and Bitlaser is now a QTE."],
 			},
 			{
 			"DisplayName":"Retooled",
-			"Value":"MBoss_Rifle02QTE_Retooled",
+			"Value":"MBoss_RifleQTE_02",
 			"Description":["Unique scenes utilizing unused animation files for new sequences."],
 			},
 			{
 			"DisplayName":"Oops All BitLaser",
-			"Value":"MBoss_Rifle03QTE_ZenBitlaser",
+			"Value":"MBoss_RifleQTE_03",
 			"Description":["Supreme uses the large diamond turrets more often here. Bitlaser01 and 02 have their extended uncut animations."],
 			},
 		],	
