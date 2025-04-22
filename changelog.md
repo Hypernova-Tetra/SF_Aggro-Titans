@@ -2,7 +2,9 @@
 - Supreme's scratch attacks are slightly faster.
 - Supreme's Bit Drone projectiles have been retextured.
 - Supreme's Bit Drone attacks are slightly more aggressive.
-- Supreme's Phase 2 Cutscene can now be skipped. (Needs Testing)
+- Supreme's "bo4xxx.pac" has been updated to add new content.
+- bo4140: Modified to play for 1 frame
+- bo4141: Added Dvscene file and an HMM script to play this scene to allow the cutscene to be skipped.
 - Rearranged Supreme's QTE files.
 - Updated animations to Supreme's QTEs and bo4160 cutscene.
 - Added unused Grand Slam Event (zev_rfl_sp00) for Supreme. Currently does not do damage due to lacking parameters, but will instead give rings while combat mods are active.
@@ -46,8 +48,8 @@
 - shieldride02: New segment added so it's not a complete copy of "shieldride01_short" using a new file.
 - Knight's "bo3xxx.pac" updated to have additional content.
 - bo3120: Updated to include Knight's Battle Start animation where he pulls the sword out.
-- bo3140: Same modification as Wyvern.
-- bo3145: Same implementation as Wyvern to have Knight's Phase 2 scene be skippable.
+- bo3140: Same modification as Wyvern and Supreme.
+- bo3145: Same implementation as Wyvern and Supreme to have Knight's Phase 2 scene be skippable.
 - bo3180: New animation was added when Sonic loses his rings.
 - Knight's "Grand Slam" for Phase 2 may instead play a QTE at a random chance.
 - Cutscene: "zev_knight_sonic_sp01_phase2" is updated. Cylinders weren't protruding as they should be, and Sonic will punch the Titan as the final attack instead of kicking him down.
