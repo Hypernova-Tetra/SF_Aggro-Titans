@@ -1,4 +1,4 @@
-Code "RNG Giganto Counter_Blow" by "Holoska"
+Code "RNG Giganto and Supreme Counter_Blow" by "Holoska"
 //
     using System.Numerics;
     using System.Collections.Generic;
@@ -16,25 +16,16 @@ Code "RNG Giganto Counter_Blow" by "Holoska"
 	static string[] qte_L = new[]
     {
         /* sup */
-        "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_02", "attack_counter_righthand_02", "attack_counter_righthand_02", "attack_counter_righthand_03", "attack_counter_righthand_03", "attack_counter_righthand_03",
+        "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_02", "attack_counter_righthand_02", "attack_counter_righthand_02", "attack_counter_righthand_03", "attack_counter_righthand_03", "attack_counter_righthand_03"
     };
 //
-if (LevelInfo.GetCurrentStageID() == "w1r03")
 {
-    if (Address == 0)
-    {
-        /* 0x14144FCF8 */
-        Address = ScanSignature
-        (
-            "attack_counter_righthand_01",
-            "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        );
-    }
-    else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
-};
+	if (Address == 0)
+	{/* 0x14144FCF8 */ Address = ScanSignature ("attack_counter_righthand_01", "xxxxxxxxxxxxxxxxxxxxxxxxxxx");}
+	
+	else
+	{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
+}
 
 Code "Giganto_Combat"
 //
@@ -64,13 +55,10 @@ Code "Giganto_Combat"
         IsConfigInitialised = true;
 
         if (BossHP == 1)
-        {
-            healthBool = true;
-        }
+        {healthBool = true;}
+		
         else
-        {
-            healthBool = false;
-        }
+        {healthBool = false;}
     }
 	
 	if (!healthBool)

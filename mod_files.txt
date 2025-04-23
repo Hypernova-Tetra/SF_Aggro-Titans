@@ -34,8 +34,6 @@ add Main/raw/event/scene/zev_spider_dive_again.pac
 add Main/raw/event/scene/zev_spider_dive_start.pac
 add Main/raw/general/resident_general/se_rangers_sys.acb
 add Main/raw/misc/bossrush.pac
-add Main/raw/movie/bo1140.usm
-add Main/raw/movie/bo2140.usm
 add Main/raw/movie/bo3110.usm
 add Main/raw/movie/bo4110.usm
 add Main/raw/movie/bo4140.usm
@@ -96,10 +94,8 @@ add MBoss_Audio_Edit/raw/sound/sumo01_sound/se_rangers_miniboss_sumo.acb
 add MBoss_Audio_Edit/raw/sound/tyrant01_sound/se_rangers_miniboss_tyrant.acb
 
 add MBoss_Bo4x00_Intro_0rgn/raw/event/scene/bo4xxx.pac
-add MBoss_Bo4x00_Intro_0rgn/raw/event/scene/zev_rfl_bitlaser01.pac
 
 add MBoss_Bo4x01_Intro_Extn/raw/event/scene/bo4xxx.pac
-add MBoss_Bo4x01_Intro_Extn/raw/event/scene/zev_rfl_bitlaser01.pac
 
 add MBoss_Bo6x00a_Silen0/raw/event/scene/bo6xxx.pac
 add MBoss_Bo6x00a_Silen0/raw/movie/bo6110.usm
@@ -241,6 +237,7 @@ add MBoss_QTE_Winglaser_1/raw/event/scene/zev_rfl_sp01.pac
 
 add MBoss_QTE_Winglaser_2/raw/event/scene/zev_rfl_sp01.pac
 
+add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser02.pac
 add MBoss_RifleQTE_01/raw/event/scene/test_sonic_walk.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_shoot01.pac
@@ -248,6 +245,7 @@ add MBoss_RifleQTE_01/raw/event/scene/test_qte_sample.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_shoot02.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_sp02.pac
 
+add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser02.pac
 add MBoss_RifleQTE_02/raw/event/scene/test_sonic_walk.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_shoot01.pac
@@ -255,6 +253,7 @@ add MBoss_RifleQTE_02/raw/event/scene/test_qte_sample.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_shoot02.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_sp02.pac
 
+add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser01.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser02.pac
 add MBoss_RifleQTE_03/raw/event/scene/test_sonic_walk.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_shoot01.pac
@@ -274,3 +273,4 @@ add BossRifleBeast.hmm
 add BossRush.hmm
 add BossTitanFinish.hmm
 add mod.ini
+add CombatDX.dll

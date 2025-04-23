@@ -48,44 +48,6 @@ Code "Shoot02 RNG" by "Holoska"
     }
 }
 
-Code "RNG Supreme Counter_Blow" by "Holoska"
-//
-    using System.Numerics;
-    using System.Collections.Generic;
-    using System.IO;
-	#import "Services"
-	#include "Reflection" noemit
-	#lib "Reflection"
-	#lib "BlackboardStatus"
-    #lib "HMM"
-	#lib "INI"
-    #load "WindowsBase.dll"
-    #load "PresentationCore.dll"
-    #load "System.Numerics.dll"
-	static long Address = 0;
-	static string[] qte_L = new[]
-    {
-        /* sup */
-        "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_01", "attack_counter_righthand_02", "attack_counter_righthand_02", "attack_counter_righthand_03", "attack_counter_head_01\x00\x00\x00\x00\x00", "attack_counter_head_01\x00\x00\x00\x00\x00", "attack_counter_head_01\x00\x00\x00\x00\x00"
-    };
-//
-if ((LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06"))
-{
-    if (Address == 0)
-    {
-        /* 0x14144FCF8 */
-        Address = ScanSignature
-        (
-            "attack_counter_righthand_01",
-            "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        );
-    }
-    else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
-};
-
 Code "Supreme_Combat"
 //
 	#include "Reflection" noemit
@@ -114,15 +76,12 @@ Code "Supreme_Combat"
         IsConfigInitialised = true;
 
         if (BossHP == 1)
-        {
-            healthBool = true;
-        }
+        {healthBool = true;}
+
         else
-        {
-            healthBool = false;
-        }
+        {healthBool = false;}
     }
-	
+
 	if (!healthBool)
 		return;
 
@@ -165,6 +124,12 @@ if (gameModeBattleRush)
 
 		RFL_SET_PARAM(BossRifleConfigInfo, bossBaseConfig.status.healthPoint, 90000);
 	}
+
+	WriteProtected<byte>
+    (
+        /* 0x1414624B8 */ ScanSignature   ("bo4160", "xxxxxx"),
+        System.Text.Encoding.UTF8.GetBytes("bo4170")
+    );
 };
 
 Library "BossRifleConfig"

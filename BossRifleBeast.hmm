@@ -107,12 +107,27 @@ Code "SS2 Ring Refill"
     #include "Reflection" noemit
     #import "GOComponents"
     #import "PlayerVisuals"
+	#import "Services"
     #lib "GameObject"
     #lib "Player"
     #lib "BlackboardStatus"
     #lib "Reflection"
 	#lib "Time"
-
+    #lib "SonicParameters"
+    #lib "Sonic"
+    #lib "Time"
+    #lib "Lua"
+	#lib "HMM"
+	#lib "INI"
+	using System.Numerics;
+    using System.Collections.Generic;
+    using System.IO;
+    #load "WindowsBase.dll"
+    #load "PresentationCore.dll"
+    #load "System.Numerics.dll"
+	#include "Reflection" noemit
+    #include "BlackboardStatus" noemit
+	
     static bool Ring = false;
     static float counter = 0f;
     
@@ -132,24 +147,26 @@ Code "SS2 Ring Refill"
     var pBlackboardItem = BlackboardItem.Get();
     if (pBlackboardItem == null)
 	    return;
+		
+	var pBlackboardStatus = BlackboardStatus.Get();
+	if (Player.GetPlayerType() != Player.PlayerType.Sonic)
+		return;
 //
 {
     // Check if the player type is Sonicw
     if (Player.GetPlayerType() == Player.PlayerType.Sonic)
     {
 		bool eventSS2Power = Lua.Call<int>("IsPlayingDiEvent", "bo6120") == 1;
-		if (eventSS2Power)
-		{
-			pBlackboardItem->RingCount += 400;
-		}
+		int rings = pBlackboardItem->RingCount;
+		int maxrings = pBlackboardItem->RingCapacity;
+		
+		if ((eventSS2Power) && (rings < 300))
+		{pBlackboardItem->RingCount += 150;}
 		
         if (visual->IsSuperSonic2)
         {
             if (!Ring)
             {				
-				int maxrings = pBlackboardItem->RingCapacity;
-				int rings = pBlackboardItem->RingCount;
-
 				if(rings > maxrings)
 				{pBlackboardItem->RingCount = maxrings;}
 				
@@ -170,7 +187,23 @@ Code "SS2 Ring Refill"
                 }
             }
         }
-    }
+
+		string Anim = Lua.Call<string>("GetCurrentAnimationName");
+		if (Anim == "PARRY_JUST")
+		{
+			bool parryPerfect = (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateParry);
+			if ((parryPerfect) && (rings < 150))
+			{
+				pBlackboardItem->RingCount += 1;
+					
+				if(rings > maxrings)
+				{pBlackboardItem->RingCount = maxrings;}
+
+				if(rings < 0)
+				{pBlackboardItem->RingCount = 0;}
+			}
+		}	
+	}
 }
 
 Library "BossRifleBeastConfig"

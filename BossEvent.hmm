@@ -20,7 +20,7 @@ Code "Skippable Phase 2 cutscene" by "Hypernova and Ashrindy"
 	WriteProtected<byte>
 	(
 		/* 0x14145C140 */ ScanSignature   ("zev_knight_shieldride02_aerial", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"),
-		System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+		System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	);
 
 	bool eventGiantPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo1140") == 1;
@@ -134,22 +134,14 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
         IsConfigInitialised = true;
 
         if (BossRifleSp00 == 1)
-        {
-            smashBool = true;
-        }
+        {smashBool = true;}
         else
-        {
-            smashBool = false;
-        }
+        {smashBool = false;}
 		
 		if (BossHP == 1)
-        {
-            healthBool = true;
-        }
+        {healthBool = true;}
         else
-        {
-            healthBool = false;
-        }
+        {healthBool = false;}
     }
 
 	if (!smashBool)

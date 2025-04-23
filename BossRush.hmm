@@ -35,6 +35,82 @@ if (gameModeMasterKing)
 	}
 };
 
+Code "Rings by Parry", by "Hypernova" and "thej01"
+//
+	#include "Reflection" noemit
+    #include "BlackboardStatus" noemit
+	#import "Services"
+    #lib "Reflection"
+    #lib "BlackboardStatus"
+    #lib "SonicParameters"
+    #lib "Sonic"
+    #lib "Time"
+    #lib "Lua"
+	#lib "HMM"
+	#lib "INI"
+	using System.Numerics;
+    using System.Collections.Generic;
+    using System.IO;
+    #load "WindowsBase.dll"
+    #load "PresentationCore.dll"
+    #load "System.Numerics.dll"
+//
+{
+	var SonicParametersInfo = Reflection.GetDataInfo<SonicParameters.Root>("player_common");
+	if (SonicParametersInfo.pData == null)
+		return;
+		
+	var pBlackboardStatus = BlackboardStatus.Get();
+	if (Player.GetPlayerType() != Player.PlayerType.Sonic)
+		return;
+
+	var pBlackboardItem = BlackboardItem.Get();
+	if (pBlackboardItem == null)
+		return;
+
+	string currentStage = LevelInfo.GetCurrentStageID();
+	List<string> excludedStages = new List<string> { "w2r01" };
+	if (LevelInfo.GetCurrentStageID() == "w2t01")
+    {
+		string Anim = Lua.Call<string>("GetCurrentAnimationName");
+		if (Anim == "PARRY_FLY")
+		{
+			bool parryFly = (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateParry);
+			int maxrings = pBlackboardItem->RingCapacity;
+			int rings = pBlackboardItem->RingCount;
+
+			if ((parryFly) && (rings < 100))
+			{
+				pBlackboardItem->RingCount += 1;
+				
+				if(rings > maxrings)
+				{pBlackboardItem->RingCount = maxrings;}
+
+				if(rings < 0)
+				{pBlackboardItem->RingCount = 0;}
+			}
+		}
+		
+		if (Anim == "PARRY")
+		{
+			bool parryQTE = (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateParry);
+			int maxrings = pBlackboardItem->RingCapacity;
+			int rings = pBlackboardItem->RingCount;
+
+			if ((parryQTE) && (rings < 50))
+			{
+				pBlackboardItem->RingCount += 2;
+				
+				if(rings > maxrings)
+				{pBlackboardItem->RingCount = maxrings;}
+
+				if(rings < 0)
+				{pBlackboardItem->RingCount = 0;}
+			}
+		}
+	}
+}
+
 Code "BossRush_Combat"
 //
 	#include "Reflection" noemit

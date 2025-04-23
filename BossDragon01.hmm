@@ -8,19 +8,11 @@ Code "ATK_Scratch 1" by "Ashrindy"
     };
 //
 {
-     if (Address == 0)
-    {
-        /* 0x14144AB18 */
-        Address = ScanSignature
-        (
-            "attack_light_scratch01_l",
-            "xxxxxxxxxxxxxxxxxxxxxxxx"
-        );
-    }
+    if (Address == 0)
+    { /* 0x14144AB18 */ Address = ScanSignature ("attack_light_scratch01_l", "xxxxxxxxxxxxxxxxxxxxxxxx");}
+	
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    {WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
 }
 
 Code "ATK_Scratch 2" by "Ashrindy"
@@ -33,19 +25,11 @@ Code "ATK_Scratch 2" by "Ashrindy"
     };
 //
 {
-     if (Address == 0)
-    {
-        /* 0x14144AB00 */
-        Address = ScanSignature
-        (
-            "attack_scratch02_l",
-            "xxxxxxxxxxxxxxxxxx"
-        );
-    }
+    if (Address == 0)
+    {/* 0x14144AB00 */ Address = ScanSignature ("attack_scratch02_l","xxxxxxxxxxxxxxxxxx");}
+	
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    {WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
 }
 
 Code "Counter_Tail Attack" by "Ashrindy"
@@ -58,19 +42,11 @@ Code "Counter_Tail Attack" by "Ashrindy"
     };
 //
 {
-     if (Address == 0)
-    {
-        /* 0x14144ABF8 */
-        Address = ScanSignature
-        (
-            "attack_armer02_l",
-            "xxxxxxxxxxxxxxxx"
-        );
-    }
+    if (Address == 0)
+    {/* 0x14144ABF8 */ Address = ScanSignature ("attack_armer02_l", "xxxxxxxxxxxxxxxx");}
+	
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    {WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
 }
 
 Code "QTE_Missile" by "Ashrindy"
@@ -83,19 +59,11 @@ Code "QTE_Missile" by "Ashrindy"
     };
 //
 {
-     if (Address == 0)
-    {
-        /* 0x14144C9F8 */
-        Address = ScanSignature
-        (
-            "zev_dragon_sp_missile",
-            "xxxxxxxxxxxxxxxxxxxxx"
-        );
-    }
+    if (Address == 0)
+    {/* 0x14144C9F8 */ Address = ScanSignature ("zev_dragon_sp_missile", "xxxxxxxxxxxxxxxxxxxxx");}
+	
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    {WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
 }
 
 Code "QTE_Psycho" by "Hypernova"
@@ -108,19 +76,11 @@ Code "QTE_Psycho" by "Hypernova"
     };
 //
 {
-     if (Address == 0)
-    {
-        /* 0x14144CA10 */
-        Address = ScanSignature
-        (
-            "zev_dragon_sp_psycho",
-            "xxxxxxxxxxxxxxxxxxxx"
-        );
-    }
+    if (Address == 0)
+    {/* 0x14144CA10 */ Address = ScanSignature ("zev_dragon_sp_psycho", "xxxxxxxxxxxxxxxxxxxx");}
+	
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    {WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
 }
 
 Code "Wyvern_Combat"
@@ -151,13 +111,10 @@ Code "Wyvern_Combat"
         IsConfigInitialised = true;
 
         if (BossHP == 1)
-        {
-            healthBool = true;
-        }
+        {healthBool = true;}
+		
         else
-        {
-            healthBool = false;
-        }
+        {healthBool = false;}
     }
 	
 	if (!healthBool)

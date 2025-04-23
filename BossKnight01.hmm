@@ -8,19 +8,11 @@ Code "Knight Grand Slam RNG" by "Holoska"
     };
 //
 {
-     if (Address == 0)
-    {
-        /* 0x14145C228 */
-        Address = ScanSignature
-        (
-            "zev_knight_sonic_sp01",
-            "xxxxxxxxxxxxxxxxxxxxx"
-        );
-    }
+    if (Address == 0)
+    {/* 0x14145C228 */ Address = ScanSignature ("zev_knight_sonic_sp01", "xxxxxxxxxxxxxxxxxxxxx");}
+
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    {WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
 }
 
 Code "Knight Damage Scene RNG" by "Hypernova"
@@ -33,19 +25,11 @@ Code "Knight Damage Scene RNG" by "Hypernova"
     };
 //
 {
-     if (Address == 0)
-    {
-        /* 0x141455908 */
-        Address = ScanSignature
-        (
-            "zev_knight_sonic_damage01",
-            "xxxxxxxxxxxxxxxxxxxxxxxxx"
-        );
-    }
+    if (Address == 0)
+    {/* 0x141455908 */ Address = ScanSignature ("zev_knight_sonic_damage01", "xxxxxxxxxxxxxxxxxxxxxxxxx");}
+
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    {WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
 }
 
 Code "Knight_Combat"
@@ -76,13 +60,10 @@ Code "Knight_Combat"
         IsConfigInitialised = true;
 
         if (BossHP == 1)
-        {
-            healthBool = true;
-        }
+        {healthBool = true;}
+		
         else
-        {
-            healthBool = false;
-        }
+        {healthBool = false;}
     }
 	
 	if (!healthBool)
