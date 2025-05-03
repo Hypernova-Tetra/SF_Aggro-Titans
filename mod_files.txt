@@ -74,7 +74,7 @@ add MBoss_Audio_0rgn/raw/sound/giant01_sound/se_rangers_giant01.acb
 add MBoss_Audio_0rgn/raw/sound/dragon01_sound/se_rangers_giant02.acb
 add MBoss_Audio_0rgn/raw/sound/knight01_sound/se_rangers_giant03.acb
 add MBoss_Audio_0rgn/raw/sound/rifle01_sound/se_rangers_giant04.acb
-add MBoss_Audio_0rgn/raw/sound/the_end01_sound/se_rangers_the_end.acb
+add MBoss_Audio_0rgn/raw/sound/the_end01_sound/se_rangers_boss_the_end.acb
 add MBoss_Audio_0rgn/raw/sound/giantEX_sound/se_rangers_giant00.acb
 add MBoss_Audio_0rgn/raw/sound/giantEX_sound/se_rangers_giant04_EX.acb
 
@@ -95,11 +95,11 @@ add MBoss_Audio_Edit/raw/sound/knight01_sound/se_rangers_giant03.acb
 add MBoss_Audio_Edit/raw/sound/rifle01_sound/se_rangers_giant04.acb
 add MBoss_Audio_Edit/raw/sound/giantEX_sound/se_rangers_giant00.acb
 add MBoss_Audio_Edit/raw/sound/giantEX_sound/se_rangers_giant04_EX.acb
-add MBoss_Audio_Edit/raw/sound/the_end01_sound/se_rangers_the_end.acb
+add MBoss_Audio_Edit/raw/sound/the_end01_sound/se_rangers_boss_the_end.acb
 add MBoss_Audio_Edit/raw/sound/amy_sound/se_rangers_player_amy.acb
 add MBoss_Audio_Edit/raw/sound/tails_sound/se_rangers_player_tails.acb
 add MBoss_Audio_Edit/raw/sound/knuckles_sound/se_rangers_player_knuckles.acb
-add MBoss_Audio_Edit/raw/sound/bladecommon_sound/se_rangers_miniboss_tyrant.acb
+add MBoss_Audio_Edit/raw/sound/bladecommon_sound/se_rangers_miniboss_blade.acb
 add MBoss_Audio_Edit/raw/sound/chargercommon_sound/se_rangers_miniboss_charger.acb
 add MBoss_Audio_Edit/raw/sound/spidercommon_sound/se_rangers_miniboss_spider.acb
 add MBoss_Audio_Edit/raw/sound/sumo01_sound/se_rangers_miniboss_sumo.acb
@@ -116,7 +116,6 @@ add MBoss_Bo6x00a_Silen0/raw/movie/bo6120.usm
 add MBoss_Bo6x00a_Silen0/raw/movie/bo6120_4k.usm
 add MBoss_Bo6x00a_Silen0/raw/movie/bo6140.usm
 add MBoss_Bo6x00a_Silen0/raw/movie/bo6140_4k.usm
-add MBoss_Bo6x00a_Silen0/raw/movie/bo6160.usm
 add MBoss_Bo6x00a_Silen0/raw/movie/bo6165.usm
 add MBoss_Bo6x00a_Silen0/raw/movie/bo6165_4k.usm
 add MBoss_Bo6x00a_Silen0/raw/movie/bo6190.usm
@@ -129,7 +128,6 @@ add MBoss_Bo6x00a_SilenB/raw/movie/bo6120.usm
 add MBoss_Bo6x00a_SilenB/raw/movie/bo6120_4k.usm
 add MBoss_Bo6x00a_SilenB/raw/movie/bo6140.usm
 add MBoss_Bo6x00a_SilenB/raw/movie/bo6140_4k.usm
-add MBoss_Bo6x00a_SilenB/raw/movie/bo6160.usm
 add MBoss_Bo6x00a_SilenB/raw/movie/bo6165.usm
 add MBoss_Bo6x00a_SilenB/raw/movie/bo6165_4k.usm
 add MBoss_Bo6x00a_SilenB/raw/movie/bo6190.usm
@@ -168,7 +166,6 @@ add MBoss_Bo6x01a_Silen0/raw/movie/bo6120.usm
 add MBoss_Bo6x01a_Silen0/raw/movie/bo6120_4k.usm
 add MBoss_Bo6x01a_Silen0/raw/movie/bo6140.usm
 add MBoss_Bo6x01a_Silen0/raw/movie/bo6140_4k.usm
-add MBoss_Bo6x01a_Silen0/raw/movie/bo6160.usm
 add MBoss_Bo6x01a_Silen0/raw/movie/bo6165.usm
 add MBoss_Bo6x01a_Silen0/raw/movie/bo6165_4k.usm
 add MBoss_Bo6x01a_Silen0/raw/movie/bo6190.usm
@@ -181,7 +178,6 @@ add MBoss_Bo6x01a_SilenB/raw/movie/bo6120.usm
 add MBoss_Bo6x01a_SilenB/raw/movie/bo6120_4k.usm
 add MBoss_Bo6x01a_SilenB/raw/movie/bo6140.usm
 add MBoss_Bo6x01a_SilenB/raw/movie/bo6140_4k.usm
-add MBoss_Bo6x01a_SilenB/raw/movie/bo6160.usm
 add MBoss_Bo6x01a_SilenB/raw/movie/bo6165.usm
 add MBoss_Bo6x01a_SilenB/raw/movie/bo6165_4k.usm
 add MBoss_Bo6x01a_SilenB/raw/movie/bo6190.usm
