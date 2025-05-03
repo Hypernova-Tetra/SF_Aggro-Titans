@@ -4,12 +4,12 @@ Code "Knight Grand Slam RNG" by "Holoska"
     static string[] qte_L = new[]
     {
         /* sup */
-        "zev_knight_sonic_sp01", "zev_knight_sonic_sp01", "zev_knight_sonic_sp01", "zev_knight_sonic_sp01", "test_qe2130_result\x00\x00\x00", "test_qe2130_result\x00\x00\x00",
+        "zev_knight_sonic_sp01_phase2", "zev_knight_sonic_sp01_phase2", "zev_knight_sonic_sp01_phase2", "zev_knight_sonic_sp02_phase2", "zev_knight_sonic_sp02_phase2", "zev_knight_sonic_sp02_phase2",
     };
 //
 {
     if (Address == 0)
-    {/* 0x14145C228 */ Address = ScanSignature ("zev_knight_sonic_sp01", "xxxxxxxxxxxxxxxxxxxxx");}
+    {/* 0x14145C1F8 */ Address = ScanSignature ("zev_knight_sonic_sp01_phase2", "xxxxxxxxxxxxxxxxxxxxxxxxxxxx");}
 
     else
     {WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));}
@@ -21,7 +21,7 @@ Code "Knight Damage Scene RNG" by "Hypernova"
     static string[] qte_L = new[]
     {
         /* sup */
-        "zev_knight_sonic_damage01", "zev_knight_sonic_damage01", "zev_knight_sonic_damage01", "zev_knight_shield_hit01\x00\x00", "zev_knight_shield_hit01\x00\x00", "zev_knight_shield_hit01\x00\x00",
+        "zev_knight_sonic_damage01", "zev_knight_sonic_damage01", "zev_knight_sonic_damage02", "zev_knight_sonic_damage02", "zev_knight_sonic_damage03", "zev_knight_sonic_damage03", "zev_knight_sonic_damage04", "zev_knight_sonic_damage04", "zev_knight_sonic_damage05", "zev_knight_sonic_damage05", "zev_knight_sonic_damage06", "zev_knight_sonic_damage06", "zev_knight_sonic_damage07"
     };
 //
 {
@@ -48,7 +48,7 @@ Code "Knight_Combat"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661727NB");
+		var mod = HMM.GetModByID("566416");
 
 		if (mod == null)
 			return;

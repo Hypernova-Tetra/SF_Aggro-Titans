@@ -55,7 +55,7 @@ Code "QTE_Missile" by "Ashrindy"
     static string[] qte_L = new[]
     {
         /* sup */
-        "zev_dragon_sp_missile", "zev_dragon_sp_missile", "zev_dragon_sp_missile", "zev_dragon_sp_missile", "test_qe1080_result\x00\x00\x00", "test_qe1080_result\x00\x00\x00", "test_qe1080_result\x00\x00\x00"
+        "zev_dragon_sp_missile", "zev_dragon_sp_missile", "zev_dragon_sp_missile", "zev_dragon_sp_missile", "zev_dragon_sp_laser01", "zev_dragon_sp_laser01", "zev_dragon_sp_laser01"
     };
 //
 {
@@ -99,7 +99,7 @@ Code "Wyvern_Combat"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661727NB");
+		var mod = HMM.GetModByID("566416");
 
 		if (mod == null)
 			return;

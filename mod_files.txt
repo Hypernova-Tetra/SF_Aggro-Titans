@@ -4,6 +4,7 @@ add Main/raw/boss/giant01.pac
 add Main/raw/boss/knight01.pac
 add Main/raw/boss/rifle01.pac
 add Main/raw/boss/riflebeast.pac
+
 add Main/raw/event/scene/bo1xxx.pac
 add Main/raw/event/scene/bo2xxx.pac
 add Main/raw/event/scene/bo3xxx.pac
@@ -12,77 +13,88 @@ add Main/raw/event/scene/ev5020.pac
 add Main/raw/event/scene/ev5030.pac
 add Main/raw/event/scene/ev5040.pac
 add Main/raw/event/scene/ev6030.pac
-add Main/raw/event/scene/test_qe1080_result.pac
-add Main/raw/event/scene/test_qe2130_result.pac
 add Main/raw/event/scene/zev_dragon_finish_00.pac
 add Main/raw/event/scene/zev_dragon_finish_01.pac
 add Main/raw/event/scene/zev_dragon_sp_01.pac
+add Main/raw/event/scene/zev_dragon_sp_laser.pac
+add Main/raw/event/scene/zev_dragon_sp_laser01.pac
 add Main/raw/event/scene/zev_dragon_sp_missile.pac
 add Main/raw/event/scene/zev_dragon_sp_psycho.pac
 add Main/raw/event/scene/zev_end.pac
 add Main/raw/event/scene/zev_end_shooting.pac
 add Main/raw/event/scene/zev_knight_atk_sp01.pac
-add Main/raw/event/scene/zev_knight_shield_hit01.pac
 add Main/raw/event/scene/zev_knight_shieldride01.pac
 add Main/raw/event/scene/zev_knight_shieldride01_short.pac
 add Main/raw/event/scene/zev_knight_shieldride02.pac
 add Main/raw/event/scene/zev_knight_sonic_damage01.pac
+add Main/raw/event/scene/zev_knight_sonic_damage02.pac
+add Main/raw/event/scene/zev_knight_sonic_damage03.pac
+add Main/raw/event/scene/zev_knight_sonic_damage04.pac
+add Main/raw/event/scene/zev_knight_sonic_damage05.pac
+add Main/raw/event/scene/zev_knight_sonic_damage06.pac
+add Main/raw/event/scene/zev_knight_sonic_damage07.pac
 add Main/raw/event/scene/zev_knight_sonic_sp01.pac
 add Main/raw/event/scene/zev_knight_sonic_sp01_phase2.pac
+add Main/raw/event/scene/zev_knight_sonic_sp02_phase2.pac
 add Main/raw/event/scene/zev_rfl_sp00.pac
 add Main/raw/event/scene/zev_spider_dive_again.pac
 add Main/raw/event/scene/zev_spider_dive_start.pac
+
 add Main/raw/general/resident_general/se_rangers_sys.acb
+
+add Main/raw/hedgehog/level/master.levels
+
 add Main/raw/misc/bossrush.pac
-add Main/raw/movie/bo3110.usm
-add Main/raw/movie/bo4110.usm
+
+add Main/raw/movie/bo1141.usm
+add Main/raw/movie/bo2141.usm
+add Main/raw/movie/bo3141.usm
 add Main/raw/movie/bo4140.usm
+add Main/raw/movie/bo4141.usm
 add Main/raw/movie/bo4160.usm
-add Main/raw/movie/bo6125.usm
-add Main/raw/movie/bo6130.usm
-add Main/raw/movie/bo6150.usm
-add Main/raw/movie/bo6170.usm
 add Main/raw/movie/ev5030.usm
 add Main/raw/movie/ev5030_4k.usm
-add Main/raw/movie/ev5040.usm
-add Main/raw/movie/ev5040_4k.usm
 add Main/raw/movie/ev6030.usm
 add Main/raw/movie/ev6030_4k.usm
 
+add Main/raw/text/text_dlc_common_en.pac
+
 add MBoss_Audio_0rgn/raw/movie/bo1120.usm
 add MBoss_Audio_0rgn/raw/movie/bo2115.usm
-add MBoss_Audio_0rgn/raw/movie/bo2120.usm
-add MBoss_Audio_0rgn/raw/movie/bo2180.usm
 add MBoss_Audio_0rgn/raw/movie/bo3120.usm
-add MBoss_Audio_0rgn/raw/movie/bo4141.usm
-add MBoss_Audio_0rgn/raw/movie/bo4180.usm
-add MBoss_Audio_0rgn/raw/movie/bo6180.usm
 add MBoss_Audio_0rgn/raw/movie/ev1770.usm
 add MBoss_Audio_0rgn/raw/movie/ev1770_4k.usm
 add MBoss_Audio_0rgn/raw/movie/ev5020.usm
+add MBoss_Audio_0rgn/raw/movie/ev5040.usm
+add MBoss_Audio_0rgn/raw/movie/ev5040_4k.usm
 add MBoss_Audio_0rgn/raw/movie/zev_knight_sonic_sp01.usm
 add MBoss_Audio_0rgn/raw/movie/zev_knight_sonic_sp01_phase2.usm
+
 add MBoss_Audio_0rgn/raw/sound/giant01_sound/se_rangers_giant01.acb
 add MBoss_Audio_0rgn/raw/sound/dragon01_sound/se_rangers_giant02.acb
 add MBoss_Audio_0rgn/raw/sound/knight01_sound/se_rangers_giant03.acb
+add MBoss_Audio_0rgn/raw/sound/rifle01_sound/se_rangers_giant04.acb
 add MBoss_Audio_0rgn/raw/sound/the_end01_sound/se_rangers_the_end.acb
+add MBoss_Audio_0rgn/raw/sound/giantEX_sound/se_rangers_giant00.acb
+add MBoss_Audio_0rgn/raw/sound/giantEX_sound/se_rangers_giant04_EX.acb
 
 add MBoss_Audio_Edit/raw/movie/bo1120.usm
 add MBoss_Audio_Edit/raw/movie/bo2115.usm
-add MBoss_Audio_Edit/raw/movie/bo2120.usm
-add MBoss_Audio_Edit/raw/movie/bo2180.usm
 add MBoss_Audio_Edit/raw/movie/bo3120.usm
-add MBoss_Audio_Edit/raw/movie/bo4141.usm
-add MBoss_Audio_Edit/raw/movie/bo4180.usm
-add MBoss_Audio_Edit/raw/movie/bo6180.usm
 add MBoss_Audio_Edit/raw/movie/ev1770.usm
 add MBoss_Audio_Edit/raw/movie/ev1770_4k.usm
 add MBoss_Audio_Edit/raw/movie/ev5020.usm
+add MBoss_Audio_Edit/raw/movie/ev5040.usm
+add MBoss_Audio_Edit/raw/movie/ev5040_4k.usm
 add MBoss_Audio_Edit/raw/movie/zev_knight_sonic_sp01.usm
 add MBoss_Audio_Edit/raw/movie/zev_knight_sonic_sp01_phase2.usm
+
 add MBoss_Audio_Edit/raw/sound/giant01_sound/se_rangers_giant01.acb
 add MBoss_Audio_Edit/raw/sound/dragon01_sound/se_rangers_giant02.acb
 add MBoss_Audio_Edit/raw/sound/knight01_sound/se_rangers_giant03.acb
+add MBoss_Audio_Edit/raw/sound/rifle01_sound/se_rangers_giant04.acb
+add MBoss_Audio_Edit/raw/sound/giantEX_sound/se_rangers_giant00.acb
+add MBoss_Audio_Edit/raw/sound/giantEX_sound/se_rangers_giant04_EX.acb
 add MBoss_Audio_Edit/raw/sound/the_end01_sound/se_rangers_the_end.acb
 add MBoss_Audio_Edit/raw/sound/amy_sound/se_rangers_player_amy.acb
 add MBoss_Audio_Edit/raw/sound/tails_sound/se_rangers_player_tails.acb
@@ -213,53 +225,49 @@ add MBoss_QTE_Miss_0rgn/raw/event/scene/zev_parrymiss_riflebeast.pac
 add MBoss_QTE_Miss_0rgn/raw/event/scene/zev_sp_riflebeast.pac
 add MBoss_QTE_Miss_0rgn/raw/movie/zev_sp_riflebeast.usm
 add MBoss_QTE_Miss_0rgn/raw/movie/zev_sp_riflebeast_4k.usm
-add MBoss_QTE_Miss_0rgn/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 add MBoss_QTE_Miss_0rgnB/raw/event/scene/zev_parrymiss_riflebeast.pac
 add MBoss_QTE_Miss_0rgnB/raw/event/scene/zev_sp_riflebeast.pac
 add MBoss_QTE_Miss_0rgnB/raw/movie/zev_sp_riflebeast.usm
 add MBoss_QTE_Miss_0rgnB/raw/movie/zev_sp_riflebeast_4k.usm
-add MBoss_QTE_Miss_0rgnB/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 add MBoss_QTE_Miss_Edit0/raw/event/scene/zev_parrymiss_riflebeast.pac
 add MBoss_QTE_Miss_Edit0/raw/event/scene/zev_sp_riflebeast.pac
 add MBoss_QTE_Miss_Edit0/raw/movie/zev_sp_riflebeast.usm
 add MBoss_QTE_Miss_Edit0/raw/movie/zev_sp_riflebeast_4k.usm
-add MBoss_QTE_Miss_Edit0/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
 add MBoss_QTE_Miss_EditB/raw/event/scene/zev_parrymiss_riflebeast.pac
 add MBoss_QTE_Miss_EditB/raw/event/scene/zev_sp_riflebeast.pac
 add MBoss_QTE_Miss_EditB/raw/movie/zev_sp_riflebeast.usm
 add MBoss_QTE_Miss_EditB/raw/movie/zev_sp_riflebeast_4k.usm
-add MBoss_QTE_Miss_EditB/raw/sound/rifle01_sound/se_rangers_giant04.acb
 
-add MBoss_QTE_Winglaser_1/raw/event/scene/zev_rfl_sp01.pac
-
-add MBoss_QTE_Winglaser_2/raw/event/scene/zev_rfl_sp01.pac
-
-add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser01.pac
-add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser02.pac
-add MBoss_RifleQTE_01/raw/event/scene/test_sonic_walk.pac
+add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_shoot01.pac
-add MBoss_RifleQTE_01/raw/event/scene/test_qte_sample.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_shoot02.pac
+add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_sp02.pac
+add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_spQTE01.pac
+add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_spQTE02.pac
 
-add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser01.pac
-add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser02.pac
-add MBoss_RifleQTE_02/raw/event/scene/test_sonic_walk.pac
+add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_shoot01.pac
-add MBoss_RifleQTE_02/raw/event/scene/test_qte_sample.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_shoot02.pac
+add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_sp02.pac
+add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_spQTE01.pac
+add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_spQTE02.pac
 
-add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser01.pac
-add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser02.pac
-add MBoss_RifleQTE_03/raw/event/scene/test_sonic_walk.pac
+add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_shoot01.pac
-add MBoss_RifleQTE_03/raw/event/scene/test_qte_sample.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_shoot02.pac
+add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_sp02.pac
+add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_spQTE01.pac
+add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_spQTE02.pac
+
+add MBoss_RifleWingLaser1/raw/event/scene/zev_rfl_spwing00.pac
+
+add MBoss_RifleWingLaser2/raw/event/scene/zev_rfl_spwing00.pac
 
 add BossConfig.json
 add BossCutsceneAudio.hmm
@@ -268,6 +276,8 @@ add BossGiant01.hmm
 add BossDragon01.hmm
 add BossKnight01.hmm
 add BossRifle01.hmm
+add BossRifle01Bossbit.hmm
+add BossRifle01Smash.hmm
 add BossRifleATSHOT2-4.hmm
 add BossRifleBeast.hmm
 add BossRush.hmm

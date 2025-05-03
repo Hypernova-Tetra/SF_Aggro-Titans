@@ -61,11 +61,20 @@
 				{
 				"Name":"BossZevRifleSp00",
 				"DisplayName":"Supreme Grand Slam",
-				"Description":["Choose how you want the Grand Slam to play out."],
+				"Description":["Only available in 'Unused Event/Scene' option for now, I cannot figure out a way to config both this option, and the original non-cinematic Grand Slam scene at the moment due to very technical problems with how this game is coded."],
 				"Type":"BossRifleSp00",
 				"MinValue":null,
 				"MaxValue":null,
-				"DefaultValue":"0"
+				"DefaultValue":"1"
+				},
+				{
+				"Name":"IncludeDir7",
+				"DisplayName":"Supreme Wing Laser QTE",
+				"Description":["Supreme's new godly attack he performs in Final Horizons Ouranos when fighting Supreme."],
+				"Type":"BossRifleSp01",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_RifleWingLaser1"
 				},
 				{
 				"Name":"IncludeDir3",
@@ -75,15 +84,6 @@
 				"MinValue":null,
 				"MaxValue":null,
 				"DefaultValue":"MBoss_RifleQTE_01"
-				},
-				{
-				"Name":"IncludeDir4",
-				"DisplayName":"Supreme Winglaser QTE",
-				"Description":["Supreme uses his wings to fire an even bigger laser. Comes in 2 flavors, one of them pays homage to a certain other game."],
-				"Type":"Winglaser",
-				"MinValue":null,
-				"MaxValue":null,
-				"DefaultValue":"MBoss_QTE_Winglaser_1"
 				},
 			]
 		},
@@ -102,7 +102,7 @@
 				"DefaultValue":"0"
 				},
 				{
-				"Name":"IncludeDir5",
+				"Name":"IncludeDir4",
 				"DisplayName":"The End monologue during cutscenes",
 				"Description":["This mod modifies file: 'bo6xxx.pac' to restore the Monologue. Adds the default 'bgm_boss05' in the files to avoid confliction with other mods that restore the monologue using this file. Place THIS mod above the other mods that implimented the monologue that way. If you don't want to have the monologue heard through the game's cutscenes, you can keep this mod disabled."],
 				"Type":"SupremeM",
@@ -111,7 +111,7 @@
 				"DefaultValue":"MBoss_Bo6x00a_Silen0"
 				},
 				{
-				"Name":"IncludeDir6",
+				"Name":"IncludeDir5",
 				"DisplayName":"Parrymiss QTE",
 				"Description":["Added support for Hyper Sonic skins"],
 				"Type":"ZevMiss",
@@ -120,7 +120,7 @@
 				"DefaultValue":"MBoss_QTE_Miss_0rgn"
 				},
 				{
-				"Name":"IncludeDir7",
+				"Name":"IncludeDir6",
 				"DisplayName":"The Final Blow QTE",
 				"Description":["The Final QTE has small changes."],
 				"Type":"ZevBlow",
@@ -191,17 +191,25 @@
 			"Description":["Utilizes an unused version left in the game files, with some changes."],
 			},
 		],
-		"Winglaser":
+		"BossRifleSp00":
+		[
+			{
+			"DisplayName":"Grand Slam (Unused Event/Scene)",
+			"Value":"1",
+			"Description":["**Experimental** Restores the unused cutscene for Supreme's Grand Slam. Known Issues- Does not inflict damage."],
+			},
+		],
+		"BossRifleSp01":
 		[
 			{
 			"DisplayName":"Version 1",
-			"Value":"MBoss_QTE_Winglaser_1",
-			"Description":["The first iteration."],
+			"Value":"MBoss_RifleWingLaser1",
+			"Description":["The first version of Supreme's Laser Wing QTE"],
 			},
 			{
 			"DisplayName":"Version 2",
-			"Value":"MBoss_QTE_Winglaser_2",
-			"Description":["For those that wanted a Secret Rings callback."],
+			"Value":"MBoss_RifleWingLaser2",
+			"Description":["Almost the same as version 1, but with an animation change to Sonic."],
 			},
 		],
 		"SupremeB":
@@ -222,19 +230,6 @@
 			"Description":["Supreme uses the large diamond turrets more often here. Bitlaser01 and 02 have their extended uncut animations."],
 			},
 		],	
-		"BossRifleSp00":
-		[
-			{
-			"DisplayName":"Grand Slam (Default)",
-			"Value":"0",
-			"Description":["Reuses the in-engine Grand Slam coding."],
-			},
-			{
-			"DisplayName":"Grand Slam (Unused Event/Scene)",
-			"Value":"1",
-			"Description":["**Experimental** Restores the unused cutscene for Supreme's Grand Slam. Known Issues- 1: Does not inflict damage. 2: Has a softlock problem when using the pause menu to exit to the title screen while fighting as Super Sonic in Ouranos Island."],
-			},
-		],
 		"NoTackle":
 		[
 			{

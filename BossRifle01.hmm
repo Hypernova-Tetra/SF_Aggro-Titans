@@ -2,50 +2,78 @@ Code "Shoot01 RNG" by "Holoska"
 //
     static long Address = 0;
 	static string[] qte_L = new[]
-	{
-        /* sup */
-        "test_sonic_walk", "test_sonic_walk", "test_sonic_walk", "zev_rfl_shoot01", "zev_rfl_shoot01", "zev_rfl_shoot01"
-    };
+	
+	{ /* sup */ "zev_rfl_shoot01", "zev_rfl_shoot01", "zev_rfl_shoot01", "zev_rfl_shoot01", "zev_rfl_spQTE01", "zev_rfl_spQTE01", };
 //
 {
      if (Address == 0)
-    {
-        /* 0x14125C840 */
-        Address = ScanSignature
-        (
-            "zev_rfl_laser01",
-            "xxxxxxxxxxxxxxx"
-        );
+    { 
+		/* 0x14125C840 */ Address = ScanSignature
+		("zev_rfl_laser01", "xxxxxxxxxxxxxxx");
     }
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)])); }
 }
 
 Code "Shoot02 RNG" by "Holoska"
 //
     static long Address = 0;
 	static string[] qte_L = new[]
-	{
-        /* sup */
-        "test_qte_sample", "test_qte_sample", "test_qte_sample", "zev_rfl_shoot02", "zev_rfl_shoot02", "zev_rfl_shoot02"
-    };
+	
+	{ /* sup */ "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_shoot02", "zev_rfl_shoot02", "zev_rfl_shoot02" };
 //
 {
     if (Address == 0)
     {
-        /* 0x14125C830 */
-        Address = ScanSignature
-        (
-            "zev_rfl_shoot02",
-            "xxxxxxxxxxxxxxx"
-        );
+		/* 0x14125C830 */ Address = ScanSignature
+        ("zev_rfl_shoot02", "xxxxxxxxxxxxxxx");
     }
     else
-    {
-        WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)]));
-    }
+    { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)])); }
+}
+
+Code "Shoot01_w1r04" by "Hypernova"
+//
+	#include "Reflection" noemit
+	#lib "Reflection"
+	#lib "BlackboardStatus"
+	#import "Services"
+	#import "GOComponents"
+//
+{
+    string currentStage = LevelInfo.GetCurrentStageID();
+	List<string> excludedStages = new List<string> {"w1r04"};
+	
+	if (LevelInfo.GetCurrentStageID() == "w1r04")
+	{
+		WriteProtected<byte>
+		(
+			/* 0x14125C840 */ ScanSignature   ("zev_rfl_shoot01","xxxxxxxxxxxxxxxxxx"),
+			System.Text.Encoding.UTF8.GetBytes("zev_rfl_laser01")
+		);
+	}
+}
+
+Code "Shoot02_w1r04" by "Hypernova"
+//
+	#include "Reflection" noemit
+	#lib "Reflection"
+	#lib "BlackboardStatus"
+	#import "Services"
+	#import "GOComponents"
+//
+{
+	string currentStage = LevelInfo.GetCurrentStageID();
+	List<string> excludedStages = new List<string> {"w1r04"};
+	
+	if (LevelInfo.GetCurrentStageID() == "w1r04")
+	{
+		WriteProtected<byte>
+		(
+			/* 0x14125C830 */ ScanSignature   ("zev_rfl_shoot02","xxxxxxxxxxxxxxxxxx"),
+			System.Text.Encoding.UTF8.GetBytes("zev_rfl_laser02")
+		);
+	}
 }
 
 Code "Supreme_Combat"
@@ -64,7 +92,7 @@ Code "Supreme_Combat"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661727NB");
+		var mod = HMM.GetModByID("566416");
 
 		if (mod == null)
 			return;
@@ -129,6 +157,14 @@ if (gameModeBattleRush)
     (
         /* 0x1414624B8 */ ScanSignature   ("bo4160", "xxxxxx"),
         System.Text.Encoding.UTF8.GetBytes("bo4170")
+    );
+}
+else
+{
+	WriteProtected<byte>
+    (
+        /* 0x1414624B8 */ ScanSignature   ("bo4170", "xxxxxx"),
+        System.Text.Encoding.UTF8.GetBytes("bo4160")
     );
 };
 
@@ -1092,7 +1128,7 @@ Code "BossBit_Combat"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661727NB");
+		var mod = HMM.GetModByID("566416");
 
 		if (mod == null)
 			return;

@@ -14,7 +14,7 @@ Code "Supreme_End_Combat"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661727NB");
+		var mod = HMM.GetModByID("566416");
 
 		if (mod == null)
 			return;
@@ -67,7 +67,7 @@ Code "No_Tackle"
 {
     if (!IsConfigInitialised)
     {
-		var mod = HMM.GetModByID("H1661727NB");
+		var mod = HMM.GetModByID("566416");
 
 		if (mod == null)
 			return;
