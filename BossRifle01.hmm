@@ -98,11 +98,11 @@ Code "Zev_Sp02 RNG" by "Holoska"
     static long Address = 0;
 	static string[] qte_L = new[]
 	
-	{ /* sup */ "zev_rfl_sp02\x00\x00\x00", "zev_rfl_sp02\x00\x00\x00", "zev_rfl_sp02\x00\x00\x00", "zev_rfl_spQTE02", "zev_rfl_spQTE02","zev_rfl_spQTE02", };
+	{ /* sup */ "zev_rfl_sp02\x00\x00\x00", "zev_rfl_sp02\x00\x00\x00", "zev_rfl_sp02\x00\x00\x00", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_laser02", "zev_rfl_laser02", };
 //
 {
 	string currentStage = LevelInfo.GetCurrentStageID();
-    if ((LevelInfo.GetCurrentStageID() == "w1r04") || (LevelInfo.GetCurrentStageID() == "w1r06"))
+    if (LevelInfo.GetCurrentStageID() == "w1r06")
 	{
 		if (Address == 0)
 		{ 
@@ -115,16 +115,22 @@ Code "Zev_Sp02 RNG" by "Holoska"
 	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_sp02\x00\x00\x00")); }
 }
 
-Code "Bitlaser RNG" by "Holoska"
+Code "Bitlaser RNG (w1r06)" by "Holoska"
 //
+	#lib "GameManager"
+	#import "Services"
+	#import "GOComponents"
+	#import "Graphics"
+	#import "Plugins"
+	
     static long Address = 0;
 	static string[] qte_L = new[]
 	
-	{ /* sup */ "zev_rfl_bitlaser02", "zev_rfl_bitlaser02", "zev_rfl_bitlaser01", "zev_rfl_bitlaser01",};
+	{ /* sup */ "zev_rfl_bitlaser00", "zev_rfl_bitlaser00", "zev_rfl_bitlaser01", "zev_rfl_bitlaser01", "zev_rfl_bitlaser02", "zev_rfl_bitlaser02",};
 //
 {
 	string currentStage = LevelInfo.GetCurrentStageID();
-    if ((LevelInfo.GetCurrentStageID() == "w1r04") || (LevelInfo.GetCurrentStageID() == "w1r06"))
+    if (LevelInfo.GetCurrentStageID() == "w1r06")
 	{
 		if (Address == 0)
 		{ 
@@ -134,8 +140,37 @@ Code "Bitlaser RNG" by "Holoska"
 		else
 		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)])); }
 	}
-	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_sp02\x00\x00\x00")); }
+	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser02")); }
 }
+
+Code "Bitlaser00 (w1r04)" by "Hypernova"
+//
+	#lib "GameManager"
+	#import "Services"
+	#import "GOComponents"
+	#import "Graphics"
+	#import "Plugins"
+	
+    static long Address = 0;
+	static string[] qte_L = new[]
+	
+	{ /* sup */ "zev_rfl_bitlaser00"};
+//
+{
+	string currentStage = LevelInfo.GetCurrentStageID();
+    if (LevelInfo.GetCurrentStageID() == "w1r04")
+	{
+		if (Address == 0)
+		{ 
+			/* 0x14125CA48 */ Address = ScanSignature
+			("zev_rfl_bitlaser02", "xxxxxxxxxxxxxxxxxx");
+		}
+		else
+		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)])); }
+	}
+	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser02")); }
+}
+
 
 Code "Supreme Wing Laser for Final Horizons Ouranos" by "Hypernova"
 //
