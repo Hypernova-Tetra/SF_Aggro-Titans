@@ -19,9 +19,12 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 	#lib "SonicParameters"
     #lib "Lua"
 	#lib "XInput"
+    #lib "EventPlayer"
+    #lib "Memory"
+    #lib "Helpers"
+    #lib "GameService"
 	#lib "GameObject"
 	#lib "GameManager"
-    #lib "EventPlayer"
     #load "WindowsBase.dll"
     #load "PresentationCore.dll"
     #load "System.Numerics.dll"
@@ -42,7 +45,6 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 		return;
 		
 	string currentStage = LevelInfo.GetCurrentStageID();
-	List<string> excludedStages = new List<string> { "w1r04", "w1r06" };
 	
 	if (LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06")
 	{
@@ -86,26 +88,22 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 	if (!smashBool)
 		return;
 	{
-	
 		WriteProtected<byte>
 		(
-			/* 0x141453550 */ ScanSignature   ("boss_giant01_bo1180", "xxxxxxxxxxxxxxxxxxx"),
-			System.Text.Encoding.UTF8.GetBytes("zev_rfl_sp00\x00\x00\x00\x00\x00\x00\x00")  
+			/* 0x141556068 */ ScanSignature   ("obj_event_ga3220", "xxxxxxxxxxxxxxxx"),
+			System.Text.Encoding.UTF8.GetBytes("zev_rfl_sp00\x00\x00\x00\x00")
 		);
-		
+
 		if (LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06")
 		{
 			if ((IS_WORLD_FLAG(IsBattle)) && (BlackboardStatus.IsSuper()))
 			{
-				if (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS)
+				if ((XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B)) && (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS))
 				{
-					if ((XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B)) && (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS))
-					{
-						var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
-						var setupData = new EventPlayer.EventSetupData("zev_rfl_sp00");
-						setupData.playFlags |= EventPlayer.EventSetupData.PlayFlag.CantSkip;
-						evtPlayer->PlayEvent(ref setupData);
-					}
+					var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+					var setupData = new EventPlayer.EventSetupData("zev_rfl_sp00");
+					evtPlayer->PlayEvent(ref setupData);
+					setupData.playFlags |= EventPlayer.EventSetupData.PlayFlag.CantSkip;
 				}
 			}
 			
@@ -133,13 +131,13 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 		{
 			if (LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06")
 			{
-				bool smashQTE_Xi = (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS) && (XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B));
 				int maxrings = pBlackboardItem->RingCapacity;
 				int rings = pBlackboardItem->RingCount;
-
-				if (smashQTE_Xi)
+				
+				bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
+				if (eventGrandSp)
 				{
-					pBlackboardItem->RingCount += 20;
+					pBlackboardItem->RingCount += 0;
 					
 					if(rings > maxrings)
 					{pBlackboardItem->RingCount = maxrings;}

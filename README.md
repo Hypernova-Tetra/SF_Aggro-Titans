@@ -18,9 +18,11 @@ Contributors:
 - Stis
 - Blitz
 - ik-01
-- Skrud
+- Skrubd
 - The Duck Dealer
 - GordinRamsay
+- Mangomilk
+- and many more
 
 Special Thanks to everyone.
 

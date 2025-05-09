@@ -2,13 +2,10 @@
 - Supreme's scratch attacks are slightly faster.
 - Supreme's Bit Drone projectiles have been retextured.
 - Supreme's Bit Drone attacks are slightly more aggressive.
-- Supreme's "bo4xxx.pac" has been updated to add new content.
-- bo4140: Modified to play for 1 frame
-- bo4141: Added Dvscene file and an HMM script to play this scene to allow the cutscene to be skipped.
 - Rearranged Supreme's QTE files.
-- Updated animations to Supreme's QTEs and bo4160 cutscene.
-- Added unused Grand Slam Event (zev_rfl_sp00) for Supreme. Currently does not do damage due to lacking parameters, but will instead give rings while combat mods are active.
-- When using Combat Mods, especially ones that keep your rings limited to 400, or that start you off with a low ring count. Rings will be replenished when entering SS2. (Still in the testing phase)
+- Updated animations to Supreme's QTEs and defeat cutscene.
+- Changes to Supreme's Wing Laser QTE were made and is exclusive to Final Horizons Supreme fight.
+- Converted Supreme's Grand Slam into the unused cutscene. (Doesn't do damage, but will give rings while "Combat Mods" is active.
 - Final Horizons Cutscenes updated.
 - bo6120: Added new effects from Sonic's stat boost cutscenes. Will be red when using the "Edited" option. Will be Red/Blue for the "Hyper_Blue Aura" options. The Power Boost eye effect has been repositioned properly so that it better overlaps the eyes better. (Can't change their color for now though.)
 - bo6165: The "blue-eye" effect for SS2 has been properly positioned to overlap the eyes.
@@ -19,9 +16,7 @@
 - Adjusted Giganto's Sp01 attack. Giganto's "Counter_Bite_Start" pose was updated to utilize an unused animation file. "Counter_Bite_Loop" camera animation from the beta has been implemented.
 - Added a small extra animation for the start of Giganto's Sp02 attack that originally wasn't there before.
 - bo1120: Super Sonic's transformation cutscene is updated to include an unused animation for Super Sonic and a almost seamless transition to the fight.
-- bo1140: Phase 2 transition includes a small extra animation to an almost seemless transition to the fight.
 - bo1150: Added as a variant for Giganto's defeat. This is primarily based off of leftover beta files left in the game.
-- bo1160: Remains unchanged.
 - bo1170: Added as another variant for Giganto's defeat. This is a mixed version of the Beta and the Final's animations.
 - bo1180: Added the unused "Zero Ring Warning" sound effect. Other than that, mostly remains unchanged.
 - Wyvern's attack patterns are slightly adjusted.
@@ -29,8 +24,6 @@
 - Added more chances to attack Wyvern after failing to parry his attacks.
 - Wyvern's "bo2xxx.pac" updated to have additional content.
 - bo2120: Updated Super Sonic's transformation cutscene.
-- bo2140: Modified to play for 1 frame
-- bo2145: Added Dvscene file and an HMM script to play this scene to allow the cutscene to be skipped.
 - bo2180: New animation was added when Sonic loses his rings.
 - Phase 2 "Chase" after the transition cutscene has been moved.
 - Parry slow effect adjusted.
@@ -43,22 +36,22 @@
 - Knight's sword slash animations are adjusted a little. (Still in a WIP. I'll adjust them based on feedback.)
 - Knight's Battle Start animation was moved in to cutscene bo3120, making the fight start sooner instead of waiting for Knight to pull his sword out.
 - Knight's QTEs adjusted: 
-- shieldride01: Remains unchanged for the most part in terms of its animation, but the QTE prompt is a bit faster now.
-- shieldride01_short: Slight animation change in how Knight tosses the shield, QTE button changed, and ends early when winning the QTE.
-- shieldride02: New segment added so it's not a complete copy of "shieldride01_short" using a new file.
+- "shieldride01": Remains unchanged for the most part in terms of its animation, but the QTE prompt is a bit faster now.
+- "shieldride01_short": Slight animation change in how Knight tosses the shield, QTE button changed, and ends early when winning the QTE.
+- "shieldride02": New segment added so it's not a complete copy of "shieldride01_short" using a new file.
 - Knight's "bo3xxx.pac" updated to have additional content.
 - bo3120: Updated to include Knight's Battle Start animation where he pulls the sword out.
-- bo3140: Same modification as Wyvern and Supreme.
-- bo3145: Same implementation as Wyvern and Supreme to have Knight's Phase 2 scene be skippable.
 - bo3180: New animation was added when Sonic loses his rings.
 - Knight's "Grand Slam" for Phase 2 may instead play a QTE at a random chance.
 - Cutscene: "zev_knight_sonic_sp01_phase2" is updated. Cylinders weren't protruding as they should be, and Sonic will punch the Titan as the final attack instead of kicking him down.
 - Knight's "Sword QTE" was updated to reflect his Phase 2 appearance and adds a cut segment where the camera will pan to Sonic preparing to catch the sword.
 - Master King Trials have been adjusted to reflect the new changes.
 - All the above changes to Giganto, Wyvern, and Knight are automatically reflected in the MK trials since they use the same pac files. 
-- Rings will be granted between fights. 
+- Rings will be granted between fights in Master King Trials. 
+- Added a condition to earn rings from parrying while ring count is low during the Wyvern fight.
 - Giganto and Knight can also grant rings via cylooping them and Grand Slam. 
-- Time of Day is adjusted for each fight.
+- Time of Day is adjusted.
+- Experimental changes to Phase 2 cutscene for Giganto, Wyvern, Knight, and base Supreme to be skippable. (Sonic's position might be affected)
 
 # Aggro-Titans Version 1.12
 - Improved a method in which to support the mod for version 1.41.

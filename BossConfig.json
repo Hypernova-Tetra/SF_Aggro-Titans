@@ -61,7 +61,7 @@
 				{
 				"Name":"BossZevRifleSp00",
 				"DisplayName":"Supreme Grand Slam",
-				"Description":["Only available in 'Unused Event/Scene' option for now, I cannot figure out a way to config both this option, and the original non-cinematic Grand Slam scene at the moment due to very technical problems with how this game is coded."],
+				"Description":["Choose how you want the Grand Slam to play out."],
 				"Type":"BossRifleSp00",
 				"MinValue":null,
 				"MaxValue":null,
@@ -69,9 +69,9 @@
 				},
 				{
 				"Name":"IncludeDir7",
-				"DisplayName":"Supreme Wing Laser QTE",
-				"Description":["Supreme's new godly attack he performs in Final Horizons Ouranos when fighting Supreme."],
-				"Type":"BossRifleSp01",
+				"DisplayName":"Supreme Wing Laser",
+				"Description":["Choose the version of Supreme's godly laser attcak."],
+				"Type":"BossRifleWing",
 				"MinValue":null,
 				"MaxValue":null,
 				"DefaultValue":"MBoss_RifleWingLaser1"
@@ -196,20 +196,20 @@
 			{
 			"DisplayName":"Grand Slam (Unused Event/Scene)",
 			"Value":"1",
-			"Description":["**Experimental** Restores the unused cutscene for Supreme's Grand Slam. Known Issues- Does not inflict damage."],
+			"Description":["**Experimental** Restores the unused cutscene for Supreme's Grand Slam. Known Issues- 1: Does not inflict damage. 2: Has a softlock problem when using the pause menu to exit to the title screen while fighting as Super Sonic in Ouranos Island."],
 			},
 		],
-		"BossRifleSp01":
+		"BossRifleWing":
 		[
 			{
 			"DisplayName":"Version 1",
 			"Value":"MBoss_RifleWingLaser1",
-			"Description":["The first version of Supreme's Laser Wing QTE"],
+			"Description":[" Sonic combos the deadly laser and ends in a familiar animation from a familiar game. "],
 			},
 			{
 			"DisplayName":"Version 2",
 			"Value":"MBoss_RifleWingLaser2",
-			"Description":["Almost the same as version 1, but with an animation change to Sonic."],
+			"Description":[" Sonic continuous stomp-kicks the laser beam that ends in Sonic punching the attack. "],
 			},
 		],
 		"SupremeB":
@@ -351,6 +351,19 @@
 			{
 			"DisplayName":"Extended",
 			"Value":"MBoss_Bo4x01_Intro_Extn",
+			"Description":["01."],
+			},
+		],
+		"TestDir":
+		[
+			{
+			"DisplayName":"Test00",
+			"Value":"TestA",
+			"Description":["00."],
+			},
+			{
+			"DisplayName":"Test01",
+			"Value":"TestB",
 			"Description":["01."],
 			},
 		],
