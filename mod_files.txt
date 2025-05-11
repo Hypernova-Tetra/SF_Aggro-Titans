@@ -240,6 +240,7 @@ add MBoss_QTE_Miss_EditB/raw/event/scene/zev_sp_riflebeast.pac
 add MBoss_QTE_Miss_EditB/raw/movie/zev_sp_riflebeast.usm
 add MBoss_QTE_Miss_EditB/raw/movie/zev_sp_riflebeast_4k.usm
 
+delete MBoss_RifleQTE_01/raw/event/scene/zev_rfl_shoot01.pac
 delete MBoss_RifleQTE_01/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser01.pac
@@ -251,6 +252,7 @@ add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_sp02.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_spQTE01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_spQTE02.pac
 
+delete MBoss_RifleQTE_02/raw/event/scene/zev_rfl_shoot01.pac
 delete MBoss_RifleQTE_02/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser01.pac
@@ -262,6 +264,7 @@ add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_sp02.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_spQTE01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_spQTE02.pac
 
+delete MBoss_RifleQTE_03/raw/event/scene/zev_rfl_shoot01.pac
 delete MBoss_RifleQTE_03/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser01.pac

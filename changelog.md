@@ -1,4 +1,9 @@
-## Aggro-Titans Version 1.20 (Test)
+## Aggro-Titans Version 1.21 (Test)
+- Fixed the Edited "parrymiss" QTE having missing sounds when Riflebeast strikes Sonic to start the QTE.
+- Fixed the Edited "Final Blow" Riflebeast QTE having the wrong sound effects that used different names.
+- Updated "master.levels" in the Hedgehog folder.
+
+# Aggro-Titans Version 1.20 (Test)
 - Supreme's scratch attacks are slightly faster.
 - Supreme's Bit Drone projectiles have been retextured.
 - Supreme's Bit Drone attacks are slightly more aggressive.
