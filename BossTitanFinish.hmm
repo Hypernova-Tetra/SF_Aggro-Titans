@@ -6,8 +6,7 @@ Code "Giganto Finale Beta"
 	#lib "INI"
     #import "Services"
     static bool IsConfigInitialised = false;
-    static bool scene50Bool = false;
-	static bool scene70Bool = false;
+    static bool scene1Bool = false;
 	static int BossGiantFinale = 0;
 //
 {
@@ -24,17 +23,24 @@ Code "Giganto Finale Beta"
         IsConfigInitialised = true;
 
         if (BossGiantFinale == 1)
-        { scene50Bool = true; }
+        { scene1Bool = true; }
         else
-        { scene50Bool = false; }
+        { scene1Bool = false; }
 		
 		if (BossGiantFinale == 2)
-        { scene70Bool = true; }
+        {
+			WriteProtected<byte>
+			(
+				/* 0x141453520 */ ScanSignature
+				( "bo1160", "xxxxxx" ),
+				System.Text.Encoding.UTF8.GetBytes("bo1170")
+			);
+		}
         else
-        { scene70Bool = false; }
+        { scene1Bool = false; }
     }
 
-	if (!scene50Bool)
+	if (!scene1Bool)
 		return;
 	{
 		WriteProtected<byte>
@@ -42,17 +48,6 @@ Code "Giganto Finale Beta"
 			/* 0x141453520 */ ScanSignature
 			( "bo1160", "xxxxxx" ),
 			System.Text.Encoding.UTF8.GetBytes("bo1150")
-		);
-	}
-
-	if (!scene70Bool)
-		return;
-	{
-		WriteProtected<byte>
-		(
-			/* 0x141453520 */ ScanSignature
-			( "bo1160", "xxxxxx" ),
-			System.Text.Encoding.UTF8.GetBytes("bo1170")
 		);
 	}
 }
