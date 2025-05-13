@@ -23,7 +23,14 @@ Code "Giganto Finale Beta"
         IsConfigInitialised = true;
 
         if (BossGiantFinale == 1)
-        { scene1Bool = true; }
+        {
+			WriteProtected<byte>
+			(
+				/* 0x141453520 */ ScanSignature
+				( "bo1160", "xxxxxx" ),
+				System.Text.Encoding.UTF8.GetBytes("bo1150")
+			);
+		}
         else
         { scene1Bool = false; }
 		
@@ -39,17 +46,6 @@ Code "Giganto Finale Beta"
         else
         { scene1Bool = false; }
     }
-
-	if (!scene1Bool)
-		return;
-	{
-		WriteProtected<byte>
-		(
-			/* 0x141453520 */ ScanSignature
-			( "bo1160", "xxxxxx" ),
-			System.Text.Encoding.UTF8.GetBytes("bo1150")
-		);
-	}
 }
 
 Code "Wyvern Finale Beta"
