@@ -148,6 +148,8 @@ add MBoss_Bo6x00b_Mon0/raw/movie/bo6165.usm
 add MBoss_Bo6x00b_Mon0/raw/movie/bo6165_4k.usm
 add MBoss_Bo6x00b_Mon0/raw/movie/bo6190.usm
 add MBoss_Bo6x00b_Mon0/raw/movie/bo6190_4k.usm
+add MBoss_Bo6x00b_Mon0/raw/sound/riflebeast_sound/bgm_boss05.acb
+add MBoss_Bo6x00b_Mon0/raw/sound/riflebeast_sound/bgm_boss05.awb
 
 add MBoss_Bo6x00b_MonB/raw/event/scene/bo6xxx.pac
 add MBoss_Bo6x00b_MonB/raw/movie/bo6110.usm
@@ -161,6 +163,8 @@ add MBoss_Bo6x00b_MonB/raw/movie/bo6165.usm
 add MBoss_Bo6x00b_MonB/raw/movie/bo6165_4k.usm
 add MBoss_Bo6x00b_MonB/raw/movie/bo6190.usm
 add MBoss_Bo6x00b_MonB/raw/movie/bo6190_4k.usm
+add MBoss_Bo6x00b_MonB/raw/sound/riflebeast_sound/bgm_boss05.acb
+add MBoss_Bo6x00b_MonB/raw/sound/riflebeast_sound/bgm_boss05.awb
 
 add MBoss_Bo6x01a_Silen0/raw/event/scene/bo6xxx.pac
 add MBoss_Bo6x01a_Silen0/raw/movie/bo6110.usm
@@ -198,6 +202,8 @@ add MBoss_Bo6x01b_Mon0/raw/movie/bo6165.usm
 add MBoss_Bo6x01b_Mon0/raw/movie/bo6165_4k.usm
 add MBoss_Bo6x01b_Mon0/raw/movie/bo6190.usm
 add MBoss_Bo6x01b_Mon0/raw/movie/bo6190_4k.usm
+add MBoss_Bo6x01b_Mon0/raw/sound/riflebeast_sound/bgm_boss05.acb
+add MBoss_Bo6x01b_Mon0/raw/sound/riflebeast_sound/bgm_boss05.awb
 
 add MBoss_Bo6x01b_MonB/raw/event/scene/bo6xxx.pac
 add MBoss_Bo6x01b_MonB/raw/movie/bo6110.usm
@@ -211,6 +217,8 @@ add MBoss_Bo6x01b_MonB/raw/movie/bo6165.usm
 add MBoss_Bo6x01b_MonB/raw/movie/bo6165_4k.usm
 add MBoss_Bo6x01b_MonB/raw/movie/bo6190.usm
 add MBoss_Bo6x01b_MonB/raw/movie/bo6190_4k.usm
+add MBoss_Bo6x01b_MonB/raw/sound/riflebeast_sound/bgm_boss05.acb
+add MBoss_Bo6x01b_MonB/raw/sound/riflebeast_sound/bgm_boss05.awb
 
 add MBoss_QTE_Blow_0rgn/raw/event/scene/zev_blow_rifleboss.pac
 
