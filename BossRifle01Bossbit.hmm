@@ -54,7 +54,7 @@ Code "BossBitConfig-11243229042025"
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.shootSpeed, 75);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.shootAccelMax, 0);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.shootAccelDelay, 100);
-		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.wayNum, 0);
+		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.wayNum, 2);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.wayAngle, 60);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.shootTime, 0.1f);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.phaseShootTime, 0);
@@ -62,7 +62,8 @@ Code "BossBitConfig-11243229042025"
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.homingDelay, 0);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.homingLimitAngle, 180);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.isHomingLowFly, false);
-		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.waveRotationSpeed, 150);
+		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.waveRotationSpeed, 0);
+		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.flyMoveSpeed, 100);
 	}
 	
 	if (LevelInfo.GetCurrentStageID() == "w1r06")
@@ -96,7 +97,7 @@ Code "BossBitConfig-11243229042025"
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[22].param.homingDelay, 1);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[22].param.homingLimitAngle, 0);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[22].param.waveRotationSpeed, 225);
-		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[22].param.flyMoveSpeed, 150);
+		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[22].param.flyMoveSpeed, 0);
 		
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].text.pValue, 8028);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.isParry, true);
@@ -116,6 +117,7 @@ Code "BossBitConfig-11243229042025"
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.homingLimitAngle, 0);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.isHomingLowFly, true);
 		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.waveRotationSpeed, 30.5f);
+		RFL_SET_PARAM(BossBitConfigInfo, smallBitPatternDatas[23].param.flyMoveSpeed, 0);
 	}
 }
 

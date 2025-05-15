@@ -31,7 +31,7 @@ Code "Supreme Counter_Blow (Final Horizons)" by "Holoska"
 	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("attack_counter_righthand_01")); }
 }
 
-Code "Shoot01 RNG" by "Holoska"
+Code "Shoot01 Phase Switch" by "Hypernova"
 //
 	#lib "GameManager"
 	#import "Services"
@@ -40,23 +40,20 @@ Code "Shoot01 RNG" by "Holoska"
 	#import "Plugins"
 	
     static long Address = 0;
-	static string[] qte_L = new[]
-	
-	{ /* sup */ "zev_rfl_spQTE01", "zev_rfl_spQTE01", "zev_rfl_spQTE01", "zev_rfl_laser01", "zev_rfl_laser01", "zev_rfl_laser01"};
 //
 {
 	string currentStage = LevelInfo.GetCurrentStageID();
     if (LevelInfo.GetCurrentStageID() == "w1r06")
 	{
 		if (Address == 0)
-		{ 
-			/* 0x14125C840 */ Address = ScanSignature
-			("zev_rfl_laser01", "xxxxxxxxxxxxxxx");
-		}
-		else
-		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)])); }
+		{ /* 0x14125C840 */ Address = ScanSignature ("zev_rfl_laser01", "xxxxxxxxxxxxxxx"); }
+		
+		bool isPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo4141") == 1;
+		if (isPhase2)
+		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_shoot01")); }
 	}
-	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_laser01")); }
+	else
+	{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_laser01")); }
 }
 
 Code "Shoot02 RNG" by "Holoska"
@@ -70,24 +67,21 @@ Code "Shoot02 RNG" by "Holoska"
     static long Address = 0;
 	static string[] qte_L = new[]
 	
-	{ /* sup */ "zev_rfl_shoot02", "zev_rfl_shoot02", "zev_rfl_shoot02", "zev_rfl_shoot02", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_laser02", "zev_rfl_laser02" };
+	{ /* sup */ "zev_rfl_shoot02", "zev_rfl_shoot02", "zev_rfl_shoot02", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_spQTE02" };
 //
 {
 	string currentStage = LevelInfo.GetCurrentStageID();
     if (LevelInfo.GetCurrentStageID() == "w1r06")
 	{
 		if (Address == 0)
-		{ 
-			/* 0x14125C830 */ Address = ScanSignature
-			("zev_rfl_shoot02", "xxxxxxxxxxxxxxx");
-		}
+		{ /* 0x14125C830 */ Address = ScanSignature ("zev_rfl_shoot02", "xxxxxxxxxxxxxxx"); }
 		else
 		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)])); }
 	}
 	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_shoot02")); }
 }
 
-Code "Zev_Sp02 RNG" by "Holoska"
+Code "No Winglaser for w1r04" by "Hypernova"
 //
 	#lib "GameManager"
 	#import "Services"
@@ -96,26 +90,49 @@ Code "Zev_Sp02 RNG" by "Holoska"
 	#import "Plugins"
 	
     static long Address = 0;
-	static string[] qte_L = new[]
-	
-	{ /* sup */ "zev_rfl_sp02\x00\x00\x00", "zev_rfl_sp02\x00\x00\x00", "zev_rfl_sp02\x00\x00\x00", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_spQTE02", "zev_rfl_laser02", "zev_rfl_laser02", };
 //
 {
 	string currentStage = LevelInfo.GetCurrentStageID();
-    if (LevelInfo.GetCurrentStageID() == "w1r06")
+    if (LevelInfo.GetCurrentStageID() == "w1r04")
 	{
 		if (Address == 0)
-		{ 
-			/* 0x14125C830 */ Address = ScanSignature
-			("zev_rfl_sp02\x00\x00\x00", "xxxxxxxxxxxxxxx");
-		}
-		else
-		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)])); }
+		{ /* 0x141461F00 */ Address = ScanSignature ("zev_rfl_sp01\x00\x00\x00", "xxxxxxxxxxxxxxx"); }
+		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_shoot01")); }
+	}
+	else
+	{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_sp01\x00\x00\x00")); }
+}
+
+Code "Zev_Sp02 Phase Switch" by "Hypernova"
+//
+	#lib "GameManager"
+	#import "Services"
+	#import "GOComponents"
+	#import "Graphics"
+	#import "Plugins"
+	
+    static long Address = 0;
+//
+{
+	string currentStage = LevelInfo.GetCurrentStageID();
+
+	if (LevelInfo.GetCurrentStageID() == "w1r06")
+	{
+		if (Address == 0)
+		{ /* 0x14125C830 */ Address = ScanSignature ("zev_rfl_sp02\x00\x00\x00", "xxxxxxxxxxxxxxx"); }
+		
+		bool isPhase1 = Lua.Call<int>("IsPlayingDiEvent", "bo4110") == 1;
+		if (isPhase1)
+		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_spQTE01")); }
+		
+		bool isPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo4141") == 1;
+		if (isPhase2)
+		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_sp02\x00\x00\x00")); }
 	}
 	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_sp02\x00\x00\x00")); }
 }
 
-Code "Bitlaser RNG (w1r06)" by "Holoska"
+Code "Bitlaser RNG w1r04" by "Holoska and Hypernova"
 //
 	#lib "GameManager"
 	#import "Services"
@@ -127,34 +144,6 @@ Code "Bitlaser RNG (w1r06)" by "Holoska"
 	static string[] qte_L = new[]
 	
 	{ /* sup */ "zev_rfl_bitlaser00", "zev_rfl_bitlaser00", "zev_rfl_bitlaser01", "zev_rfl_bitlaser01", "zev_rfl_bitlaser02", "zev_rfl_bitlaser02",};
-//
-{
-	string currentStage = LevelInfo.GetCurrentStageID();
-    if (LevelInfo.GetCurrentStageID() == "w1r06")
-	{
-		if (Address == 0)
-		{ 
-			/* 0x14125CA48 */ Address = ScanSignature
-			("zev_rfl_bitlaser02", "xxxxxxxxxxxxxxxxxx");
-		}
-		else
-		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes(qte_L[new Random().Next(0, qte_L.Length)])); }
-	}
-	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser02")); }
-}
-
-Code "Bitlaser00 (w1r04)" by "Hypernova"
-//
-	#lib "GameManager"
-	#import "Services"
-	#import "GOComponents"
-	#import "Graphics"
-	#import "Plugins"
-	
-    static long Address = 0;
-	static string[] qte_L = new[]
-	
-	{ /* sup */ "zev_rfl_bitlaser00"};
 //
 {
 	string currentStage = LevelInfo.GetCurrentStageID();
@@ -171,6 +160,38 @@ Code "Bitlaser00 (w1r04)" by "Hypernova"
 	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser02")); }
 }
 
+Code "Bitlaser Phase Switch w1r06" by "Holoska and Hypernova"
+//
+	#lib "GameManager"
+	#import "Services"
+	#import "GOComponents"
+	#import "Graphics"
+	#import "Plugins"
+	
+    static long Address = 0;
+//
+{
+	string currentStage = LevelInfo.GetCurrentStageID();
+	if (LevelInfo.GetCurrentStageID() == "w1r06")
+	{
+		if (Address == 0)
+		{ /* 0x14125CA48 */ Address = ScanSignature ("zev_rfl_bitlaser02", "xxxxxxxxxxxxxxxxxx"); }
+
+		bool isPhase1 = Lua.Call<int>("IsPlayingDiEvent", "bo4110") == 1;
+		if (isPhase1)
+		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser00")); }
+
+		bool isPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo4140") == 1;
+		if (isPhase2)
+		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_laser02\x00\x00\x00")); }
+		
+		bool isPhaseLast1 = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_shoot02") == 1;
+		bool isPhaseLast2 = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_spQTE02") == 1;
+		if ((isPhaseLast1) || (isPhaseLast2))
+		{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_spQTE02\x00\x00\x00")); }	
+	}
+	else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("zev_rfl_bitlaser02")); }
+}
 
 Code "Supreme Wing Laser for Final Horizons Ouranos" by "Hypernova"
 //
@@ -189,13 +210,14 @@ Code "Supreme Wing Laser for Final Horizons Ouranos" by "Hypernova"
 		if (BossRifleConfigInfo.pData == null)
 			return;
 		{
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[3], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SP02);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[3], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SP01);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[5], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_COUNTER_BLOW);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[7], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SP01);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[10], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_NONE);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[7], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SP02);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[10], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SHOT4);
 
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[0].attackType, BossRifleConfig.ActionType.AT_BIT_WAVE);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[1].attackType, BossRifleConfig.ActionType.AT_LASER);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[1].attackType, BossRifleConfig.ActionType.AT_WAIT);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[1].actionTime, 1);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[2].attackType, BossRifleConfig.ActionType.AT_HAND_R);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[3].attackType, BossRifleConfig.ActionType.AT_HAND_L);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[4].attackType, BossRifleConfig.ActionType.AT_HAND_R);
@@ -206,34 +228,11 @@ Code "Supreme Wing Laser for Final Horizons Ouranos" by "Hypernova"
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[9].attackType, BossRifleConfig.ActionType.AT_HAND_R);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[10].attackType, BossRifleConfig.ActionType.AT_HAND_L);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[11].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[12].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].bitBreakAttackDatas[0].attackType, BossRifleConfig.ActionType.AT_HOMINGLASER_NORMAL);
-
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[0].attackType, BossRifleConfig.ActionType.AT_BIT_WAVE);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[1].attackType, BossRifleConfig.ActionType.AT_LASER);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[2].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[3].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[4].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[5].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[6].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[7].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[8].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[9].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[10].attackType, BossRifleConfig.ActionType.AT_SP02);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].bitBreakAttackDatas[0].attackType, BossRifleConfig.ActionType.AT_SHOT3);
-
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[0].attackType, BossRifleConfig.ActionType.AT_BIT_WAVE);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[1].attackType, BossRifleConfig.ActionType.AT_LASER);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[2].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[3].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[4].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[5].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[6].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[7].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[8].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[9].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[10].attackType, BossRifleConfig.ActionType.AT_SHOT3);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].bitBreakAttackDatas[0].attackType, BossRifleConfig.ActionType.AT_SHOT3);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].bitBreakAttackDatas[0].attackType, BossRifleConfig.ActionType.AT_QTE_NONE);
+			
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patternChangeHpRatios[1], 65.0f);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patternChangeHpRatios[2], 0.0f);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patternChangeHpRatios[3], 0.0f);
 		}
 	}
 
@@ -245,7 +244,7 @@ Code "Supreme Wing Laser for Final Horizons Ouranos" by "Hypernova"
 		{
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[3], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SHOT3);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[5], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_NONE);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[7], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SHOT3);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[7], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SHOT2);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.immediateActions[10], BossRifleConfig.BossRifleBattleParam_ActionType.BossRifleBattleParam_ActionType_AT_SHOT4);
 
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[0].attackType, BossRifleConfig.ActionType.AT_BIT_WAVE);
@@ -260,7 +259,6 @@ Code "Supreme Wing Laser for Final Horizons Ouranos" by "Hypernova"
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[9].attackType, BossRifleConfig.ActionType.AT_HAND_R);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[10].attackType, BossRifleConfig.ActionType.AT_HAND_L);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[11].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].attackDatas[12].attackType, BossRifleConfig.ActionType.AT_SP01);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[1].bitBreakAttackDatas[0].attackType, BossRifleConfig.ActionType.AT_COUNTER_BLOW);
 
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[0].attackType, BossRifleConfig.ActionType.AT_BIT_WAVE);
@@ -273,7 +271,6 @@ Code "Supreme Wing Laser for Final Horizons Ouranos" by "Hypernova"
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[7].attackType, BossRifleConfig.ActionType.AT_HAND_R);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[8].attackType, BossRifleConfig.ActionType.AT_HAND_L);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[9].attackType, BossRifleConfig.ActionType.AT_HAND_R);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].attackDatas[10].attackType, BossRifleConfig.ActionType.AT_SP02);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[2].bitBreakAttackDatas[0].attackType, BossRifleConfig.ActionType.AT_SHOT3);
 
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[0].attackType, BossRifleConfig.ActionType.AT_BIT_WAVE);
@@ -286,8 +283,11 @@ Code "Supreme Wing Laser for Final Horizons Ouranos" by "Hypernova"
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[7].attackType, BossRifleConfig.ActionType.AT_HAND_R);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[8].attackType, BossRifleConfig.ActionType.AT_HAND_L);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[9].attackType, BossRifleConfig.ActionType.AT_HAND_L);
-			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].attackDatas[10].attackType, BossRifleConfig.ActionType.AT_SP02);
 			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patterns[3].bitBreakAttackDatas[0].attackType, BossRifleConfig.ActionType.AT_HOMINGLASER_NORMAL);
+			
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patternChangeHpRatios[1], 75);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patternChangeHpRatios[2], 65);
+			RFL_SET_PARAM(BossRifleConfigInfo, battleParam.giantPhaseParams[0].patternChangeHpRatios[3], 55);
 		}
 	}
 }

@@ -48,12 +48,12 @@ add Main/raw/hedgehog/level/master.levels
 
 add Main/raw/misc/bossrush.pac
 
+delete Main/raw/movie/bo4140.usm
+delete Main/raw/movie/bo4141.usm
 delete Main/raw/movie/bo4160.usm
 add Main/raw/movie/bo1141.usm
 add Main/raw/movie/bo2141.usm
 add Main/raw/movie/bo3141.usm
-add Main/raw/movie/bo4140.usm
-add Main/raw/movie/bo4141.usm
 add Main/raw/movie/bo4162.usm
 add Main/raw/movie/ev5030.usm
 add Main/raw/movie/ev5030_4k.usm
@@ -248,37 +248,37 @@ add MBoss_QTE_Miss_EditB/raw/event/scene/zev_sp_riflebeast.pac
 add MBoss_QTE_Miss_EditB/raw/movie/zev_sp_riflebeast.usm
 add MBoss_QTE_Miss_EditB/raw/movie/zev_sp_riflebeast_4k.usm
 
-delete MBoss_RifleQTE_01/raw/event/scene/zev_rfl_shoot01.pac
 delete MBoss_RifleQTE_01/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_bitlaser02.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_laser01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_laser02.pac
+add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_shoot01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_shoot02.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_sp02.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_spQTE01.pac
 add MBoss_RifleQTE_01/raw/event/scene/zev_rfl_spQTE02.pac
 
-delete MBoss_RifleQTE_02/raw/event/scene/zev_rfl_shoot01.pac
 delete MBoss_RifleQTE_02/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_bitlaser02.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_laser01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_laser02.pac
+add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_shoot01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_shoot02.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_sp02.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_spQTE01.pac
 add MBoss_RifleQTE_02/raw/event/scene/zev_rfl_spQTE02.pac
 
-delete MBoss_RifleQTE_03/raw/event/scene/zev_rfl_shoot01.pac
 delete MBoss_RifleQTE_03/raw/event/scene/zev_rfl_sp01.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser00.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser01.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_bitlaser02.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_laser01.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_laser02.pac
+add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_shoot01.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_shoot02.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_sp02.pac
 add MBoss_RifleQTE_03/raw/event/scene/zev_rfl_spQTE01.pac

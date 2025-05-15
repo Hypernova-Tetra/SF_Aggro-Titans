@@ -98,27 +98,30 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 		{
 			if ((IS_WORLD_FLAG(IsBattle)) && (BlackboardStatus.IsSuper()))
 			{
-				if ((XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B)) && (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS))
+				if (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS)
 				{
-					var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
-					var setupData = new EventPlayer.EventSetupData("zev_rfl_sp00");
-					evtPlayer->PlayEvent(ref setupData);
-					setupData.playFlags |= EventPlayer.EventSetupData.PlayFlag.CantSkip;
+					if (XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B))
+					{
+						var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+						var setupData = new EventPlayer.EventSetupData("zev_rfl_sp00");
+						evtPlayer->PlayEvent(ref setupData);
+						setupData.playFlags |= EventPlayer.EventSetupData.PlayFlag.CantSkip;
+						
+						bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
+						if (eventGrandSp)
+						{
+							Lua.Call("HideObjectInEvent", "Rifle", !eventGrandSp);
+							Lua.Call("HideObjectInEvent", "Rifle0", !eventGrandSp);
+							Lua.Call("HideObjectInEvent", "ARifle", !eventGrandSp);
+						}
+						else 
+						{
+							Lua.Call("HideObjectInEvent", "Rifle", !false);
+							Lua.Call("HideObjectInEvent", "Rifle0", !false);
+							Lua.Call("HideObjectInEvent", "ARifle", !false);
+						}
+					}
 				}
-			}
-			
-			bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
-			if (eventGrandSp)
-			{
-				Lua.Call("HideObjectInEvent", "Rifle", !eventGrandSp);
-				Lua.Call("HideObjectInEvent", "Rifle0", !eventGrandSp);
-				Lua.Call("HideObjectInEvent", "ARifle", !eventGrandSp);
-			}
-			else 
-			{
-				Lua.Call("HideObjectInEvent", "Rifle", !false);
-				Lua.Call("HideObjectInEvent", "Rifle0", !false);
-				Lua.Call("HideObjectInEvent", "ARifle", !false);
 			}
 		}
 	}
