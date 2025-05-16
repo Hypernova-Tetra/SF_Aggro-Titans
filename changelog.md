@@ -5,6 +5,7 @@
 - Small update to bo6125 and bo6190.
 - Updated bo6190.usms.
 - Another adjustment Supreme's Event files to implement gradual changes to the Bitlaser Event Slot for Phase 1 and 2. BIG shoutout to Holoska for this implementation.
+- Adjusted Address Memory code scripts for Unused Supreme Grand Slam Event
 
 # Aggro-Titans Version 1.20 (Test)
 - Supreme's scratch attacks are slightly faster.

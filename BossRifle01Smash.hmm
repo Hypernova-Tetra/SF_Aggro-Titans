@@ -34,6 +34,8 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 	static bool smashBool = false;
 	static bool initialized = false;
 	static bool IsConfigInitialised = false;
+
+	static long Address = 0;
 //
 {
 	var pBlackboardStatus = BlackboardStatus.Get();
@@ -96,34 +98,40 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 
 		if (LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06")
 		{
-			if ((IS_WORLD_FLAG(IsBattle)) && (BlackboardStatus.IsSuper()))
+			if (Address == 0)
+			{ /* 0x14140F5D0 */ Address = ScanSignature ("special_atk_damage", "xxxxxxxxxxxxxxxxxx"); }
+			
+			if (IS_WORLD_FLAG(IsBattle) && BlackboardStatus.IsSuper())
 			{
-				if (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS)
+				{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("attack_special00\x00\x00")); }
+				
+				if ((XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B)) && (Player.State.GetCurrentStateID<Sonic.StateID>() == Sonic.StateID.StateSmashSS))
+				{	
+					var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+					var setupData = new EventPlayer.EventSetupData("zev_rfl_sp00");
+					evtPlayer->PlayEvent(ref setupData);
+					setupData.playFlags |= EventPlayer.EventSetupData.PlayFlag.CantSkip;
+				}
+				
+				bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
+				if (eventGrandSp)
 				{
-					if (XInput.IsButtonDown(XInput.Buttons.Y) && XInput.IsButtonDown(XInput.Buttons.B))
-					{
-						var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
-						var setupData = new EventPlayer.EventSetupData("zev_rfl_sp00");
-						evtPlayer->PlayEvent(ref setupData);
-						setupData.playFlags |= EventPlayer.EventSetupData.PlayFlag.CantSkip;
-						
-						bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
-						if (eventGrandSp)
-						{
-							Lua.Call("HideObjectInEvent", "Rifle", !eventGrandSp);
-							Lua.Call("HideObjectInEvent", "Rifle0", !eventGrandSp);
-							Lua.Call("HideObjectInEvent", "ARifle", !eventGrandSp);
-						}
-						else 
-						{
-							Lua.Call("HideObjectInEvent", "Rifle", !false);
-							Lua.Call("HideObjectInEvent", "Rifle0", !false);
-							Lua.Call("HideObjectInEvent", "ARifle", !false);
-						}
-					}
+					Lua.Call("HideObjectInEvent", "Rifle", !eventGrandSp);
+					Lua.Call("HideObjectInEvent", "Rifle0", !eventGrandSp);
+					Lua.Call("HideObjectInEvent", "ARifle", !eventGrandSp);
+					{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("special_atk_damage")); }
+				}
+				else 
+				{
+					Lua.Call("HideObjectInEvent", "Rifle", !false);
+					Lua.Call("HideObjectInEvent", "Rifle0", !false);
+					Lua.Call("HideObjectInEvent", "ARifle", !false);
+					{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("attack_special00\x00\x00")); }
 				}
 			}
+			else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("special_atk_damage")); }
 		}
+		else { WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("special_atk_damage")); }
 	}
 
 	if (!healthBool && !smashBool)
@@ -140,7 +148,7 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 				bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
 				if (eventGrandSp)
 				{
-					pBlackboardItem->RingCount += 0;
+					pBlackboardItem->RingCount += 10;
 					
 					if(rings > maxrings)
 					{pBlackboardItem->RingCount = maxrings;}

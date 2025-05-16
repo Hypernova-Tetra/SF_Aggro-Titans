@@ -115,7 +115,6 @@ Code "Zev_Sp02 Phase Switch" by "Hypernova"
 //
 {
 	string currentStage = LevelInfo.GetCurrentStageID();
-
 	if (LevelInfo.GetCurrentStageID() == "w1r06")
 	{
 		if (Address == 0)
