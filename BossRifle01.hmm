@@ -175,7 +175,7 @@ Code "Bitlaser Phase Switch w1r06" by "Holoska and Hypernova"
 	if (LevelInfo.GetCurrentStageID() == "w1r06")
 	{
 		if (Address == 0)
-		{ /* 0x14125CA48 */ Address = ScanSignature ("zev_rfl_bitlaser02", "xxxxxxxxxxxxxxxxxx"); }
+		{ /* 0x141462108 */ Address = ScanSignature ("zev_rfl_bitlaser02", "xxxxxxxxxxxxxxxxxx"); }
 
 		bool isPhase1 = Lua.Call<int>("IsPlayingDiEvent", "bo4110") == 1;
 		if (isPhase1)
