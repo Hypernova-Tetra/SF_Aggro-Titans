@@ -119,13 +119,21 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 					Lua.Call("HideObjectInEvent", "Rifle", !eventGrandSp);
 					Lua.Call("HideObjectInEvent", "Rifle0", !eventGrandSp);
 					Lua.Call("HideObjectInEvent", "ARifle", !eventGrandSp);
-					{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("special_atk_damage")); }
 				}
 				else 
 				{
 					Lua.Call("HideObjectInEvent", "Rifle", !false);
 					Lua.Call("HideObjectInEvent", "Rifle0", !false);
 					Lua.Call("HideObjectInEvent", "ARifle", !false);
+				}
+				
+				bool eventAddressSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
+				if (eventAddressSp)
+				{
+					{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("special_atk_damage")); }
+				}
+				else 
+				{
 					{ WriteProtected<byte>(Address, System.Text.Encoding.UTF8.GetBytes("attack_special00\x00\x00")); }
 				}
 			}
