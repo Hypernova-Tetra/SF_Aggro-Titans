@@ -19,7 +19,7 @@ Code "Skippable Phase 2 cutscene" by "Hypernova and Ashrindy"
 		System.Text.Encoding.UTF8.GetBytes("bo1141\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	);
 	
-	if (LevelInfo.GetCurrentStageID() == "w1t01")
+	if ((LevelInfo.GetCurrentStageID() == "w1t01") || (LevelInfo.GetCurrentStageID() == "w1b01"))
 	{
 		bool eventGiantPhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo1140") == 1;
 		if (eventGiantPhase2)
