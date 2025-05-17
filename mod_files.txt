@@ -65,13 +65,13 @@ add Main/raw/text/text_dlc_common_en.pac
 delete MBoss_Audio_0rgn/raw/movie/bo1120.usm
 delete MBoss_Audio_0rgn/raw/movie/bo3120.usm
 delete MBoss_Audio_0rgn/raw/movie/bo2115.usm
+delete MBoss_Audio_0rgn/raw/movie/zev_knight_sonic_sp01.usm
+delete MBoss_Audio_0rgn/raw/movie/zev_knight_sonic_sp01_phase2.usm
 add MBoss_Audio_0rgn/raw/movie/ev1770.usm
 add MBoss_Audio_0rgn/raw/movie/ev1770_4k.usm
 add MBoss_Audio_0rgn/raw/movie/ev5020.usm
 add MBoss_Audio_0rgn/raw/movie/ev5040.usm
 add MBoss_Audio_0rgn/raw/movie/ev5040_4k.usm
-add MBoss_Audio_0rgn/raw/movie/zev_knight_sonic_sp01.usm
-add MBoss_Audio_0rgn/raw/movie/zev_knight_sonic_sp01_phase2.usm
 
 add MBoss_Audio_0rgn/raw/sound/giant01_sound/se_rangers_giant01.acb
 add MBoss_Audio_0rgn/raw/sound/dragon01_sound/se_rangers_giant02.acb
@@ -81,8 +81,6 @@ add MBoss_Audio_0rgn/raw/sound/the_end01_sound/se_rangers_boss_the_end.acb
 add MBoss_Audio_0rgn/raw/sound/giantEX_sound/se_rangers_giant00.acb
 add MBoss_Audio_0rgn/raw/sound/giantEX_sound/se_rangers_giant04_EX.acb
 
-delete MBoss_Audio_Edit/raw/movie/bo1120.usm
-delete MBoss_Audio_Edit/raw/movie/bo3120.usm
 add MBoss_Audio_Edit/raw/movie/bo2115.usm
 add MBoss_Audio_Edit/raw/movie/ev1770.usm
 add MBoss_Audio_Edit/raw/movie/ev1770_4k.usm
@@ -91,6 +89,9 @@ add MBoss_Audio_Edit/raw/movie/ev5040.usm
 add MBoss_Audio_Edit/raw/movie/ev5040_4k.usm
 add MBoss_Audio_Edit/raw/movie/zev_knight_sonic_sp01.usm
 add MBoss_Audio_Edit/raw/movie/zev_knight_sonic_sp01_phase2.usm
+
+delete MBoss_Audio_Edit/raw/movie/bo1120.usm
+delete MBoss_Audio_Edit/raw/movie/bo3120.usm
 
 add MBoss_Audio_Edit/raw/sound/giant01_sound/se_rangers_giant01.acb
 add MBoss_Audio_Edit/raw/sound/dragon01_sound/se_rangers_giant02.acb

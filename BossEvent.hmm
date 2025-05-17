@@ -76,6 +76,18 @@ Code "Skippable Phase 2 cutscene" by "Hypernova and Ashrindy"
 		evtPlayer->PlayEvent(ref setupData);
 	}
 	
+	if (LevelInfo.GetCurrentStageID() == "w3t01")
+	{	
+		bool eventQTEKnight2 = Lua.Call<int>("IsPlayingDiEvent", "bo3141") == 1;
+		if (eventQTEKnight2)
+		{	
+			var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
+			var setupData = new EventPlayer.EventSetupData("zev_knight_shieldride02_aerial");
+			setupData.playFlags |= EventPlayer.EventSetupData.PlayFlag.CantSkip;
+			evtPlayer->PlayEvent(ref setupData);
+		}
+	}
+	
 	if (LevelInfo.GetCurrentStageID() == "w1r04" || LevelInfo.GetCurrentStageID() == "w1r06")
 	{	
 		bool eventRiflePhase2 = Lua.Call<int>("IsPlayingDiEvent", "bo4140") == 1;
