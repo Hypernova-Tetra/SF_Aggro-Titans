@@ -111,20 +111,20 @@ Code "Supreme Unused Grand Slam EventPlayer" by "Batman Sonic, Hypernova, Holosk
 					var setupData = new EventPlayer.EventSetupData("zev_rfl_sp00");
 					evtPlayer->PlayEvent(ref setupData);
 					setupData.playFlags |= EventPlayer.EventSetupData.PlayFlag.CantSkip;
-				}
-				
-				bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
-				if (eventGrandSp)
-				{
-					Lua.Call("HideObjectInEvent", "Rifle", !eventGrandSp);
-					Lua.Call("HideObjectInEvent", "Rifle0", !eventGrandSp);
-					Lua.Call("HideObjectInEvent", "ARifle", !eventGrandSp);
-				}
-				else 
-				{
-					Lua.Call("HideObjectInEvent", "Rifle", !false);
-					Lua.Call("HideObjectInEvent", "Rifle0", !false);
-					Lua.Call("HideObjectInEvent", "ARifle", !false);
+					
+					bool eventGrandSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
+					if (eventGrandSp)
+					{
+						Lua.Call("HideObjectInEvent", "Rifle", !eventGrandSp);
+						Lua.Call("HideObjectInEvent", "Rifle0", !eventGrandSp);
+						Lua.Call("HideObjectInEvent", "ARifle", !eventGrandSp);
+					}
+					else 
+					{
+						Lua.Call("HideObjectInEvent", "Rifle", !false);
+						Lua.Call("HideObjectInEvent", "Rifle0", !false);
+						Lua.Call("HideObjectInEvent", "ARifle", !false);
+					}
 				}
 				
 				bool eventAddressSp = Lua.Call<int>("IsPlayingDiEvent", "zev_rfl_sp00") == 1;
