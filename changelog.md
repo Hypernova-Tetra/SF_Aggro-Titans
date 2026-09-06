@@ -1,4 +1,4 @@
-# **Aggro-Titans Test** - 2026.08.27
+# **Aggro-Titans Test** - 2026.09.06
 
 * Current 7z Compressed Mod File Size: "1.07GB"
 
@@ -9,6 +9,7 @@
 * A - Trimmed out the Bool references of the Monologue options.
 * B - Small code tweaks, attempting to trim the fat anywhere I can.
 * C - A small code tweak to fix some possible issues cropping up.
+* D - Slightly decreased Knight's arm slam speed during the Climb Phase
 
 
 
