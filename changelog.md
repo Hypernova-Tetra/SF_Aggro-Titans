@@ -1,15 +1,19 @@
-# **Aggro-Titans Test** - 2026.09.06
+# **Aggro-Titans Test** - 2026.09.09
 
 * Current 7z Compressed Mod File Size: "1.07GB"
 
 
 
-#### **Aggro-Titans 1.45 - Testing stuff**
+##### ***Preparing for Public Update.***
 
-* A - Trimmed out the Bool references of the Monologue options.
-* B - Small code tweaks, attempting to trim the fat anywhere I can.
-* C - A small code tweak to fix some possible issues cropping up.
-* D - Slightly decreased Knight's arm slam speed during the Climb Phase
+
+
+#### **Aggro-Titans 1.45 - Adjustments**
+
+* Trimmed out the Bool references of the Monologue options.
+* Small code tweaks, attempting to trim the fat anywhere I can.
+* A small code tweak to fix some possible issues cropping up.
+* Adjusted Knight's arm slam speed during the Climb Phase so it's not as fast as before, but not vanilla slow.
 
 
 
