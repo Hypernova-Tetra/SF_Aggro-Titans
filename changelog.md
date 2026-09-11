@@ -1,4 +1,4 @@
-# **Aggro-Titans Test** - 2026.09.09
+# **Aggro-Titans Test** - 2026.09.10
 
 * Current 7z Compressed Mod File Size: "1.07GB"
 
