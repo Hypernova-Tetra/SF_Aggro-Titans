@@ -1,4 +1,4 @@
-Patch "Giganto Address Edits"
+Patch "Giganto Address Edits" by "Hypernova"
 {
 	WriteProtected<byte> (/* 0x1414534E4 */ ScanSignature ("bo1140", "xxxxxx"), System.Text.Encoding.UTF8.GetBytes("bo1141"));
 	WriteProtected<byte> (/* 0x1414534D0 */ ScanSignature ("boss_giant01_bo1120","xxxxxxxxxxxxxxxxxxx"), System.Text.Encoding.UTF8.GetBytes("update_event_signal"));
@@ -79,9 +79,47 @@ Code "Giganto_Combat"
     }
 };
 
-Code "Giganto Dynamics"
+Code "Giganto_Scenes"
 //
+	#include "Reflection" noemit
+	#lib "Reflection"
+    #lib "HMM"
+    #import "Services"
+
+	static long Address1120 = 0;
+	static long Address1160 = 0;
+//
+{	
+	if (Address1120 == 0) { /* 0x1414534C8 */ Address1120 = ScanSignature ("bo1120", "xxxxxx"); }
+	if (Address1160 == 0) { /* 0x141453520 */ Address1160 = ScanSignature ("bo1160", "xxxxxx"); }
+		
+	bool isBSRActive = HMM.GetMods().Where(x => x.Name == "Boss Select Rematch").Count() > 0;
+	bool gameModeBattleRush = GameMode.GetName() == "GameModeBattleRush"
+	bool gameModeBossRush = GameMode.GetName() == "GameModeBossRush"
+	
+	if (gameModeBattleRush)
+	{ 
+		WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1120"));
+	
+		if (isBSRActive)
+		{ WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1170")); }
+		else
+		{ WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1160")); }
+	}
+    else if (gameModeBossRush)
+	{ 
+		WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1121"));
+		WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1161")); 
+	}
+	else
+	{ return; }
+}
+
+Code "Giganto Dynamics" by "Hypernova"
+//
+	#include "Reflection" noemit
 	#lib "GameManager"
+	#lib "Reflection"
 	#lib "EventPlayer"
 	#lib "GameObject"
 	#lib "Player"
@@ -104,7 +142,7 @@ Code "Giganto Dynamics"
 	var evtPlayer = (EventPlayer.Data*)GameManager.GetService("EventPlayer");
 	if (evtPlayer == null)
 		return;
-
+	
 	if (AttackShout == 0) { /* 0x1414508E8 */ AttackShout = ScanSignature ("attack_howl", "xxxxxxxxxxx"); }
 	if (AdCyloopAtk == 0) { /* 0x14140F690 */ AdCyloopAtk = ScanSignature ("cyloop_counter", "xxxxxxxxxxxxxx"); }
 	if (AdCyloopPry == 0) { /* 0x14140F6A0 */ AdCyloopPry = ScanSignature ("cyloop_counter_parry", "xxxxxxxxxxxxxxxxxxxx"); }
@@ -113,7 +151,46 @@ Code "Giganto Dynamics"
 	if (Address1160 == 0) { /* 0x141453520 */ Address1160 = ScanSignature ("bo1160", "xxxxxx"); }
 	if (Address1180 == 0) { /* 0x141453544 */ Address1180 = ScanSignature ("bo1180", "xxxxxx"); }
 	
-	bool isGiantSkipF2 = (evtPlayer->IsEventPlaying("bo1141"))
+	bool isGiant01 = (GameManager.GetGameObject("Giant0") != null)
+	if (!isGiant01)
+		return;
+	{	
+		string eventName = evtPlayer->GetCurrentEventName();
+		switch (eventName)
+		{
+			case "ga1225":
+				WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1122"));
+				WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1151")); 
+			break;
+			
+			case "bo1120": 
+			case "bo1121":
+			case "bo1122":
+				WriteProtected<byte>(AttackShout, System.Text.Encoding.UTF8.GetBytes("attack_howl"));
+				WriteProtected<byte>(AdCyloopAtk, System.Text.Encoding.UTF8.GetBytes("cyloop_counter"));
+				WriteProtected<byte>(AdCyloopPry, System.Text.Encoding.UTF8.GetBytes("cyloop_counter_parry"));
+				WriteProtected<byte>(AdAtkCnSp02, System.Text.Encoding.UTF8.GetBytes("attack_counter_sp_02"));
+				WriteProtected<byte>(Address1180, System.Text.Encoding.UTF8.GetBytes("bo1180"));
+			break;
+			
+			case "bo1141":
+				WriteProtected<byte>(AttackShout, System.Text.Encoding.UTF8.GetBytes("atk_howl_02"));
+				WriteProtected<byte>(AdCyloopAtk, System.Text.Encoding.UTF8.GetBytes("cyloop_attck_r"));
+				WriteProtected<byte>(AdCyloopPry, System.Text.Encoding.UTF8.GetBytes("cyloop_counter_pry_r"));
+				WriteProtected<byte>(Address1180, System.Text.Encoding.UTF8.GetBytes("bo1181"));
+			break;
+			
+			case "bo1140":
+				WriteProtected<byte>(AdAtkCnSp02, System.Text.Encoding.UTF8.GetBytes("attack_counter_sp_02"));
+			break;
+			
+			case "bo1142":
+				WriteProtected<byte>(AdAtkCnSp02, System.Text.Encoding.UTF8.GetBytes("attack_counter_sp_03"));
+			break;
+		}
+	}
+	
+	bool isGiantSkipF2 = evtPlayer->IsEventPlaying("bo1141")
 	if (!isGiantSkipF2)
 		return;
 	{	
@@ -130,73 +207,6 @@ Code "Giganto Dynamics"
 		{
 			var setupData = new EventPlayer.EventSetupData("bo1140");
 			evtPlayer->PlayEvent(ref setupData);
-		}
-	}
-	
-	bool isGiant01 = (GameManager.GetGameObject("Giant0") != null)
-	if (!isGiant01)
-		return;
-	{
-		string eventName = evtPlayer->GetCurrentEventName();
-		switch (eventName)
-		{
-			case "ga1225":
-				WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1122"));
-				WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1151")); 
-			break;
-		}
-		
-		bool gameModeBattleRush = GameMode.GetName() == "GameModeBattleRush"
-		bool gameModeBossRush = GameMode.GetName() == "GameModeBossRush"
-			
-		if (gameModeBattleRush)
-		{
-			WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1120"));
-				
-			bool isBSRActive = HMM.GetMods().Where(x => x.Name == "Boss Select Rematch").Count() > 0;
-			if (!isBSRActive)
-			{ WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1160")); }
-			else
-			{ WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1170")); }
-		}
-		else if (gameModeBossRush)
-		{
-			WriteProtected<byte>(Address1120, System.Text.Encoding.UTF8.GetBytes("bo1121"));
-			WriteProtected<byte>(Address1160, System.Text.Encoding.UTF8.GetBytes("bo1161")); 
-		}
-		else return;
-
-		bool isBossFight = (Player.State.GetStatePlugin("StatePluginBossBattle") != null)
-		if (!isBossFight)
-			return;
-		{
-			switch (eventName)
-			{
-				case "bo1120": 
-				case "bo1121":
-				case "bo1122":
-					WriteProtected<byte>(AttackShout, System.Text.Encoding.UTF8.GetBytes("attack_howl"));
-					WriteProtected<byte>(AdCyloopAtk, System.Text.Encoding.UTF8.GetBytes("cyloop_counter"));
-					WriteProtected<byte>(AdCyloopPry, System.Text.Encoding.UTF8.GetBytes("cyloop_counter_parry"));
-					WriteProtected<byte>(AdAtkCnSp02, System.Text.Encoding.UTF8.GetBytes("attack_counter_sp_02"));
-					WriteProtected<byte>(Address1180, System.Text.Encoding.UTF8.GetBytes("bo1180"));
-				break;
-				
-				case "bo1141":
-					WriteProtected<byte>(AttackShout, System.Text.Encoding.UTF8.GetBytes("atk_howl_02"));
-					WriteProtected<byte>(AdCyloopAtk, System.Text.Encoding.UTF8.GetBytes("cyloop_attck_r"));
-					WriteProtected<byte>(AdCyloopPry, System.Text.Encoding.UTF8.GetBytes("cyloop_counter_pry_r"));
-					WriteProtected<byte>(Address1180, System.Text.Encoding.UTF8.GetBytes("bo1181"));
-				break;
-				
-				case "bo1140":
-					WriteProtected<byte>(AdAtkCnSp02, System.Text.Encoding.UTF8.GetBytes("attack_counter_sp_02"));
-				break;
-				
-				case "bo1142":
-					WriteProtected<byte>(AdAtkCnSp02, System.Text.Encoding.UTF8.GetBytes("attack_counter_sp_03"));
-				break;
-			}
 		}
 	}
 };

@@ -50,6 +50,15 @@
 				"DefaultValue":"Main_FittingTexture"
 				},
 				{
+				"Name":"IncludeDir3",
+				"DisplayName":"Titan Audio",
+				"Description":["Sound Effect settings."],
+				"Type":"TitanAudio",
+				"MinValue":null,
+				"MaxValue":null,
+				"DefaultValue":"MBoss_Audio_Edit"
+				},
+				{
 				"Name":"IncludeDir2",
 				"DisplayName":"Supreme QTE Preset",
 				"Description":["Choose between 3 batches of QTE Scenes for Supreme."],
@@ -61,7 +70,7 @@
 				{
 				"Name":"BossRifleWing",
 				"DisplayName":"Secondary WingLaser QTE",
-				"Description":["An alternate event for Supreme's Wing Laser QTE will play at low health."],
+				"Description":["Choose if you want yo have Supreme fire a laser from his wings or not."],
 				"Type":"RifleWing",
 				"MinValue":null,
 				"MaxValue":null,
@@ -99,7 +108,7 @@
 				"Type":"SupremeM",
 				"MinValue":null,
 				"MaxValue":null,
-				"DefaultValue":"1"
+				"DefaultValue":"0"
 				},
 				{
 				"Name":"RifleBeastAnm",
@@ -108,7 +117,7 @@
 				"Type":"SupremeA",
 				"MinValue":null,
 				"MaxValue":null,
-				"DefaultValue":"1"
+				"DefaultValue":"0"
 				},
 			]
 		}
@@ -116,24 +125,6 @@
 
 	"Enums":
 	{
-		"BossHP":
-		[
-			{
-			"DisplayName":"Low HP",
-			"Value":"1",
-			"Description":["Modified Vanilla values of HP, relatively low for starting a new game while progressing Sonic's power level. Starts at 75k HP and steadily increases up to 100k when fighting Riflebeast."]
-			},
-			{
-			"DisplayName":"Medium HP",
-			"Value":"2",
-			"Description":["A bit higher health, Titans start at 100k HP in the Story Mode only and increase overtime up to 200k by Riflebeast's encounter. Extreme Mode or a Nerfed Sonic through Combat Mods may take a bit longer here, hopefully not too much."]
-			},
-			{
-			"DisplayName":"High HP",
-			"Value":"0",
-			"Description":["Titans start at 200k HP in the Story Mode only and increase overtime to 400k during Riflebeast. DO NOT USE WITH COMBAT MODS THAT NERFS SONIC OR EXTREME MODE, UNLESS YOU WANT TO SPEND A COSMIC ETERNITY FIGHTING A SINGLE TITAN!"]
-			},
-		],
 		"SonicBattle":
 		[
 			{
@@ -160,6 +151,24 @@
 			"Description":["Changes the animation speed of Loop Kick and Wild Rush so that the attacks go by a bit faster."]
 			}
 		],
+		"BossHP":
+		[
+			{
+			"DisplayName":"Low HP",
+			"Value":"1",
+			"Description":["Modified Vanilla values of HP, relatively low for starting a new game while progressing Sonic's power level. Starts at 75k HP and steadily increases up to 100k when fighting Riflebeast."]
+			},
+			{
+			"DisplayName":"Medium HP",
+			"Value":"2",
+			"Description":["A bit higher health, Titans start at 100k HP in the Story Mode only and increase overtime up to 200k by Riflebeast's encounter. Extreme Mode or a Nerfed Sonic through Combat Mods may take a bit longer here, hopefully not too much."]
+			},
+			{
+			"DisplayName":"High HP",
+			"Value":"0",
+			"Description":["Titans start at 200k HP in the Story Mode only and increase overtime to 400k during Riflebeast. DO NOT USE WITH COMBAT MODS THAT NERFS SONIC OR EXTREME MODE, UNLESS YOU WANT TO SPEND A COSMIC ETERNITY FIGHTING A SINGLE TITAN!"]
+			},
+		],
 		"TitanSkin1":
 		[
 			{
@@ -171,6 +180,24 @@
 			"DisplayName":"MatiosDX Fitting Re-Texture",
 			"Value":"Main_FittingTexture",
 			"Description":["Tier 2 Color (Purple) for Wyvern and Tier 3 Color (Red) for Knight."]
+			}
+		],
+		"TitanAudio":
+		[
+			{
+			"DisplayName":"Original Audio",
+			"Value":"MBoss_Audio_0rgn",
+			"Description":["Original Audio from release."]
+			},
+			{
+			"DisplayName":"Sound Edit",
+			"Value":"MBoss_Audio_Edit",
+			"Description":["Edited Sounds"]
+			},
+			{
+			"DisplayName":"Sound Overhaul",
+			"Value":"MBoss_Audio_SO",
+			"Description":["Sound Overhaul"]
 			}
 		],
 		"RifleWing":
@@ -216,7 +243,7 @@
 			"Value":"MBoss_RifleQTE_03",
 			"Description":["Supreme uses the large diamond turrets more often here. Bitlaser01 and 02 have their extended uncut animations."]
 			}
-		],	
+		],
 		"SupremeM":
 		[
 			{
@@ -243,6 +270,19 @@
 			"Description":["Certain changes to the cutscenes."]
 			},
 		],
+		"BossDarkballQTE":
+		[
+			{
+			"DisplayName":"Off",
+			"Value":"0",
+			"Description":["Disabled"]
+			},
+			{
+			"DisplayName":"On",
+			"Value":"1",
+			"Description":["Enabled"]
+			}
+		],
 		"NoTackle":
 		[
 			{
@@ -257,5 +297,6 @@
 			}
 		],
 	},
+	
    "IniFile":"mod.ini"
 }

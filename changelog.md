@@ -1,10 +1,12 @@
-# **Aggro-Titans Test** - 2026.09.10
+# **Aggro-Titans Test** - 2026.09.12
 
 * Current 7z Compressed Mod File Size: "1.07GB"
 
 
 
-##### ***Preparing for Public Update.***
+#### **Aggro-Titans 1.46 - Stuff I Missed**
+
+* Fixed an issue were custom code functions weren't activating for Giganto.
 
 
 
@@ -34,7 +36,7 @@
 
 
 
-#### **Aggro-Titans 1.42**
+#### **Aggro-Titans 1.42 - Skipped**
 
 * Skipped to avoid confusion with the current PC/Steam version of the game.
 
